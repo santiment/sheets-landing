@@ -1,13 +1,17 @@
-@import '~@santiment-network/ui/mixins.scss';
+@import "~@santiment-network/ui/mixins.scss";
 
 .advantages {
   display: grid;
   grid-gap: 24px;
-  grid-template-areas: 'chain social financial' 'chain social financial' 'chain social developer' 'interest interest developer';
+  grid-template-areas: "chain social financial" "chain social financial" "chain social developer" "interest interest developer";
 
-  @include responsive('phone', 'phone-xs') {
-    grid-template-areas: 'chain' 'social' 'financial' 'developer' 'interest';
+  @include responsive("phone", "phone-xs") {
+    grid-template-areas: "chain" "social" "financial" "developer" "interest";
   }
+}
+
+.text {
+  text-align: left;
 }
 
 .interest {
@@ -19,15 +23,15 @@
 
   &::after {
     display: block;
-    content: '';
+    content: "";
     position: absolute;
     height: 222px;
     width: 200px;
-    background: url('../../images/interest.svg');
+    background: url("../../images/interest.svg");
     right: 0;
     top: 45px;
 
-    @include responsive('laptop', 'desktop') {
+    @include responsive("laptop", "desktop") {
       right: 9%;
     }
   }
@@ -35,37 +39,43 @@
   &__text {
     margin: 12px 0 20px;
     width: 60%;
-    @include responsive('desktop') {
+    max-width: 270px;
+    @include responsive("desktop") {
       width: 47%;
     }
 
-    @include responsive('laptop', 'tablet') {
+    @include responsive("laptop", "tablet") {
       margin: 7px 0 14px;
       font-size: 14px;
     }
   }
 
-  @include responsive('phone-xs') {
-    padding: 0;
-    background: transparent;
-    &__text,
-    &__title,
+  @include responsive("phone-xs") {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 300px;
+
+    &__text {
+      width: 100%;
+      text-align: center;
+    }
+
     &::after {
-      display: none;
+      right: 0;
+      left: 0;
+      top: 45px;
+      margin: 0 auto;
     }
   }
 }
 
-.text {
-  text-align: left;
-}
-
 .btn {
-  @include text('body-2');
+  @include text("body-2");
   padding: 8px 44px;
   height: auto;
 
-  @include responsive('phone-xs') {
+  @include responsive("phone-xs") {
     height: 50px;
     justify-content: center;
     width: 100%;
@@ -86,15 +96,15 @@
     grid-area: developer;
   }
   padding: 30px 40px;
-  background: $malibu-accent;
+  background: $athens;
   border-radius: 8px;
 
-  @include responsive('tablet') {
-    padding: 20px;
+  @include responsive("tablet", "phone-xs", "phone") {
+    padding: 30px;
   }
 
   &__type {
-    color: var(--dodger-blue);
+    color: var(--sheets);
     font-size: 18px;
     line-height: 26px;
   }
@@ -102,7 +112,7 @@
   &__title {
     text-align: left;
     margin: 22px 0 30px;
-    @include responsive('tablet') {
+    @include responsive("tablet") {
       font-size: 24px;
       line-height: 32px;
     }
@@ -114,7 +124,7 @@
   margin-bottom: 10px;
   font-size: 16px;
 
-  @include responsive('tablet') {
+  @include responsive("tablet") {
     font-size: 14px;
   }
 }

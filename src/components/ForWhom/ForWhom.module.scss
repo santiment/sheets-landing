@@ -1,0 +1,54 @@
+@import "~@santiment-network/ui/mixins.scss";
+
+.wrapper {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mirage);
+  padding: 40px 50px;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 186px;
+    left: 5%;
+    top: 26px;
+    z-index: -1;
+    background: var(--mirage);
+    opacity: 0.6;
+    filter: blur(18px);
+    border-radius: 8px;
+  }
+
+  @include responsive('phone-xs', 'phone') {
+    padding: 32px 24px;
+  }
+}
+
+.wrapper + .wrapper {
+  margin-top: 32px;
+}
+
+.title {
+  @include text("h4", "m");
+  color: var(--white);
+  margin-bottom: 16px;
+
+  //   @include responsive('phone-xs', 'phone') {
+  //   text-align: center;
+  // }
+}
+
+.description {
+  @include text("body-2");
+  color: $bali-hai;
+  max-width: 400px;
+  margin-bottom: 2px;
+
+  //   @include responsive('phone-xs', 'phone') {
+  //   text-align: center;
+  // }
+}
