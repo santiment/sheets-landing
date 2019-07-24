@@ -33,22 +33,14 @@
 }
 
 .title {
-  @include text("h4", "m");
+  text-align: left;
   color: var(--white);
   margin-bottom: 16px;
-
-  //   @include responsive('phone-xs', 'phone') {
-  //   text-align: center;
-  // }
 }
 
 .description {
-  @include text("body-2");
+  text-align: left;
   color: $bali-hai;
   max-width: 400px;
   margin-bottom: 2px;
-
-  //   @include responsive('phone-xs', 'phone') {
-  //   text-align: center;
-  // }
 }
