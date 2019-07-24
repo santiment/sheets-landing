@@ -1,0 +1,39 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.code {
+  border: 1px solid #f2f4fa;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 50px rgba(56, 74, 167, 0.04),
+    0px 60px 40px rgba(56, 74, 167, 0.02);
+  border-radius: 8px;
+  background: #fff;
+  min-width: 600px;
+  min-height: 400px;
+  margin-top: 20px;
+  position: relative;
+
+  @include responsive("tablet", "phone", "phone-xs") {
+    display: none;
+  }
+
+  &__header {
+    height: 36px;
+    padding: 11px;
+    line-height: 0;
+    border-bottom: 1px solid #f2f4fa; // NOTE(vanguard): Undefined color
+  }
+
+  &__btn {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    background: var(--porcelain);
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  :global(&__tab) {
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,73 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.code {
+  width: 50%;
+  margin-left: 5%;
+      @include responsive("tablet", "laptop") {
+        width: 40%;
+      margin-left:0;
+    }
+}
+
+.content {
+  background-image: url("../../../images/waves.svg");
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 37px 70px;
+}
+
+.list {
+  width: 190px;
+}
+
+.item {
+  padding: 10px 20px 9px 38px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $dodger-blue;
+  }
+
+  &:nth-child(2) {
+    border: 1px solid #f1f3f9;
+    border-radius: 8px;
+    background: var(--white);
+    &:before {
+      background-color: $heliotrope;
+    }
+  }
+
+  &:last-child {
+    &:before {
+      background-color: $malibu;
+    }
+  }
+}
+
+.item + .item {
+  margin-top: 10px;
+}
+
+.title {
+  @include text("body-1");
+  color: var(--casper);
+}
+
+.value {
+  @include text("h2", "m");
+  color: var(--mirage);
+}

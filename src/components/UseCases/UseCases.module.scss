@@ -1,10 +1,18 @@
 @import '~@santiment-network/ui/mixins.scss';
 
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 155px;
+  justify-content: space-between;
+
+  &:nth-child(2) {
+    flex-direction: row-reverse;
+  }
+}
+
 
 .case {
-  margin-bottom: 155px;
-  width: 100%;
-
   @include responsive('tablet', 'phone', 'phone-xs') {
     width: 100%;
     display: flex;
@@ -38,4 +46,8 @@
       text-align: center;
     }
   }
+}
+
+.code {
+  width: 50%;
 }

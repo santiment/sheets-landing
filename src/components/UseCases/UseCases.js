@@ -1,11 +1,15 @@
 import React from 'react'
 import Title from '../Title/Title'
 import Subtitle from '../Subtitle/Subtitle'
+import BacktestCodePanel from '../CodePanel/BacktestCodePanel/BacktestCodePanel'
+import MonitorCodePanel from '../CodePanel/MonitorCodePanel/MonitorCodePanel'
+import AnalyzeCodePanel from '../CodePanel/AnalyzeCodePanel/AnalyzeCodePanel'
 import styles from './UseCases.module.scss'
 
 const cases = [
   {
     title: 'Backtest strategies',
+    code: (<BacktestCodePanel />),
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -27,6 +31,7 @@ const cases = [
   },
   {
     title: 'Monitor portfolio',
+    code: (<MonitorCodePanel />),
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -50,6 +55,7 @@ const cases = [
   },
   {
     title: 'Analyze 100s of assets',
+    code: (<AnalyzeCodePanel />),
     icon: (
 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
   <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -74,13 +80,16 @@ const cases = [
 export default () => (
   <section id='use-cases'>
     <ul className={styles.cases}>
-      {cases.map(({ icon, title, desc }) => (
-        <li className={styles.case} key={title}>
+      {cases.map(({ icon, title, desc, code }) => (
+        <li key={title} className={styles.wrapper}>
+          <div className={styles.case}>
             {icon}
           <Title small className={styles.case__title}>
             {title}
           </Title>
           <Subtitle className={styles.case__desc}>{desc}</Subtitle>
+          </div>
+          {code}
         </li>
       ))}
     </ul>
