@@ -8,6 +8,8 @@
   border-radius: 8px;
   position: absolute;
   padding: 14px 16px;
+  display: flex;
+  align-items: center;
 
   &:after {
     position: absolute;

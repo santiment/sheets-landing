@@ -5,11 +5,13 @@
   display: flex;
   flex-direction: column;
   background-color: var(--mirage);
+  background-repeat: no-repeat;
+  background-position: 92% 55%;
   padding: 40px 50px;
   position: relative;
 
   &:before {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     width: 90%;
@@ -17,14 +19,36 @@
     left: 5%;
     top: 26px;
     z-index: -1;
-    background: var(--mirage);
+    background-color: var(--mirage);
     opacity: 0.6;
     filter: blur(18px);
     border-radius: 8px;
   }
 
-  @include responsive('phone-xs', 'phone') {
-    padding: 32px 24px;
+  &:first-child {
+    background-image: url("./first.svg");
+    @include responsive("phone-xs", "phone") {
+      background-position: 92% -5%;
+    }
+    @include responsive("tablet") {
+      background-position: 92% -53%;
+    }
+  }
+
+  &:last-child {
+    background-image: url("./second.svg");
+  }
+
+  @include responsive("tablet") {
+    padding-top: 150px;
+    background-position: 92% 12%;
+    background-size: contain;
+  }
+
+  @include responsive("phone-xs", "phone") {
+    background-position: 92% 12%;
+    background-size: contain;
+    padding: 132px 24px 32px;
   }
 }
 

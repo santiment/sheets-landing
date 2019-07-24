@@ -71,3 +71,17 @@
   @include text("h2", "m");
   color: var(--mirage);
 }
+
+.bitcoin {
+  top: 60px;
+  left: -60px;
+}
+
+.risk {
+  bottom: 40px;
+  left: 54px;
+}
+
+.ticker {
+  color: var(--mystic);
+}

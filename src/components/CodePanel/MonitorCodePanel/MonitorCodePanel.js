@@ -1,7 +1,9 @@
 import React from "react"
 import CodePanel from "../CodePanel"
 import FloatingPanel from "../FloatingPanel/FloatingPanel"
-import img from './pocket.svg'
+import pocket from './pocket.svg'
+import btc from '../FloatingPanel/btc.png'
+import star from '../FloatingPanel/star.svg'
 import styles from "./MonitorCodePanel.module.scss"
 
 const items = [
@@ -24,10 +26,11 @@ const MonitorCodePanel = () => (
     <div className={styles.content}>
       <FloatingPanel
         className={styles.bitcoin}
+        icon={btc}
         title={<span>Bitcoin <span className={styles.ticker}>BTC</span></span>}
         />
-      <FloatingPanel className={styles.risk} title="Low risk" />
-      <img src={img} alt="pocket" />
+      <FloatingPanel className={styles.risk} title="Low risk" icon={star} />
+      <img src={pocket} alt="pocket" />
       <ul className={styles.list}>
         {items.map(({ title, value }) => (
           <li className={styles.item} key={title}>

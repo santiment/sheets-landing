@@ -2,5 +2,33 @@
 @import "~@santiment-network/ui/variables";
 
 .code {
-	width: 60%;
+  width: 60%;
+}
+
+.financial {
+  top: -15px;
+  left: 115px;
+}
+
+.devact {
+  bottom: -20px;
+  right: 60px;
+}
+
+.social {
+  top: 150px;
+  left: 190px;
+}
+
+.onchain {
+  left: -30px;
+  bottom: 94px;
+}
+
+.content {
+	width: 94%;
+	margin: 0 auto;
+	height: 365px;
+	background: url('./graph.svg') no-repeat 25%;
+	background-size: contain;
 }
