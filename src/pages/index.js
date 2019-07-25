@@ -18,7 +18,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Santiment's Sheets - Crypto asset data for Google Sheets" />
     <section className={styles.wrapper}>
-      <div>
+      <div className={styles.main}>
         <h1 className={styles.title}>Crypto asset data for Google Sheets</h1>
         <h2 className={styles.desc}>
           Get relevant access for on-chain, social development activity, prices

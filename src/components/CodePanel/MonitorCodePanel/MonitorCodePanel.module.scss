@@ -4,10 +4,9 @@
 .code {
   width: 50%;
   margin-left: 5%;
-      @include responsive("tablet", "laptop") {
-        width: 40%;
-      margin-left:0;
-    }
+  @include responsive("laptop") {
+    margin-left: 25px;
+  }
 }
 
 .content {
@@ -75,6 +74,10 @@
 .bitcoin {
   top: 60px;
   left: -60px;
+
+  @include responsive("laptop") {
+    left: -20px;
+  }
 }
 
 .risk {

@@ -27,6 +27,12 @@
   }
 }
 
+.main {
+  @include responsive('laptop') {
+      padding-right: 20px;
+    }
+}
+
 .title {
   &,
   &__mark {
@@ -64,6 +70,7 @@
   font-weight: 100;
   color: var(--waterloo);
   margin: 32px 0;
+  max-width: 466px;
 
   @include responsive("phone", "phone-xs") {
     font-size: 18px;

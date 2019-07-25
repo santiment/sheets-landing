@@ -3,6 +3,11 @@
 
 .code {
   width: 60%;
+  margin-right: 20px;
+
+  @include responsive("laptop") {
+    margin-right: 30px;
+  }
 }
 
 .financial {
@@ -39,7 +44,7 @@
   height: 140px;
   bottom: 16px;
   top: 48px;
-  right: -60px;
+  right: -50px;
   padding: 30px 24px 18px 20px;
   display: flex;
   flex-direction: column;
@@ -47,6 +52,10 @@
   background-image: url("../../FunctionsTemplate/combined-template.svg");
   background-repeat: no-repeat;
   border-radius: 8px;
+
+  @include responsive("laptop") {
+    right: -40px;
+  }
 
   &::before {
     content: "";

@@ -21,6 +21,10 @@
     margin-bottom: 50px;
   }
 
+  @include responsive('laptop') {
+      padding: 0 25px;
+    }
+
   &:last-child {
     margin-bottom: 0px;
   }
