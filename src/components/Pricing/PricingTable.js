@@ -67,6 +67,7 @@ export default ({ classes = {}, onDialogClose }) => {
                           ({ name, interval }) =>
                             interval === billing || name === 'FREE',
                         )
+                        .filter(({name}) => name !== 'PREMIUM') // NOTE(@haritonasty): temporal until plans for Sheets
                         .map(({ id, name, amount }) => {
                           const card = PLANS[name]
                           const sameAsUserPlan = id === userPlan

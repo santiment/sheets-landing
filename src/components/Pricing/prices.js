@@ -24,18 +24,10 @@ export default {
       </Button>
     ),
     features: [
-      'Historical data access to last 3 months excluding the last 24 hours',
-      <>
-        20 API calls / minute
-        <br />
-        1k API calls / month
-      </>,
+      'Data access to last 3 month',
+      'Minus last 24 hours',
       <>
         Standard metrics <span className={styles.ast}>*</span>
-      </>,
-
-      <>
-        Attribution required <span className={styles.ast}>**</span>
       </>,
     ],
   },
@@ -45,16 +37,11 @@ export default {
     link: 'Upgrade now',
     Component: PlanActionDialog,
     features: [
-      'Historical data access to last 6 months',
-      <>
-        60 API calls / minute
-        <br />
-        10k API calls / month
-      </>,
+      'Data access to last 6 months',
+      'Real time',
       <>
         Standard metrics <span className={styles.ast}>*</span>
-      </>,
-      'No attribution',
+      </>
     ],
   },
   PRO: {
@@ -64,38 +51,19 @@ export default {
     Component: PlanActionDialog,
     link: 'Upgrade now',
     features: [
-      'Historical data access to last 18 months',
-      <>
-        120 API calls / minute
-        <br />
-        150k API calls / month
-      </>,
+      'Data access to last 12 months',
+      'Real time',
       <>
         Advanced metrics <span className={styles.ast}>*</span>
-      </>,
-      'No attribution',
+      </>
     ],
   },
   PREMIUM: {
-    title: 'Premium',
-    desc: 'Full historical data and generous rate limits',
-    Component: PlanActionDialog,
-    link: 'Upgrade now',
     features: [
-      'Unlimited historical data access',
-      <>
-        180 API calls / min
-        <br />
-        500k API calls / month
-      </>,
-      <>
-        Advanced metrics <span className={styles.ast}>*</span>
-      </>,
-      'No attribution',
     ],
   },
   CUSTOM: {
-    title: 'Enterprise',
+    title: 'Corporate',
     desc: 'For organizations that need advanced data and support',
     discount: 'Based on your needs',
     link: 'Contact us',
@@ -108,12 +76,8 @@ export default {
     ),
     features: [
       'Unlimited historical data access',
-      `Custom development
-      Custom reports`,
-      <>
-        Advanced metrics <span className={styles.ast}>*</span>
-      </>,
-      'White-label options',
+      `Custom time series`,
+      'Early access to new metrics',
     ],
   },
 }

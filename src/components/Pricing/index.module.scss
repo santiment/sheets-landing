@@ -29,7 +29,7 @@
   background: #fff;
   display: inline-block;
   border: 1px solid var(--porcelain);
-  padding: 32px 24px 28px;
+  padding: 32px 24px 20px;
   transition: transform 200ms;
   flex: 1;
 
@@ -61,7 +61,7 @@
     border-radius: 4px !important;
     box-shadow: 0px 14px 20px rgba(24, 27, 43, 0.06) !important;
     transform: scale(1.03) !important;
-    border-color: var(--dodger-blue);
+    border-color: var(--sheets);
   }
 
   &__title {
@@ -95,7 +95,7 @@
     }
     .card__arrow {
       transform: rotate(180deg);
-      fill: var(--dodger-blue);
+      fill: var(--sheets);
     }
   }
 }
@@ -103,7 +103,7 @@
 .popular {
   font-size: 12px;
   line-height: 18px;
-  background: $malibu-accent;
+  background: $jungle-green-accent;
   padding: 3px 8px;
   border-radius: 2px;
   margin-left: 10px;
@@ -164,8 +164,8 @@
 .more {
   user-select: none;
   cursor: pointer;
-  color: var(--dodger-blue);
-  fill: var(--dodger-blue);
+  color: var(--sheets);
+  fill: var(--sheets);
   display: block;
   text-align: center;
   margin-top: 22px;
@@ -175,7 +175,7 @@
     margin-top: 45px;
   }
 
-  @include responsive('tablet', 'phone', 'phone-xs') {
+  @include responsive('phone', 'phone-xs') {
     display: none;
   }
 
@@ -196,7 +196,7 @@
   margin-left: 16px;
 
   &_cancel:hover {
-    color: var(--dodger-blue);
+    color: var(--sheets);
   }
 }
 
@@ -204,7 +204,7 @@
   display: flex;
   justify-content: center;
   padding: 25px 0 40px;
-  --green: var(--dodger-blue);
+  --green: var(--sheets);
 }
 
 .bill {

@@ -1,5 +1,5 @@
 export default {
-  columns: ['', 'Free', 'Basic', 'Pro', 'Premium', 'Corporate'],
+  columns: ['', 'Free', 'Basic', 'Pro', 'Corporate'],
   rows: [
     {
       group: 'Financial data',
@@ -29,12 +29,12 @@ export default {
         { name: 'Distribution between mining pools' },
         { name: 'Top holders percent of total supply' },
         { name: 'Percent of total supply on exchanges' },
-        { name: 'Realized value', checks: [false, false, true, true, true] },
-        { name: 'MVRV ratio', checks: [false, false, true, true, true] },
-        { name: 'NVT', checks: [false, false, true, true, true] },
+        { name: 'Realized value', checks: [false, false, true, true] },
+        { name: 'MVRV ratio', checks: [false, false, true, true] },
+        { name: 'NVT', checks: [false, false, true, true] },
         {
           name: 'Daily active deposits',
-          checks: [false, false, true, true, true],
+          checks: [false, false, true, true],
         },
       ],
     },

@@ -3,23 +3,6 @@
 .wrapper {
   background: url('./bg.svg') no-repeat 50%;
   position: relative;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 100vw;
-    top: -150px;
-    height: 500px;
-    left: calc((1140px - 100vw) / 2);
-    z-index: -1;
-    background: url('./blur.svg') no-repeat 0 -70px;
-    background-size: 30%;
-
-    @include responsive('phone', 'phone-xs') {
-      background: none;
-    }
-  }
 }
 
 .title {
@@ -65,6 +48,7 @@
 .arrow {
   height: 36px;
   width: 36px;
+  background: var(--white);
   border: 1px solid var(--porcelain);
   border-radius: 50%;
   display: inline-flex;
@@ -77,7 +61,7 @@
   stroke: var(--mirage);
 
   &:hover {
-    stroke: var(--dodger-blue) !important;
+    stroke: var(--sheets) !important;
   }
 
   &_left {

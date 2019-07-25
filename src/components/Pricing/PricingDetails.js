@@ -7,7 +7,7 @@ import DETAILS from './details'
 import { formatPrice } from '../../utils/plans'
 import styles from './PricingDetails.module.scss'
 
-const all = [true, true, true, true, true]
+const all = [true, true, true, true]
 
 export default ({ isLoggedIn, billing, userPlan, plans }) => (
   <table className={styles.table}>
@@ -23,7 +23,6 @@ export default ({ isLoggedIn, billing, userPlan, plans }) => (
         <React.Fragment key={i}>
           <tr>
             <td className={cx(styles.group, styles.cell)}>{row.group}</td>
-            <td className={styles.cell} />
             <td className={styles.cell} />
             <td className={styles.cell} />
             <td className={styles.cell} />
@@ -53,6 +52,7 @@ export default ({ isLoggedIn, billing, userPlan, plans }) => (
           .filter(
             ({ interval, name }) => interval === billing || name === 'FREE',
           )
+          .filter(({name}) => name !== 'PREMIUM') // NOTE(@haritonasty): temporal until plans for Sheets
           .map(({ id, name, amount }) => {
             const plan = PLANS[name]
             const sameAsUserPlan = id === userPlan
