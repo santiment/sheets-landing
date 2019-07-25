@@ -1,4 +1,4 @@
-@import '~@santiment-network/ui/mixins.scss';
+@import "~@santiment-network/ui/mixins.scss";
 
 .wrapper {
   display: flex;
@@ -6,14 +6,21 @@
   margin-bottom: 155px;
   justify-content: space-between;
 
+  @include responsive("tablet") {
+    margin-bottom: 20px;
+  }
+
+    @include responsive("phone", "phone-xs") {
+    margin-bottom: 40px;
+  }
+
   &:nth-child(2) {
     flex-direction: row-reverse;
   }
 }
 
-
 .case {
-  @include responsive('tablet', 'phone', 'phone-xs') {
+  @include responsive("phone", "phone-xs") {
     width: 100%;
     display: flex;
     align-items: center;
@@ -21,9 +28,9 @@
     margin-bottom: 50px;
   }
 
-  @include responsive('laptop') {
-      padding: 0 25px;
-    }
+  @include responsive("laptop") {
+    padding: 0 25px;
+  }
 
   &:last-child {
     margin-bottom: 0px;
@@ -35,7 +42,7 @@
     align-items: center;
     margin: 14px 0 16px;
 
-    @include responsive('tablet', 'phone', 'phone-xs') {
+    @include responsive("phone", "phone-xs") {
       flex-direction: column;
       justify-content: center;
       margin: 10px 0 12px;
@@ -45,10 +52,14 @@
   &__desc {
     text-align: left;
     max-width: 360px;
-    @include text('body-1')
-    @include responsive('tablet', 'phone', 'phone-xs') {
+    @include text("body-1")
+    @include responsive("phone", "phone-xs") {
       text-align: center;
     }
+    @include responsive("tablet") {
+      max-width: 400px;
+    }
+
   }
 }
 
