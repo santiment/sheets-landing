@@ -1,4 +1,10 @@
-<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 4H11V1C11 0.4 10.6 0 10 0H3C1.3 0 0 1.3 0 3V13C0 14.7 1.3 16 3 16H15C15.6 16 16 15.6 16 15V5C16 4.4 15.6 4 15 4ZM2 3C2 2.4 2.4 2 3 2H9V4H2V3ZM14 14H3C2.4 14 2 13.6 2 13V6H14V14Z" fill="#181B2B"/>
-<path d="M11 10C11 10.5523 11.4477 11 12 11C12.5523 11 13 10.5523 13 10C13 9.44772 12.5523 9 12 9C11.4477 9 11 9.44772 11 10Z" fill="#181B2B"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="202" height="202" fill="none">
+  <circle cx="101" cy="101" r="89" stroke="#F9FAFF" stroke-width="24"/>
+  <path stroke="#5275FF" stroke-linecap="round" stroke-width="24" d="M101 12a89 89 0 0 1 83.8 119"/>
+  <circle cx="101" cy="101" r="63" stroke="#FAF9FF" stroke-width="24"/>
+  <path stroke="#8358FF" stroke-linecap="round" stroke-width="24" d="M101 38a63 63 0 0 1 26 120.4"/>
+  <circle cx="101" cy="101" r="37" stroke="#F3FDFF" stroke-width="24"/>
+  <path stroke="#68DBF4" stroke-linecap="round" stroke-width="24" d="M101 64a37 37 0 1 1-20.5 67.8"/>
+  <path fill="#181B2B" d="M108 97h-4v-3c0-.6-.4-1-1-1h-7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h12c.6 0 1-.4 1-1V98c0-.6-.4-1-1-1zm-13-1c0-.6.4-1 1-1h6v2h-7v-1zm12 11H96c-.6 0-1-.4-1-1v-7h12v8z"/>
+  <path fill="#181B2B" d="M104 103a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
 </svg>

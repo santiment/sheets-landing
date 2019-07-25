@@ -10,8 +10,6 @@
     top: -180px;
     height: 500px;
     z-index: -1;
-
-    background: url('./bg.svg') no-repeat 100% 0px;
     background-size: 30%;
   }
 }
@@ -44,8 +42,14 @@
     fill: var(--waterloo);
     min-width: 15px;
 
+    &:hover {
+      @include responsive('laptop', 'desktop') {
+        fill: var(--sheets);
+      }
+    }
+
     :global(.opened) & {
-      fill: var(--dodger-blue);
+      fill: var(--sheets);
       transform: rotate(180deg);
     }
   }
@@ -54,7 +58,7 @@
     @include text('body-2');
 
     :global(.opened) & {
-      color: var(--dodger-blue);
+      color: var(--sheets);
     }
   }
 
@@ -89,9 +93,8 @@
   margin-bottom: 20px;
 
   a {
-    color: var(--dodger-blue);
+    color: var(--sheets);
     &:hover {
-      color: var(--dodger-blue-hover);
       text-decoration: underline;
     }
   }

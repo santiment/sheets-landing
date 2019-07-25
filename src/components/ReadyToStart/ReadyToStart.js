@@ -11,7 +11,7 @@ export default () => (
       <p className={styles.text}>
         Click below to access the Santiment API or join the Discord
         <br className={styles.br} />
-        channel to share your solutions with the world
+         {' '}channel to share your solutions with the world
       </p>
       <Button
         as={Link}

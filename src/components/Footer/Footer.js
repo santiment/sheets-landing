@@ -19,7 +19,7 @@ const categories = [
         href: 'https://app.santiment.net/labs/balance',
       },
       { children: 'Charts', href: 'https://data.santiment.net' },
-      { children: 'Sheets', href: 'https://santiment.net/sansheets/' },
+      { children: 'Neuro', href: 'https://neuro.santiment.net' },
     ],
   },
   {
