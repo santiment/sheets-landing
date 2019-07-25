@@ -83,7 +83,7 @@ const SettingsAPIKeys = ({ apikeys = [], generateAPIKey, revokeAPIKey }) => {
                 </div>
               ))
             ) : (
-              <Button onClick={onGenClick} variant='fill' accent='blue'>
+              <Button onClick={onGenClick} variant='fill' accent='sheets'>
                 Generate
               </Button>
             )}

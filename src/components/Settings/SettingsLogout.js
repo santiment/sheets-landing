@@ -34,7 +34,7 @@ const SettingsAPIKeys = ({ apikeys = [], generateAPIKey, revokeAPIKey }) => (
         {(logout, { loading }) => (
           <Button
             variant='fill'
-            accent='blue'
+            accent='sheets'
             isLoading={loading}
             onClick={logout}
           >

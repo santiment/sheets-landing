@@ -54,7 +54,7 @@ const PlanText = ({ subscription }) => {
       <div className={styles.title}>Free Plan</div>
       <div className={styles.desc}>
         You can see data{' '}
-        <Button accent='blue' className={styles.btn}>
+        <Button accent='sheets' className={styles.btn}>
           generated 24h ago.
         </Button>
       </div>
@@ -73,7 +73,7 @@ const SubscriptionRenewButton = ({
         <div className={cx(styles.renew, isHighlighted && styles.highlighted)}>
           <Button
             variant='fill'
-            accent='blue'
+            accent='sheets'
             isLoading={loading}
             onClick={() =>
               renew({ variables: { id: +id } }).then(resetHighlight)

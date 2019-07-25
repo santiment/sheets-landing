@@ -19,7 +19,7 @@ export default {
     discount: 'Free forever',
     link: 'Upgrade now',
     Component: () => (
-      <Button accent='blue' border fluid className={styles.link} disabled>
+      <Button accent='sheets' border fluid className={styles.link} disabled>
         Default plan
       </Button>
     ),

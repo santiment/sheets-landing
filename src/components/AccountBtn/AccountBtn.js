@@ -9,7 +9,7 @@ import styles from './AccountBtn.module.scss'
 
 const btnProps = {
   false: {
-    accent: 'blue',
+    accent: 'sheets',
     border: true,
     className: styles.login,
     children: 'Sign up',
@@ -31,7 +31,7 @@ const AccountBtn = ({ isAccountPage }) => {
           <Button
             as={Link}
             to='/account'
-            variant='flat'
+            variant='bordered'
             isActive={isAccountPage}
             {...btnProps[Boolean(currentUser)]}
           />

@@ -18,7 +18,7 @@ export default () => (
         as={Link}
         to='/account'
         variant='fill'
-        accent='blue'
+        accent='sheets'
         className={styles.btn}
       >
         Get access

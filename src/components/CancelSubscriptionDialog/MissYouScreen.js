@@ -16,14 +16,14 @@ const MissYouScreen = ({ closeDialog, nextScreen, name }) => {
       </p>
       <Button
         variant='fill'
-        accent='blue'
+        accent='sheets'
         onClick={closeDialog}
         className={styles.btn}
       >
         Keep using {plan} plan
       </Button>
       <br />
-      <Button accent='blue' onClick={nextScreen}>
+      <Button accent='sheets' onClick={nextScreen}>
         Continue canceling
       </Button>
     </Dialog.ScrollContent>

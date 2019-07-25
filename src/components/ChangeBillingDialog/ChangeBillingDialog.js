@@ -60,7 +60,7 @@ const ChangeBillingDialog = ({
               <Dialog
                 title='Change billing periond'
                 trigger={
-                  <Button className={sharedStyles.btn} accent='blue'>
+                  <Button className={sharedStyles.btn} accent='sheets'>
                     Change billing period
                   </Button>
                 }
@@ -96,7 +96,7 @@ const ChangeBillingDialog = ({
                         </div>
                         <Button
                           border
-                          accent='blue'
+                          accent='sheets'
                           disabled={oldInterval === bill}
                           isLoading={oldInterval !== bill && updateLoading}
                           onClick={() =>

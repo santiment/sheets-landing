@@ -71,7 +71,7 @@ const CancelPlanDialog = ({
               title='Subscription cancelling'
               onClose={closeDialog}
               trigger={
-                <Button onClick={openDialog} accent='blue'>
+                <Button onClick={openDialog} accent='sheets'>
                   Cancel subscription
                 </Button>
               }

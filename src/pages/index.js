@@ -29,7 +29,7 @@ const IndexPage = () => (
           to='/account'
           className={styles.access}
           variant='fill'
-          accent='positive'
+          accent='sheets'
         >
           Get started
         </Button>

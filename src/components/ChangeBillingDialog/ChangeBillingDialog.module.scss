@@ -17,7 +17,7 @@
 
 .price {
   @include text('body-2', 'm');
-  color: var(--dodger-blue);
+  color: var(--sheets);
 
   &__type {
     @include text('body-3');

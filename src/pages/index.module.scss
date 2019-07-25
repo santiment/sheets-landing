@@ -82,7 +82,6 @@
   padding: 10px 39px;
   margin-right: 32px;
   height: 50px;
-  background: var(--sheets);
   @include text("body-2");
   @include responsive("phone", "phone-xs") {
     margin-right: 25px;

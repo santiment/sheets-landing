@@ -10,7 +10,7 @@ const PlanRestrictBtn = ({ sameAsUserPlan, isSubscriptionCanceled }) => {
     ? { children: 'Upgrade now', as: Link, to: '/account#subscription?renew' }
     : { children: 'Upgrade now', as: Link, to: '/account' }
   return (
-    <Button fluid accent='blue' border className={styles.link} {...props} />
+    <Button fluid accent='sheets' variant='fill' className={styles.link} {...props} />
   )
 }
 

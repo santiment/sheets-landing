@@ -35,7 +35,7 @@ const CancellationScreen = ({
           Cancel
         </Dialog.Cancel>
         <Dialog.Approve
-          accent='blue'
+          accent='sheets'
           isLoading={loading}
           onClick={() =>
             cancelSubscription({

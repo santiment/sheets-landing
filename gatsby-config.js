@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Neuro - Crypto’s Most Comprehensive API`,
-    description: `Raw data access to on-chain, social media, development activity and pricing information for 1000+ crypto assets. Unlimited historical and real time data. Backtest strategies, build custom signals, DIY dashboards and much more with the most all-inclusive crypto API on the market.`,
+    title: `Sheets - Crypto asset data for Google Sheets`,
+    description: `Relevant access for on-chain, social development activity, prices and volume data.`,
     author: `Santiment Team`,
   },
   plugins: [
@@ -39,8 +39,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#5275FF`,
-        theme_color: `#5275FF`,
+        background_color: `#1aa168`,
+        theme_color: `#1aa168`,
         display: `minimal-ui`,
         icon: `src/images/logo.png`, // This path is relative to the root of the site.
       },

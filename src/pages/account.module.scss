@@ -26,7 +26,7 @@
 }
 
 .tab_selected {
-  color: var(--dodger-blue) !important;
+  color: var(--sheets) !important;
 
   &::after {
     content: '';
@@ -37,6 +37,6 @@
     left: 0;
     right: 0;
     border-radius: 1px;
-    background: var(--dodger-blue);
+    background: var(--sheets);
   }
 }

@@ -24,7 +24,7 @@ const PipedriveBtn = ({ title, label, src }) => {
       title='Contact Information'
       classes={{ dialog: styles.dialog }}
       trigger={
-        <Button className={styles.link} fluid border accent='blue'>
+        <Button className={styles.link} fluid border accent='sheets'>
           {label}
         </Button>
       }

@@ -1,5 +1,7 @@
 # Sheets landing page
 
+![](./src/images/sheets.png)
+
 This is the source for [`Sheets Landing Page`](https://santiment.net/sansheets/).
 
 ## Running locally

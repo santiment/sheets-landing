@@ -77,7 +77,7 @@ const PaymentDialog = ({
         className={sharedStyles.link}
         fluid
         border
-        accent='blue'
+        accent='sheets'
         disabled={disabled}
         onClick={showPayment}
       >
@@ -160,7 +160,7 @@ const PaymentDialog = ({
                     </Dialog.Cancel>
                     <Dialog.Approve
                       variant='fill'
-                      accent='blue'
+                      accent='sheets'
                       disabled={loading}
                       className={sharedStyles.action}
                       type='submit'

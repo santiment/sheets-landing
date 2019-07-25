@@ -53,7 +53,7 @@ export default () => (
                 />
                 <Button
                   variant='fill'
-                  accent='blue'
+                  accent='sheets'
                   className={styles.email__btn}
                   type='submit'
                   disabled={loading}

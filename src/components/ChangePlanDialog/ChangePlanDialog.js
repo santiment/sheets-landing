@@ -38,7 +38,7 @@ const ChangePlanDialog = ({
                   fluid
                   className={sharedStyles.link}
                   border
-                  accent='blue'
+                  accent='sheets'
                 >
                   Change to this plan
                 </Button>
@@ -57,7 +57,7 @@ const ChangePlanDialog = ({
                   Cancel
                 </Dialog.Cancel>
                 <Dialog.Approve
-                  accent='blue'
+                  accent='sheets'
                   isLoading={loading}
                   onClick={() =>
                     updateSubscription({

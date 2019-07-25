@@ -76,7 +76,7 @@
     }
     .card__arrow {
       transform: rotate(180deg);
-      fill: var(--dodger-blue);
+      fill: var(--sheets);
     }
   }
 }
@@ -144,8 +144,8 @@
 .more {
   user-select: none;
   cursor: pointer;
-  color: var(--dodger-blue);
-  fill: var(--dodger-blue);
+  color: var(--sheets);
+  fill: var(--sheets);
   display: block;
   text-align: center;
   margin-top: 12px;

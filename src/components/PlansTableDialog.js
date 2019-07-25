@@ -22,7 +22,7 @@ const PlanDialog = ({ subscription }) => {
       classes={styles}
       onClose={closeDialog}
       trigger={
-        <Button accent='blue' variant='fill' onClick={openDialog}>
+        <Button accent='sheets' variant='fill' onClick={openDialog}>
           {subscription ? 'Change' : 'Upgrade'} plan
         </Button>
       }
