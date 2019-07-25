@@ -83,7 +83,7 @@ const Advantage = ({ className, advantage: { type, title, features } }) => (
 )
 
 export default () => (
-  <section>
+  <section id='metrics'>
     <div className={styles.advantages}>
       <Advantage
         advantage={advantages[0]}
