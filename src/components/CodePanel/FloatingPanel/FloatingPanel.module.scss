@@ -30,4 +30,5 @@
 	color: var(--mirage);
 	@include text('body-1');
 	margin-left: 14px;
+  white-space: nowrap;
 }

@@ -1,4 +1,5 @@
 import React from "react"
+import Parallax from "react-rellax"
 import CodePanel from "../CodePanel"
 import styles from "./BacktestCodePanel.module.scss"
 

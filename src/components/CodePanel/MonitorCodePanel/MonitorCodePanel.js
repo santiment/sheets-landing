@@ -1,9 +1,10 @@
 import React from "react"
+import Parallax from "react-rellax"
 import CodePanel from "../CodePanel"
 import FloatingPanel from "../FloatingPanel/FloatingPanel"
-import pocket from './pocket.svg'
-import btc from '../FloatingPanel/btc.png'
-import star from '../FloatingPanel/star.svg'
+import pocket from "./pocket.svg"
+import btc from "../FloatingPanel/btc.png"
+import star from "../FloatingPanel/star.svg"
 import styles from "./MonitorCodePanel.module.scss"
 
 const items = [
@@ -24,13 +25,21 @@ const items = [
 const MonitorCodePanel = () => (
   <CodePanel className={styles.code}>
     <div className={styles.content}>
-      <FloatingPanel
-        className={styles.bitcoin}
-        icon={btc}
-        title={<span>Bitcoin <span className={styles.ticker}>BTC</span></span>}
+      <Parallax speed={0.7}>
+        <FloatingPanel
+          className={styles.bitcoin}
+          icon={btc}
+          title={
+            <span>
+              Bitcoin <span className={styles.ticker}>BTC</span>
+            </span>
+          }
         />
-      <FloatingPanel className={styles.risk} title="Low risk" icon={star} />
-      <img src={pocket} alt="pocket" />
+      </Parallax>
+      <Parallax speed={1.5}>
+        <FloatingPanel className={styles.risk} title='Low risk' icon={star} />
+      </Parallax>
+      <img src={pocket} alt='pocket' />
       <ul className={styles.list}>
         {items.map(({ title, value }) => (
           <li className={styles.item} key={title}>
