@@ -31,7 +31,7 @@ const AccountBtn = ({ isAccountPage }) => {
           <Button
             as={Link}
             to='/account'
-            variant='bordered'
+            variant='flat'
             isActive={isAccountPage}
             {...btnProps[Boolean(currentUser)]}
           />
