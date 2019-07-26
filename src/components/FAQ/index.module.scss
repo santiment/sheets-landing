@@ -89,7 +89,8 @@
   }
 }
 
-.text {
+
+.text, .item {
   margin-bottom: 20px;
 
   a {
@@ -100,7 +101,17 @@
     }
   }
 
+  bold {
+    font-weight: 700;
+    margin: 0 1px;
+  }
+
   &:last-child {
     margin: 0;
   }
+}
+
+
+.item {
+ margin-bottom: 6px;
 }

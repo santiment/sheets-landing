@@ -179,6 +179,10 @@
   padding: 8px;
   display: block;
   min-width: 200px;
+
+  @include responsive("laptop") {
+    left: 250px;
+  }
 }
 
 .input {
@@ -192,6 +196,6 @@
     line-height: 20px;
   }
   & input {
-    padding-left: 47px;
+    padding-left: 48px;
   }
 }

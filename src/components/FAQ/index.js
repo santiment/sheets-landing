@@ -1,79 +1,79 @@
-import React from 'react'
-import Title from '../Title/Title'
-import styles from './index.module.scss'
+import React from "react"
+import Title from "../Title/Title"
+import styles from "./index.module.scss"
 
 const onQuestionClick = ({ currentTarget }) => {
-  currentTarget.classList.toggle('opened')
+  currentTarget.classList.toggle("opened")
 }
 
 const questions = [
   {
-    question: 'How can I easily explore the API and all endpoints it offers?',
+    question: "How do I install SANsheets?",
     answer: (
       <>
-        <p className={styles.text}>
-          You can try our API through a web explorer! Find out more{' '}
-          <a
-            href='https://help.santiment.net/santiment-getting-started/sanbase-api/using-the-sanbase-api-explorer'
-            rel='noopener noreferrer'
-            target='_blank'
-          >
-            here
-          </a>
-          .
+        <p className={styles.item}>
+          1) Open a new Google Sheet and select <bold>Get Add-Ons</bold> under the{" "}
+          <bold>Add-Ons</bold> tab.
+        </p>
+        <p className={styles.item}>
+          2) After the Google Marketplace viewer opens in your Google Spreadsheet,
+          look for <bold>Santiment</bold> in the search bar at the top right
+          corner and install it.
+        </p>
+        <p className={styles.item}>
+          3) After it has been installed, go back to your Google Spreadsheet and
+          enable the SANsheets tool by selecting <bold>SANsheets</bold> and then
+          selecting <bold>Enable</bold> under the <bold>Add-Ons</bold> tab.
+        </p>
+        <p className={styles.item}>
+          4) When this is done, you are ready and set to using the tool under the{" "}
+          <bold>Free</bold> version. Just write <bold>=SAN</bold> in an empty
+          cell and you’re ready to start fetching data!
         </p>
       </>
     ),
   },
   {
-    question: 'How far back is the data available?',
+    question: "How to add an API key for paid access?",
     answer: (
       <>
+        <p className={styles.text} />
         <p className={styles.text}>
-          For our on-chain metrics - all the way back. This means all BTC
-          metrics are available for as far back as the BTC blockchain existed;
-          same goes for Ethereum and other chains that we track at the moment
-          and will track in the future.
-        </p>
-        <p className={styles.text}>
-          For our social metrics, it will obviously differ based on the age of a
-          particular social channel, but we have more than enough data for most
-          machine learning applications.
-        </p>
-        <p className={styles.text}>
-          For our development activity metrics, the data goes back to the first
-          git commit/event executed in a project’s public Github repo.
-        </p>
-        <p className={styles.text}>
-          Feel free to ask{' '}
+          Feel free to ask{" "}
           <a
             href='https://santiment.net/discord'
             rel='noopener noreferrer'
             target='_blank'
           >
             on our Discord
-          </a>{' '}
+          </a>{" "}
           for more details.
         </p>
       </>
     ),
   },
   {
-    question: 'What is a ‘slug’ - and where can I find a list of them?',
+    question: "How do I fetch metrics and pricing?",
     answer: (
       <>
         <p className={styles.text}>
-          ‘slug’ is a parameter that most API endpoints share; it acts as a
-          unique identifier for a project or asset. Check out this query to find
-          all available slugs{' '}
+          SANsheets was built in a way that it makes it easy for anyone to gain
+          access to our data without the need for coding skills. When opening
+          creating a new Google Spreadsheet, you always need to{" "}
+          <bold>Enable</bold> the add-on under the <bold>Add-Ons</bold> tab.
+          After that, you simply have to write
+          <bold>=SAN</bold> in an empty cell, and you get a list of metric
+          suggestions, ranging from MVRV metric to Social Volume, with
+          descriptions. If you want to explore our metrics and how you can fetch
+          them in SANsheets, take a look at{" "}
           <a
-            href='https://api.santiment.net/graphiql?variables=%7B%7D&query=query%7BallProjects%20%7B%0A%20%20slug%0A%7D%7D'
+            href='https://help.santiment.net/en/articles/3001303-full-list-of-available-sansheets-functions'
             rel='noopener noreferrer'
             target='_blank'
           >
-            here
-          </a>
-          .
+            its dedicated page
+          </a>{" "}
+          on our knowledge base.
         </p>
       </>
     ),

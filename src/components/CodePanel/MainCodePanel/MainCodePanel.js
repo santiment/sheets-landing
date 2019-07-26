@@ -68,7 +68,7 @@ const MainCodePanel = () => (
           className={styles.search}
           data={functions}
           inputProps={{
-            placeholder: "",
+            placeholder: "_",
             autoFocus: true,
             className: styles.input,
           }}
