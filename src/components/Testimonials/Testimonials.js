@@ -14,11 +14,11 @@ const settings = {
 
 const testimonials = [
   {
-    author: 'Paolo Ardoino',
-    pic: 'paolo',
-    position: 'CTO at Bitfinex',
+    author: 'Neal Swaelens',
+    pic: 'neal',
+    position: 'Product Manager',
     text:
-      'SANapi is one of the most comprehensive crypto APIs on the market. For us, it is incredibly easy to fetch various data sets like on-chain, social media and development info directly to Bitfinex through their unified API and across different blockchains. The Santiment team has worked hard on creating a stable, reliable and all-inclusive data source for crypto, and they’ve more than delivered.',
+      'People often tend to forget how easy-to-use and powerful spreadsheets are, especially in combination with unique data and metrics. That’s why I was really thrilled to support Santiment’s development of SANsheets since it allows me to create custom-made financial models, ranging from a portfolio dashboard to backtesting frameworks. All powered by Santiment data and without the need of a single line of code.',
   },
   {
     author: 'Pramesh Tyagi',

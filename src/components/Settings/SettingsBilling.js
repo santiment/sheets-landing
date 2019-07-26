@@ -44,9 +44,9 @@ const BillingTable = ({ payments }) => {
 const SettingsBilling = () => {
   return (
     <Query query={USER_PAYMENTS}>
-      {({ data: { payments = [] } }) => {
+      {({ data = {}}) => {
         return (
-          payments.length > 0 && (
+          (data.payments && data.payments.length > 0) ? (
             <Settings id='billing' header='Billing'>
               <Settings.Row className={styles.row}>
                 <div>
@@ -56,11 +56,12 @@ const SettingsBilling = () => {
                     History for all payments made on your SANbase account
                   </Label>
                 </div>
-                <BillingTable payments={payments} />
+                <BillingTable payments={data.payments} />
               </Settings.Row>
             </Settings>
-          )
+          ) : null
         )
+
       }}
     </Query>
   )
