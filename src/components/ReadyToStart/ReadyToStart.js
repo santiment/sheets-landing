@@ -1,5 +1,4 @@
 import React from 'react'
-import Parallax from "react-rellax"
 import { Link } from 'gatsby'
 import Title from '../Title/Title'
 import Button from '@santiment-network/ui/Button'

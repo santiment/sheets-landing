@@ -36,20 +36,18 @@
 }
 
 .function {
-  height: 30px;
   position: relative;
+  z-index: 5;
+  display: flex;
+}
 
-  &::before {
-    position: absolute;
-    display: block;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 26px;
-    height: 27px;
-    background: url(../../FunctionsTemplate/fx.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
+.fx {
+  fill: #d2d6e7;
+}
+
+.function:hover {
+  & .fx {
+    fill: var(--sheets);
   }
 }
 
@@ -165,5 +163,35 @@
   @include responsive("laptop") {
     min-width: 500px;
     margin-right: 30px;
+  }
+}
+
+.search {
+  margin-left: 10px;
+  margin-top: -4px;
+  width: 60%;
+}
+
+.suggestions {
+  top: -180%;
+  left: 93%;
+  position: absolute;
+  padding: 8px;
+  display: block;
+  min-width: 200px;
+}
+
+.input {
+  &:before {
+    content: "= SAN";
+    position: absolute;
+    top: 7px;
+    left: 10px;
+    color: var(--mirage);
+    font-size: 14px;
+    line-height: 20px;
+  }
+  & input {
+    padding-left: 47px;
   }
 }
