@@ -3,7 +3,7 @@ import Parallax from "react-rellax"
 import CodePanel from "../CodePanel"
 import FloatingPanel from "../FloatingPanel/FloatingPanel"
 import pocket from "./pocket.svg"
-import btc from "../FloatingPanel/btc.png"
+import btc from "../FloatingPanel/btc.svg"
 import star from "../FloatingPanel/star.svg"
 import styles from "./MonitorCodePanel.module.scss"
 

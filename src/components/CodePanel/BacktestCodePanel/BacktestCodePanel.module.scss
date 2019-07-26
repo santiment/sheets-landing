@@ -3,6 +3,7 @@
 
 .code {
   width: 60%;
+  position: relative;
 
   @include responsive("laptop") {
     margin-right: 30px;
@@ -21,4 +22,114 @@
 
 .item + .item {
   margin-top: 24px;
+}
+
+.circle {
+	border: 4px solid var(--white);
+	position: absolute;
+	border-radius: 50%;
+}
+
+.btc {
+	// top: 40px;
+	top: 271px;
+	left: 40px;
+	}
+
+.eth {
+	// top: 220px;
+	top: -81px;
+	left: 300px;
+	}
+
+.shadow {
+	position: absolute;
+	box-shadow: 0px 10px 40px rgba(24, 27, 43, 0.06);
+}
+
+.status {
+	// bottom: 33px;
+	bottom: -182px;
+	right: 36px;
+}
+
+.comparing {
+	top: 224px;
+	left: -38px;
+	padding: 14px 20px;
+	background-color: var(--white);
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 16px;
+		color:var(--waterloo);
+	}
+}
+
+.tracking {
+	// top: 75px;
+	top: 175px;
+	right: -30px;
+	background-color: var(--white);
+	padding: 16px 20px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.financial {
+	margin-top: -5px;
+	margin-right: 16px;
+}
+
+.title {
+	@include text('body-1');
+	margin-bottom: 6px;
+	color: var(--mirage);
+}
+
+.desc {
+	color: var(--waterloo);
+	width: 250px;
+}
+
+.change {
+	display: flex;
+	width: 55px;
+	align-items: center;
+	justify-content: space-between;
+	color: var(--dodger-blue);
+}
+
+.man {
+	width:32px;
+	height: 32px;
+	border-radius: 50%;
+	position: absolute;
+	top: 14px;
+	left: 14px;
+}
+
+.reaction {
+	top: 20px;
+	position: absolute;
+	fill: #7a859e;
+	right: 24px;
+	&:hover {
+		fill: var(--sheets);
+	}
+
+	&:first-of-type {
+		right: 57px;
+	}
+}
+
+.input {
+	padding: 30px 80px 30px 57px;
 }
