@@ -10,8 +10,8 @@ import PlanRestrictBtn from './PlanRestrictBtn'
 import { PLANS_QUERY } from '../../gql/plans'
 import PLANS from './prices'
 import {
-  findNeuroPlan,
-  getCurrentNeuroSubscription,
+  findSheetsPlan,
+  getCurrentSheetsSubscription,
   formatPrice,
   getAlternativeBillingPlan,
 } from '../../utils/plans'
@@ -47,27 +47,26 @@ export default ({ classes = {}, onDialogClose }) => {
       </div>
       <Query query={CURRENT_USER_QUERY}>
         {({ data: { currentUser } }) => {
-          const subscription = getCurrentNeuroSubscription(currentUser)
+          const subscription = getCurrentSheetsSubscription(currentUser)
           const userPlan = subscription && subscription.plan.id
           const isSubscriptionCanceled =
             subscription && subscription.cancelAtPeriodEnd
           return (
             <Query query={PLANS_QUERY}>
               {({ data: { productsWithPlans = [] } }) => {
-                const neuro = productsWithPlans.find(findNeuroPlan)
-                if (!neuro) {
+                const sheets = productsWithPlans.find(findSheetsPlan)
+                if (!sheets) {
                   return null
                 }
 
                 return (
                   <>
                     <div className={styles.cards}>
-                      {neuro.plans
+                      {sheets.plans
                         .filter(
                           ({ name, interval }) =>
                             interval === billing || name === 'FREE',
                         )
-                        .filter(({name}) => name !== 'PREMIUM') // NOTE(@haritonasty): temporal until plans for Sheets
                         .map(({ id, name, amount }) => {
                           const card = PLANS[name]
                           const sameAsUserPlan = id === userPlan
@@ -80,7 +79,7 @@ export default ({ classes = {}, onDialogClose }) => {
 
                           const { amount: altAmount, interval: altInterval } =
                             getAlternativeBillingPlan(
-                              neuro.plans,
+                              sheets.plans,
                               name,
                               billing,
                             ) || {}
@@ -168,7 +167,7 @@ export default ({ classes = {}, onDialogClose }) => {
                     </div>
                     <PricingDetailsToggle
                       isLoggedIn={currentUser}
-                      plans={neuro.plans}
+                      plans={sheets.plans}
                       userPlan={userPlan}
                       billing={billing}
                     />

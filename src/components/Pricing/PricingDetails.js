@@ -52,7 +52,6 @@ export default ({ isLoggedIn, billing, userPlan, plans }) => (
           .filter(
             ({ interval, name }) => interval === billing || name === 'FREE',
           )
-          .filter(({name}) => name !== 'PREMIUM') // NOTE(@haritonasty): temporal until plans for Sheets
           .map(({ id, name, amount }) => {
             const plan = PLANS[name]
             const sameAsUserPlan = id === userPlan

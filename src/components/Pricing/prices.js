@@ -31,7 +31,7 @@ export default {
       </>,
     ],
   },
-  ESSENTIAL: {
+  BASIC: {
     title: 'Basic',
     desc: 'Great for short-term analysis and prototyping',
     link: 'Upgrade now',
@@ -58,11 +58,7 @@ export default {
       </>
     ],
   },
-  PREMIUM: {
-    features: [
-    ],
-  },
-  CUSTOM: {
+  ENTERPRISE: {
     title: 'Corporate',
     desc: 'For organizations that need advanced data and support',
     discount: 'Based on your needs',

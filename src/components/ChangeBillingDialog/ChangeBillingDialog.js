@@ -5,7 +5,7 @@ import Panel from '@santiment-network/ui/Panel/Panel'
 import Dialog from '@santiment-network/ui/Dialog'
 import {
   formatPrice,
-  findNeuroPlan,
+  findSheetsPlan,
   getAlternativeBillingPlan,
 } from '../../utils/plans'
 import { getDateFormats } from '../../utils/dates'
@@ -39,9 +39,9 @@ const ChangeBillingDialog = ({
             let newPlanId
 
             if (!loading) {
-              const neuro = productsWithPlans.find(findNeuroPlan) || []
+              const sheets = productsWithPlans.find(findSheetsPlan) || []
               const { amount, interval, id: newId } = getAlternativeBillingPlan(
-                neuro.plans,
+                sheets.plans,
                 oldName,
                 oldInterval,
               )
