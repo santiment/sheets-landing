@@ -24,13 +24,17 @@
       url(../images/waves.svg);
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include responsive("tablet", "laptop", "desktop") {
+      background-size: auto;
+    }
   }
 }
 
 .main {
-  @include responsive('laptop') {
-      padding-right: 20px;
-    }
+  @include responsive("laptop") {
+    padding-right: 20px;
+  }
 }
 
 .title {
