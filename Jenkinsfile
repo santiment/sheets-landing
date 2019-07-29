@@ -1,9 +1,13 @@
-podTemplate(label: 'api-landing-builder', containers: [
-  containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true, command: 'cat', envVars: [
-    envVar(key: 'DOCKER_HOST', value: 'tcp://docker-host-docker-host:2375')
-  ])
-]) {
-  node('api-landing-builder') {
+@Library('podTemplateLib')
+import net.santiment.utils.podTemplates
+
+
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '30', artifactNumToKeepStr: '', daysToKeepStr: '30', numToKeepStr: ''))])
+
+slaveTemplates = new podTemplates()
+
+slaveTemplates.dockerTemplate { label ->
+  node('label') {
     stage('Build') {
       container('docker') {
         def scmVars = checkout scm
