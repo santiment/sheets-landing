@@ -22,9 +22,9 @@ podTemplate(label: 'api-landing-builder', containers: [
           ]) {
             def awsRegistry = "${env.aws_account_id}.dkr.ecr.eu-central-1.amazonaws.com"
             docker.withRegistry("https://${awsRegistry}", "ecr:eu-central-1:ecr-credentials") {
-              sh "docker build -t ${awsRegistry}/api-landing:${env.BRANCH_NAME} -t ${awsRegistry}/api-landing:${scmVars.GIT_COMMIT} ."
-              sh "docker push ${awsRegistry}/api-landing:${env.BRANCH_NAME}"
-              sh "docker push ${awsRegistry}/api-landing:${scmVars.GIT_COMMIT}"
+              sh "docker build -t ${awsRegistry}/sheets-landing:${env.BRANCH_NAME} -t ${awsRegistry}/sheets-landing:${scmVars.GIT_COMMIT} ."
+              sh "docker push ${awsRegistry}/sheets-landing:${env.BRANCH_NAME}"
+              sh "docker push ${awsRegistry}/sheets-landing:${scmVars.GIT_COMMIT}"
             }
           }
         }
