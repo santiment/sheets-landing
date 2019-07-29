@@ -7,7 +7,7 @@ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '30', artifactNumTo
 slaveTemplates = new podTemplates()
 
 slaveTemplates.dockerTemplate { label ->
-  node('label') {
+  node(label) {
     stage('Build') {
       container('docker') {
         def scmVars = checkout scm
