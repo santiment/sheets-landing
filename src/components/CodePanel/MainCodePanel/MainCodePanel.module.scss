@@ -166,36 +166,27 @@
   }
 }
 
-.search {
-  margin-left: 10px;
-  margin-top: -4px;
+.input {
+  @include border-box;
+  @include text('body-3');
+  margin-top: -2px;
   width: 100%;
-}
+  line-height: 20px;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 6px 10px 6px 0;
+  color: var(--mirage);
 
-.suggestions {
-  top: -180%;
-  left: 303px;
-  position: absolute;
-  padding: 8px;
-  display: block;
-  min-width: 200px;
-
-  @include responsive("laptop") {
-    left: 250px;
+  &::placeholder {
+    color: var(--waterloo);
   }
 }
 
-.input {
-  &:before {
-    content: "= SAN";
-    position: absolute;
-    top: 7px;
-    left: 10px;
+.defaultValue {
+    margin-top: 4px;
+    margin-left: 14px;
     color: var(--mirage);
     font-size: 14px;
     line-height: 20px;
   }
-  & input {
-    padding-left: 48px;
-  }
-}

@@ -51,9 +51,8 @@
   position: absolute;
   width: 263px;
   height: 140px;
-  bottom: 16px;
   // top: 48px;
-  top: 470px;
+  top: -520px;
   right: -50px;
   padding: 30px 24px 18px 20px;
   display: flex;
@@ -65,7 +64,7 @@
 
   @include responsive("laptop") {
     right: -40px;
-    // top: 1841px;
+    top: -600px;
   }
 
   &::before {

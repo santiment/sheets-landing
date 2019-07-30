@@ -25,7 +25,7 @@ const items = [
 const MonitorCodePanel = () => (
   <CodePanel className={styles.code}>
     <div className={styles.content}>
-      <Parallax speed={0.7}>
+      <Parallax speed={-1}>
         <FloatingPanel
           className={styles.bitcoin}
           icon={btc}
@@ -36,7 +36,7 @@ const MonitorCodePanel = () => (
           }
         />
       </Parallax>
-      <Parallax speed={1.5}>
+      <Parallax speed={1}>
         <FloatingPanel className={styles.risk} title='Low risk' icon={star} />
       </Parallax>
       <img src={pocket} alt='pocket' />

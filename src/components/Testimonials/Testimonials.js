@@ -19,21 +19,7 @@ const testimonials = [
     position: 'Product Manager',
     text:
       'People often tend to forget how easy-to-use and powerful spreadsheets are, especially in combination with unique data and metrics. That’s why I was really thrilled to support Santiment’s development of SANsheets since it allows me to create custom-made financial models, ranging from a portfolio dashboard to backtesting frameworks. All powered by Santiment data and without the need of a single line of code.',
-  },
-  {
-    author: 'Pramesh Tyagi',
-    pic: 'pramesh',
-    position: 'Director at ShillazTech',
-    text:
-      'After switching from stock trading to crypto, I realized that on-chain data of any crypto asset provides vital information about market participants beyond OHLCV. Using a combination of pricing and blockchain data via Santiment’s API, I was quickly able to develop hybrid trade signals that have proven highly reliable, effective and - most importantly - profitable.',
-  },
-  {
-    author: 'Jan Smirny',
-    pic: 'yan',
-    position: 'Data Scientist',
-    text:
-      'I work with both the Sanpy python module and the ‘naked’ SAN API since both have their advantages. The GraphiQL API is great if you want very specific data for your research or pipeline implementations. For quick and easy data access for my research, the sanpy module is the place to go because (after the import) it is literally one line of code to get the data. It doesn’t get easier than that!',
-  },
+  }
 ]
 
 const Testimonials = () => {

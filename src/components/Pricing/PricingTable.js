@@ -67,6 +67,7 @@ export default ({ classes = {}, onDialogClose }) => {
                           ({ name, interval }) =>
                             interval === billing || name === 'FREE',
                         )
+                        .sort(({ id: a }, {id: b}) => a - b)
                         .map(({ id, name, amount }) => {
                           const card = PLANS[name]
                           const sameAsUserPlan = id === userPlan

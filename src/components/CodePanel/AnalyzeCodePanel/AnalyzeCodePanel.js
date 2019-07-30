@@ -34,7 +34,7 @@ const AnalyzeCodePanel = () => (
           icon={devact}
         />
       </Parallax>
-      <Parallax speed={1.3}>
+      <Parallax speed={-1.3}>
         <div className={styles.ethereum}>
           <div className={styles.title}>
             <img src={eth} alt='eth logo' />
