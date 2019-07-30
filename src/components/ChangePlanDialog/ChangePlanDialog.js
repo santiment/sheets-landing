@@ -62,7 +62,7 @@ const ChangePlanDialog = ({
                 active until {date}.
                 <br />
                 Are you sure you want to change to the {title} plan ({price}
-                /month) on {date}?
+                /{billing}) on {date}?
               </Dialog.ScrollContent>
               <Dialog.Actions>
                 <Dialog.Cancel
