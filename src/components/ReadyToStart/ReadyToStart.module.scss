@@ -15,10 +15,6 @@
   justify-content: center;
   position: relative;
 
-  @include responsive('laptop', 'desktop') {
-  background-attachment: fixed;
-  }
-
   @include responsive("phone-xs") {
     z-index: 0;
     margin-top: -50px;

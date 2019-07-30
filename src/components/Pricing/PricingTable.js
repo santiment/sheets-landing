@@ -171,6 +171,8 @@ export default ({ classes = {}, onDialogClose }) => {
                       plans={sheets.plans}
                       userPlan={userPlan}
                       billing={billing}
+                      subscription={subscription}
+                      onDialogClose={onDialogClose}
                     />
                   </>
                 )

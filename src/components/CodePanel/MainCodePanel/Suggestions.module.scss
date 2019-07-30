@@ -3,22 +3,22 @@
 .suggestions {
   position: absolute;
     width: 320px;
-    height: 231px;
+    max-height: 231px;
     overflow-y: scroll;
     overflow-y: overlay;
+    padding: 8px;
     top: -50px;
     left: 290px;
-    padding: 8px;
     background: var(--white);
     border: 1px solid #F1F3F9;
     box-sizing: border-box;
     box-shadow: 0px 4px 50px rgba(56, 74, 167, 0.04), 0px 60px 40px rgba(56, 74, 167, 0.02);
     border-radius: 8px;
+  color: var(--waterloo);
 }
 
 .suggestion {
   padding: 6px 8px;
-  color: var(--waterloo);
   height: auto;
   min-height: 32px;
   text-align: left;
@@ -28,3 +28,11 @@
       color: var(--green);
   }
 }
+
+.empty {
+  padding: 6px 8px;
+  color: var(--waterloo);
+  margin: 0 auto;
+}
+
+

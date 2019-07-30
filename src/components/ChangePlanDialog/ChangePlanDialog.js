@@ -1,15 +1,15 @@
-import React from 'react'
-import Button from '@santiment-network/ui/Button'
-import Dialog from '@santiment-network/ui/Dialog'
-import { Mutation } from 'react-apollo'
-import { NotificationsContext } from '../Notifications/Notifications'
-import { UPDATE_SUBSCRIPTION_MUTATION } from '../../gql/plans'
-import PLANS from '../Pricing/prices'
-import { formatPrice, getBilling } from '../../utils/plans'
-import { getDateFormats } from '../../utils/dates'
-import { formatError, contactAction } from '../../utils/notifications'
-import sharedStyles from '../Pricing/index.module.scss'
-import dialogStyles from '../Dialog.module.scss'
+import React, { useState } from "react"
+import Button from "@santiment-network/ui/Button"
+import Dialog from "@santiment-network/ui/Dialog"
+import { Mutation } from "react-apollo"
+import { NotificationsContext } from "../Notifications/Notifications"
+import { UPDATE_SUBSCRIPTION_MUTATION } from "../../gql/plans"
+import PLANS from "../Pricing/prices"
+import { formatPrice, getBilling } from "../../utils/plans"
+import { getDateFormats } from "../../utils/dates"
+import { formatError, contactAction } from "../../utils/notifications"
+import sharedStyles from "../Pricing/index.module.scss"
+import dialogStyles from "../Dialog.module.scss"
 
 const ChangePlanDialog = ({
   subscription: {
@@ -23,9 +23,18 @@ const ChangePlanDialog = ({
   planId,
   onDialogClose = () => {},
 }) => {
-  const [oldPrice] = formatPrice(amount, null, interval)
+  const [dialogVisible, setDialogVisibility] = useState(false)
+  const [oldPrice] = formatPrice(amount, null, null)
   const { MMMM, DD, YYYY } = getDateFormats(new Date(currentPeriodEnd))
   const date = `${MMMM} ${DD}, ${YYYY}`
+
+  function showDialog () {
+    setDialogVisibility(true)
+  }
+
+  function hideDialog () {
+    setDialogVisibility(false)
+  }
 
   return (
     <NotificationsContext.Consumer>
@@ -33,6 +42,9 @@ const ChangePlanDialog = ({
         <Mutation mutation={UPDATE_SUBSCRIPTION_MUTATION}>
           {(updateSubscription, { loading }) => (
             <Dialog
+              open={dialogVisible}
+              onClose={hideDialog}
+              onClick={showDialog}
               trigger={
                 <Button
                   fluid
@@ -46,14 +58,17 @@ const ChangePlanDialog = ({
               title='Plan change'
             >
               <Dialog.ScrollContent withPadding>
-                Your current plan ({PLANS[name].title} {oldPrice}/month) is
+                Your current plan ({PLANS[name].title} {oldPrice}/{interval}) is
                 active until {date}.
                 <br />
                 Are you sure you want to change to the {title} plan ({price}
                 /month) on {date}?
               </Dialog.ScrollContent>
               <Dialog.Actions>
-                <Dialog.Cancel className={dialogStyles.cancel}>
+                <Dialog.Cancel
+                  onClick={hideDialog}
+                  className={dialogStyles.cancel}
+                >
                   Cancel
                 </Dialog.Cancel>
                 <Dialog.Approve
@@ -65,21 +80,21 @@ const ChangePlanDialog = ({
                     })
                       .then(() =>
                         addNot({
-                          variant: 'success',
+                          variant: "success",
                           title: `You have successfully upgraded to the "${title}" plan!`,
                           dismissAfter: 5000,
-                        }),
+                        })
                       )
                       .then(onDialogClose)
                       .then(getBilling)
                       .catch(e =>
                         addNot({
-                          variant: 'error',
+                          variant: "error",
                           title: `Error during the plan change`,
                           description: formatError(e.message),
                           dismissAfter: 5000,
                           actions: contactAction,
-                        }),
+                        })
                       )
                   }
                 >

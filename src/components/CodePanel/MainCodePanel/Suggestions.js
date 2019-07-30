@@ -28,13 +28,14 @@ const functions = [
 ]
 
 const Suggestions = ({ currentValue }) => {
-  const filteredSuggestions = functions.filter(name => name.includes(currentValue))
+  const filteredSuggestions = functions.filter(name => name.includes('SAN_' + currentValue))
   return (
     <div className={styles.suggestions}>
       {(currentValue ? filteredSuggestions : functions)
         .map(suggest => (
           <div key={suggest} className={styles.suggestion}>{suggest}</div>
           ))}
+        {currentValue && filteredSuggestions.length === 0 && <div className={styles.empty}>No results found</div>}
     </div>
   )
 }

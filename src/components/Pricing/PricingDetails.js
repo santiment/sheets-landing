@@ -1,15 +1,22 @@
-import React from 'react'
-import Icon from '@santiment-network/ui/Icon'
-import cx from 'classnames'
-import PlanRestrictBtn from './PlanRestrictBtn'
-import PLANS from './prices'
-import DETAILS from './details'
-import { formatPrice } from '../../utils/plans'
-import styles from './PricingDetails.module.scss'
+import React from "react"
+import Icon from "@santiment-network/ui/Icon"
+import cx from "classnames"
+import PlanRestrictBtn from "./PlanRestrictBtn"
+import PLANS from "./prices"
+import DETAILS from "./details"
+import { formatPrice } from "../../utils/plans"
+import styles from "./PricingDetails.module.scss"
 
 const all = [true, true, true, true]
 
-export default ({ isLoggedIn, billing, userPlan, plans }) => (
+export default ({
+  isLoggedIn,
+  billing,
+  userPlan,
+  plans,
+  subscription,
+  onDialogClose,
+}) => (
   <table className={styles.table}>
     <tbody>
       <tr className={styles.headers}>
@@ -50,9 +57,9 @@ export default ({ isLoggedIn, billing, userPlan, plans }) => (
         <td />
         {plans
           .filter(
-            ({ interval, name }) => interval === billing || name === 'FREE',
+            ({ interval, name }) => interval === billing || name === "FREE"
           )
-          .sort(({ id: a }, {id: b}) => a - b)
+          .sort(({ id: a }, { id: b }) => a - b)
           .map(({ id, name, amount }) => {
             const plan = PLANS[name]
             const sameAsUserPlan = id === userPlan
@@ -69,6 +76,8 @@ export default ({ isLoggedIn, billing, userPlan, plans }) => (
                     price={price}
                     planId={+id}
                     billing={billing}
+                    subscription={subscription}
+                    onDialogClose={onDialogClose}
                   />
                 )}
               </td>
