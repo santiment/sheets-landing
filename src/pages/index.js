@@ -14,6 +14,18 @@ import ReadyToStart from "../components/ReadyToStart/ReadyToStart"
 import MainCodePanel from "../components/CodePanel/MainCodePanel/MainCodePanel"
 import styles from "./index.module.scss"
 
+function onGetAccessClick() {
+  window.gtag('event', 'login_action_call', {
+    location: 'Main section',
+    text: 'Get access',
+  })
+}
+
+ function onDocumentationClick() {
+  window.gtag('event', 'documentation_clicked')
+}
+
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Santiment's Sheets - Crypto asset data for Google Sheets" />
@@ -30,6 +42,7 @@ const IndexPage = () => (
           className={styles.access}
           variant='fill'
           accent='sheets'
+          onClick={onGetAccessClick}
         >
           Get started
         </Button>
@@ -38,6 +51,7 @@ const IndexPage = () => (
           className={styles.doc}
           target='_blank'
           rel='noopener noreferrer'
+          onClick={onDocumentationClick}
         >
           Documentation <Icon type='arrow-right' className={styles.doc__icon} />
         </a>
