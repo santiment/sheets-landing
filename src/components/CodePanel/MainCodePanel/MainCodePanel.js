@@ -1,7 +1,6 @@
-import React, { useRef } from "react"
+import React from "react"
 import Parallax from "react-rellax"
 import Typed from "react-typed"
-import Input from "@santiment-network/ui/Input/Input"
 import CodePanel from "../CodePanel"
 import Suggestions from './Suggestions'
 import img from "../../FunctionsTemplate/image.png"
@@ -79,7 +78,7 @@ class MainCodePanel extends React.PureComponent {
           </div>
           <h4 className={styles.description}>
             The price of your list was increased by
-            <bold className={styles.bold}>$ 532.73</bold>
+            <b className={styles.bold}>$ 532.73</b>
             today
           </h4>
         </div>

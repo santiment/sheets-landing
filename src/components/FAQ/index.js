@@ -9,22 +9,22 @@ const questions = [
     answer: (
       <>
         <p className={styles.item}>
-          1) Open a new Google Sheet and select <bold>Get Add-Ons</bold> under
-          the <bold>Add-Ons</bold> tab.
+          1) Open a new Google Sheet and select <b>Get Add-Ons</b> under
+          the <b>Add-Ons</b> tab.
         </p>
         <p className={styles.item}>
           2) After the Google Marketplace viewer opens in your Google
-          Spreadsheet, look for <bold>Santiment</bold> in the search bar at the
+          Spreadsheet, look for <b>Santiment</b> in the search bar at the
           top right corner and install it.
         </p>
         <p className={styles.item}>
           3) After it has been installed, go back to your Google Spreadsheet and
-          enable the SANsheets tool by selecting <bold>SANsheets</bold> and then
-          selecting <bold>Enable</bold> under the <bold>Add-Ons</bold> tab.
+          enable the SANsheets tool by selecting <b>SANsheets</b> and then
+          selecting <b>Enable</b> under the <b>Add-Ons</b> tab.
         </p>
         <p className={styles.item}>
           4) When this is done, you are ready and set to using the tool under
-          the <bold>Free</bold> version. Just write <bold>=SAN</bold> in an
+          the <b>Free</b> version. Just write <b>=SAN</b> in an
           empty cell and you’re ready to start fetching data!
         </p>
       </>
@@ -57,9 +57,9 @@ const questions = [
           SANsheets was built in a way that it makes it easy for anyone to gain
           access to our data without the need for coding skills. When opening
           creating a new Google Spreadsheet, you always need to{" "}
-          <bold>Enable</bold> the add-on under the <bold>Add-Ons</bold> tab.
+          <b>Enable</b> the add-on under the <b>Add-Ons</b> tab.
           After that, you simply have to write
-          <bold>=SAN</bold> in an empty cell, and you get a list of metric
+          <b>=SAN</b> in an empty cell, and you get a list of metric
           suggestions, ranging from MVRV metric to Social Volume, with
           descriptions. If you want to explore our metrics and how you can fetch
           them in SANsheets, take a look at{" "}

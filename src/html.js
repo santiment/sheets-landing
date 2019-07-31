@@ -1,5 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from "react"
+import PropTypes from "prop-types"
 
 const intercomScript = (
   <script
@@ -9,7 +9,18 @@ const intercomScript = (
   />
 )
 
-export default function HTML(props) {
+const gtagScript = (
+  <script
+    dangerouslySetInnerHTML={{
+      __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+ gtag('config', 'UA-100571693-8');`,
+    }}
+  />
+)
+
+export default function HTML (props) {
   return (
     <html {...props.htmlAttributes}>
       <head>
@@ -22,6 +33,11 @@ export default function HTML(props) {
         {props.headComponents}
         <script src='https://js.stripe.com/v3/' />
         {intercomScript}
+        <script
+          async
+          src='https://www.googletagmanager.com/gtag/js?id=UA-100571693-8'
+        />
+        {gtagScript}
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}

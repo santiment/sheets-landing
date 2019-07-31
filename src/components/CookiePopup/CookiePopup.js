@@ -3,30 +3,30 @@ import Panel from '@santiment-network/ui/Panel/Panel'
 import Button from '@santiment-network/ui/Button'
 import styles from './CookiePopup.module.scss'
 
- const COOKIE_POLICY_ACCEPTED = 'COOKIE_POLICY_ACCEPTED'
+const COOKIE_POLICY_ACCEPTED = 'COOKIE_POLICY_ACCEPTED'
 
- const getLSItem = key => {
+const getLSItem = key => {
   if (typeof window === 'undefined') {
     return
   }
 
-   return localStorage.getItem(key)
+  return localStorage.getItem(key)
 }
 
- const acceptCookiePolicy = () => {
+const acceptCookiePolicy = () => {
   window.gtag('event', 'cookie_accept')
   localStorage.setItem(COOKIE_POLICY_ACCEPTED, true)
 }
 
- const CookiePopup = () => {
+const CookiePopup = () => {
   const [shown, setShown] = useState(!getLSItem(COOKIE_POLICY_ACCEPTED))
 
-   function accept() {
+  function accept() {
     acceptCookiePolicy()
     setShown(false)
   }
 
-   return (
+  return (
     shown && (
       <Panel className={styles.wrapper} variant='modal'>
         <h2 className={styles.title}>We are using cookies</h2>
@@ -60,4 +60,4 @@ import styles from './CookiePopup.module.scss'
   )
 }
 
- export default CookiePopup
+export default CookiePopup

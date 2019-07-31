@@ -42,7 +42,7 @@ const AnalyzeCodePanel = () => (
           </div>
           <h4 className={styles.description}>
             Ethereum price was decreased by
-            <bold className={styles.bold}>$ 70.51</bold>
+            <b className={styles.bold}>$ 70.51</b>
             in 24 hours
           </h4>
         </div>

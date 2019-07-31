@@ -47,9 +47,9 @@ const BacktestCodePanel = () => (
         >
           <path
             stroke='#5275FF'
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            stroke-width='1.5'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+            strokeWidth='1.5'
             d='M1 39C25.3 27.4 28.6 1 51.2 1c18.2 0 22.7 29 39.5 26.4 13.7-2.1 12.1-18 27.3-15.8 13.5 1.8 16.7 29.3 30.4 16.8 15.2-13.7 29-1 42.6-13.7'
           />
         </svg>
@@ -79,9 +79,9 @@ const BacktestCodePanel = () => (
         >
           <path d='M7 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM6.86 10.28a1 1 0 1 0-1.72 1.04 4.5 4.5 0 0 0 7.72 0 1 1 0 0 0-1.72-1.04 2.5 2.5 0 0 1-4.28 0z' />
           <path
-            fill-rule='evenodd'
+            fillRule='evenodd'
             d='M9 .5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM2.5 9a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0z'
-            clip-rule='evenodd'
+            clipRule='evenodd'
           />
         </svg>
 
@@ -93,9 +93,9 @@ const BacktestCodePanel = () => (
           className={styles.reaction}
         >
           <path
-            fill-rule='evenodd'
+            fillRule='evenodd'
             d='M16.7.3a1 1 0 0 1 .25 1.03l-5 14.5a1 1 0 0 1-1.86.09l-3-6.5a1 1 0 0 1 .2-1.13l2.5-2.5a1 1 0 1 1 1.42 1.42l-2.01 2 1.67 3.61 3.52-10.2L4.18 6.12 6.4 7.16a1 1 0 1 1-.84 1.82L1.08 6.9a1 1 0 0 1 .1-1.86l14.5-5A1 1 0 0 1 16.7.3z'
-            clip-rule='evenodd'
+            clipRule='evenodd'
           />
         </svg>
       </div>

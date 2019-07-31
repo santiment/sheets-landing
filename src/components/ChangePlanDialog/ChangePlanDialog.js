@@ -1,15 +1,15 @@
-import React, { useState } from "react"
-import Button from "@santiment-network/ui/Button"
-import Dialog from "@santiment-network/ui/Dialog"
-import { Mutation } from "react-apollo"
-import { NotificationsContext } from "../Notifications/Notifications"
-import { UPDATE_SUBSCRIPTION_MUTATION } from "../../gql/plans"
-import PLANS from "../Pricing/prices"
-import { formatPrice, getBilling } from "../../utils/plans"
-import { getDateFormats } from "../../utils/dates"
-import { formatError, contactAction } from "../../utils/notifications"
-import sharedStyles from "../Pricing/index.module.scss"
-import dialogStyles from "../Dialog.module.scss"
+import React, { useState } from 'react'
+import Button from '@santiment-network/ui/Button'
+import Dialog from '@santiment-network/ui/Dialog'
+import { Mutation } from 'react-apollo'
+import { NotificationsContext } from '../Notifications/Notifications'
+import { UPDATE_SUBSCRIPTION_MUTATION } from '../../gql/plans'
+import PLANS from '../Pricing/prices'
+import { formatPrice, getBilling } from '../../utils/plans'
+import { getDateFormats } from '../../utils/dates'
+import { formatError, contactAction } from '../../utils/notifications'
+import sharedStyles from '../Pricing/index.module.scss'
+import dialogStyles from '../Dialog.module.scss'
 
 const ChangePlanDialog = ({
   subscription: {
@@ -24,18 +24,18 @@ const ChangePlanDialog = ({
   onDialogClose = () => {},
 }) => {
   const [dialogVisible, setDialogVisibility] = useState(false)
+
   const [oldPrice] = formatPrice(amount, null, null)
   const { MMMM, DD, YYYY } = getDateFormats(new Date(currentPeriodEnd))
   const date = `${MMMM} ${DD}, ${YYYY}`
 
-  function showDialog () {
+  function showDialog() {
     setDialogVisibility(true)
   }
 
-  function hideDialog () {
+  function hideDialog() {
     setDialogVisibility(false)
   }
-
   return (
     <NotificationsContext.Consumer>
       {({ add: addNot }) => (
@@ -44,13 +44,13 @@ const ChangePlanDialog = ({
             <Dialog
               open={dialogVisible}
               onClose={hideDialog}
-              onClick={showDialog}
               trigger={
                 <Button
                   fluid
                   className={sharedStyles.link}
                   border
                   accent='sheets'
+                  onClick={showDialog}
                 >
                   Change to this plan
                 </Button>
@@ -61,8 +61,8 @@ const ChangePlanDialog = ({
                 Your current plan ({PLANS[name].title} {oldPrice}/{interval}) is
                 active until {date}.
                 <br />
-                Are you sure you want to change to the {title} plan ({price}
-                /{billing}) on {date}?
+                Are you sure you want to change to the {title} plan ({price}/
+                {billing}) on {date}?
               </Dialog.ScrollContent>
               <Dialog.Actions>
                 <Dialog.Cancel
@@ -80,21 +80,21 @@ const ChangePlanDialog = ({
                     })
                       .then(() =>
                         addNot({
-                          variant: "success",
+                          variant: 'success',
                           title: `You have successfully upgraded to the "${title}" plan!`,
                           dismissAfter: 5000,
-                        })
+                        }),
                       )
                       .then(onDialogClose)
                       .then(getBilling)
                       .catch(e =>
                         addNot({
-                          variant: "error",
+                          variant: 'error',
                           title: `Error during the plan change`,
                           description: formatError(e.message),
                           dismissAfter: 5000,
                           actions: contactAction,
-                        })
+                        }),
                       )
                   }
                 >

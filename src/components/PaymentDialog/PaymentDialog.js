@@ -1,29 +1,28 @@
-import React, { useState } from 'react'
-import GA from 'react-ga'
-import { Mutation } from 'react-apollo'
-import Button from '@santiment-network/ui/Button'
-import Dialog from '@santiment-network/ui/Dialog'
-import Panel from '@santiment-network/ui/Panel/Panel'
-import { Elements, injectStripe } from 'react-stripe-elements'
-import CheckoutForm from '../CheckoutForm/CheckoutForm'
-import { NotificationsContext } from '../Notifications/Notifications'
-import Loader from '../Loader/Loader'
-import { SUBSCRIBE_MUTATION } from '../../gql/plans'
-import { CURRENT_USER_QUERY } from '../../gql/user'
-import { getBilling } from '../../utils/plans'
-import { formatError, contactAction } from '../../utils/notifications'
-import styles from './PaymentDialog.module.scss'
-import sharedStyles from '../Pricing/index.module.scss'
+import React, { useState } from "react"
+import { Mutation } from "react-apollo"
+import Button from "@santiment-network/ui/Button"
+import Dialog from "@santiment-network/ui/Dialog"
+import Panel from "@santiment-network/ui/Panel/Panel"
+import { Elements, injectStripe } from "react-stripe-elements"
+import CheckoutForm from "../CheckoutForm/CheckoutForm"
+import { NotificationsContext } from "../Notifications/Notifications"
+import Loader from "../Loader/Loader"
+import { SUBSCRIBE_MUTATION } from "../../gql/plans"
+import { CURRENT_USER_QUERY } from "../../gql/user"
+import { getBilling } from "../../utils/plans"
+import { formatError, contactAction } from "../../utils/notifications"
+import styles from "./PaymentDialog.module.scss"
+import sharedStyles from "../Pricing/index.module.scss"
 
-function useFormLoading() {
+function useFormLoading () {
   const [loading, setLoading] = useState(false)
-  function toggleLoading() {
+  function toggleLoading () {
     setLoading(state => !state)
   }
   return [loading, toggleLoading]
 }
 
-function updateCache(cache, { data: { subscribe } }) {
+function updateCache (cache, { data: { subscribe } }) {
   const { currentUser } = cache.readQuery({ query: CURRENT_USER_QUERY })
 
   let subscriptions = currentUser.subscriptions
@@ -41,7 +40,7 @@ const Form = props => <Panel as='form' {...props} />
 const getTokenDataByForm = form => {
   const res = {}
   new FormData(form).forEach((value, key) => {
-    if (key === 'name') {
+    if (key === "name") {
       return
     }
     res[key] = value
@@ -63,11 +62,11 @@ const PaymentDialog = ({
   const [loading, toggleLoading] = useFormLoading()
   const [paymentVisible, setPaymentVisiblity] = useState(false)
 
-  function hidePayment() {
+  function hidePayment () {
     setPaymentVisiblity(false)
   }
 
-  function showPayment() {
+  function showPayment () {
     setPaymentVisiblity(true)
   }
 
@@ -102,9 +101,10 @@ const PaymentDialog = ({
                       if (loading) return
                       toggleLoading()
 
-                      GA.event({
-                        category: 'User',
-                        action: 'Payment form submitted',
+                      window.gtag("event", "begin_checkout", {
+                        currency: "USD",
+                        value: price.slice(1),
+                        items: title,
                       })
 
                       const form = e.currentTarget
@@ -123,16 +123,21 @@ const PaymentDialog = ({
                         })
                         .then(() => {
                           addNot({
-                            variant: 'success',
+                            variant: "success",
                             title: `You have successfully upgraded to the "${title}" plan!`,
                             dismissAfter: 5000,
+                          })
+                          window.gtag("event", "purchase", {
+                            currency: "USD",
+                            value: price.slice(1),
+                            items: title,
                           })
                           onDialogClose()
                           return getBilling()
                         })
                         .catch(e => {
                           addNot({
-                            variant: 'error',
+                            variant: "error",
                             title: `Error during the payment`,
                             description: formatError(e.message),
                             dismissAfter: 5000,
