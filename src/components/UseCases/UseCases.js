@@ -1,4 +1,8 @@
 import React from 'react'
+import { Link } from "gatsby"
+import { Query } from 'react-apollo'
+import Button from "@santiment-network/ui/Button"
+import { CURRENT_USER_QUERY } from '../../gql/user'
 import Title from '../Title/Title'
 import Subtitle from '../Subtitle/Subtitle'
 import BacktestCodePanel from '../CodePanel/BacktestCodePanel/BacktestCodePanel'
@@ -6,10 +10,18 @@ import MonitorCodePanel from '../CodePanel/MonitorCodePanel/MonitorCodePanel'
 import AnalyzeCodePanel from '../CodePanel/AnalyzeCodePanel/AnalyzeCodePanel'
 import styles from './UseCases.module.scss'
 
+function onGetTemplateClick () {
+  window.gtag("event", "get_template", {
+    location: "Use Cases",
+    text: "Get template",
+  })
+}
+
 const cases = [
   {
     title: 'Backtest strategies',
     code: (<BacktestCodePanel />),
+    template: '',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -32,6 +44,7 @@ const cases = [
   {
     title: 'Monitor portfolio',
     code: (<MonitorCodePanel />),
+    template: 'https://docs.google.com/spreadsheets/d/1vVw72CYN_uk9wkCP8ROdLI7kglk0Zur-GDrSmWWhdNs/edit',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -56,6 +69,7 @@ const cases = [
   {
     title: 'Analyze 100s of assets',
     code: (<AnalyzeCodePanel />),
+    template: '',
     icon: (
 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
   <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -78,20 +92,35 @@ const cases = [
 ]
 
 export default () => (
-  <section id='use-cases'>
-    <ul className={styles.cases}>
-      {cases.map(({ icon, title, desc, code }) => (
-        <li key={title} className={styles.wrapper}>
-          <div className={styles.case}>
-            {icon}
-          <Title small className={styles.case__title}>
-            {title}
-          </Title>
-          <Subtitle className={styles.case__desc}>{desc}</Subtitle>
-          </div>
-          {code}
-        </li>
-      ))}
-    </ul>
-  </section>
+  <Query query={CURRENT_USER_QUERY}>
+    {({ data: { currentUser } }) => (
+      <section id='use-cases'>
+        <ul className={styles.cases}>
+          {cases.map(({ icon, title, desc, code, template }) => (
+            <li key={title} className={styles.wrapper}>
+              <div className={styles.case}>
+                {icon}
+                <Title small className={styles.case__title}>
+                  {title}
+                </Title>
+                <Subtitle className={styles.case__desc}>{desc}</Subtitle>
+                <Button
+                  accent='sheets'
+                  border
+                  className={styles.button}
+                  as={currentUser ? 'a' : Link}
+                  href={currentUser ? template : ''}
+                  to={currentUser ? '' : "/account"}
+                  onClick={onGetTemplateClick}
+                >
+                  Get template
+                </Button>
+              </div>
+              {code}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </Query>
 )
