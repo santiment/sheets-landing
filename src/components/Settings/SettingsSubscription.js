@@ -53,10 +53,7 @@ const PlanText = ({ subscription }) => {
     <>
       <div className={styles.title}>Free Plan</div>
       <div className={styles.desc}>
-        You can see data{' '}
-        <Button accent='sheets' className={styles.btn}>
-          generated 24h ago.
-        </Button>
+        You can see data generated 24h ago.
       </div>
       <div className={styles.desc}>Upgrade your plan to get more abilities</div>
     </>
