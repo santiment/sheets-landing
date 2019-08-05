@@ -214,3 +214,18 @@
     margin: 0;
   }
 }
+
+.sanTokens {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  color: var(--sheets);
+  padding: 7px;
+}
+
+.tooltip {
+  max-width: 550px;
+  a {
+    color: var(--sheets);
+  }
+}

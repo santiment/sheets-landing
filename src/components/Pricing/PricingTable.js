@@ -1,41 +1,85 @@
-import React from 'react'
-import { Query } from 'react-apollo'
-import cx from 'classnames'
-import RadioBtns from '@santiment-network/ui/RadioBtns'
-import Label from '@santiment-network/ui/Label'
-import { CURRENT_USER_QUERY } from '../../gql/user'
-import Features from '../Features/Features'
-import PricingDetailsToggle from './PricingDetailsToggle.js'
-import PlanRestrictBtn from './PlanRestrictBtn'
-import { PLANS_QUERY } from '../../gql/plans'
-import PLANS from './prices'
+import React from "react"
+import { Query } from "react-apollo"
+import cx from "classnames"
+import RadioBtns from "@santiment-network/ui/RadioBtns"
+import Label from "@santiment-network/ui/Label"
+import Tooltip from "@santiment-network/ui/Tooltip"
+import Panel from "@santiment-network/ui/Panel/Panel"
+import { CURRENT_USER_QUERY } from "../../gql/user"
+import Features from "../Features/Features"
+import PricingDetailsToggle from "./PricingDetailsToggle.js"
+import PlanRestrictBtn from "./PlanRestrictBtn"
+import { PLANS_QUERY } from "../../gql/plans"
+import PLANS from "./prices"
 import {
   findSheetsPlan,
   getCurrentSheetsSubscription,
   formatPrice,
   getAlternativeBillingPlan,
-} from '../../utils/plans'
-import styles from './index.module.scss'
+} from "../../utils/plans"
+import styles from "./index.module.scss"
 
 const toggleCardDetails = ({ currentTarget }) =>
   currentTarget.classList.toggle(styles.card_opened)
 
 const billingOptions = [
   {
-    index: 'year',
+    index: "year",
     content: (
       <>
         Bill yearly <Label accent='waterloo'>(save 10%)</Label>
       </>
     ),
   },
-  { index: 'month', content: 'Bill monthly' },
+  { index: "month", content: "Bill monthly" },
 ]
 
 export default ({ classes = {}, onDialogClose }) => {
-  const [billing, setBilling] = React.useState('year')
+  const [billing, setBilling] = React.useState("year")
   return (
     <>
+      <div className={styles.sanTokens}>
+        <Tooltip
+          trigger={
+            <div>
+              Holding 1000 SAN tokens will result in a 20% discount on all plans
+            </div>
+          }
+        >
+          <Panel padding className={styles.tooltip}>
+            SAN discount is automatically applied during checkout. <br />
+            To have the system register your tokens, you need to sign in with
+            the same email that you use on{" "}
+            <a
+              rel='noopener noreferrer'
+              target='_blank'
+              href='https://app.santiment.net'
+            >
+              SANbase
+            </a>
+            .
+            <br />
+            The SAN tokens need to show up in your{" "}
+            <a
+              rel='noopener noreferrer'
+              target='_blank'
+              href='https://app.santiment.net/account'
+            >
+              SANbase account settings
+            </a>
+            .<br />
+            Find out more{" "}
+            <a
+              rel='noopener noreferrer'
+              target='_blank'
+              href='https://help.santiment.net/en/articles/2542638-how-to-stake-san'
+            >
+              here
+            </a>
+            .
+          </Panel>
+        </Tooltip>
+      </div>
       <div className={cx(styles.billing, classes.billing)}>
         <RadioBtns
           options={billingOptions}
@@ -65,16 +109,16 @@ export default ({ classes = {}, onDialogClose }) => {
                       {sheets.plans
                         .filter(
                           ({ name, interval }) =>
-                            interval === billing || name === 'FREE',
+                            interval === billing || name === "FREE"
                         )
-                        .sort(({ id: a }, {id: b}) => a - b)
+                        .sort(({ id: a }, { id: b }) => a - b)
                         .map(({ id, name, amount }) => {
                           const card = PLANS[name]
                           const sameAsUserPlan = id === userPlan
                           const [price, priceType] = formatPrice(
                             amount,
                             name,
-                            billing,
+                            billing
                           )
                           const [realPrice] = formatPrice(amount, name)
 
@@ -82,13 +126,13 @@ export default ({ classes = {}, onDialogClose }) => {
                             getAlternativeBillingPlan(
                               sheets.plans,
                               name,
-                              billing,
+                              billing
                             ) || {}
 
                           const [altPrice] = formatPrice(
                             altAmount,
                             null,
-                            altInterval,
+                            altInterval
                           )
 
                           return (
@@ -97,7 +141,7 @@ export default ({ classes = {}, onDialogClose }) => {
                                 styles.card,
                                 classes.card,
                                 card.isPopular && styles.card_popular,
-                                sameAsUserPlan && styles.card_active,
+                                sameAsUserPlan && styles.card_active
                               )}
                               key={card.title}
                               onClick={toggleCardDetails}
