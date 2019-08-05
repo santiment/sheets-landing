@@ -27,6 +27,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const imageUrl = `${site.siteUrl}${sheets || site.defaultImage}`
 
   return (
     <Helmet
@@ -41,7 +42,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: sheets,
+          content: imageUrl,
         },
         {
           property: `og:title`,
@@ -73,7 +74,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:image`,
-          content: sheets,
+          content: imageUrl,
         },
         {
           name: `twitter:image:alt`,
