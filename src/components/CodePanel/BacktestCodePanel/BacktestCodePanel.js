@@ -4,7 +4,7 @@ import Parallax from "react-rellax"
 import Input from "@santiment-network/ui/Input"
 import CodePanel from "../CodePanel"
 import financial from "../FloatingPanel/financial.svg"
-import man from "../../../images/paolo-ardoino.jpg"
+import man from "../../../images/ibis.jpg"
 import eth from "../FloatingPanel/eth-circle.svg"
 import btc from "../FloatingPanel/btc.svg"
 import styles from "./BacktestCodePanel.module.scss"
@@ -69,7 +69,7 @@ const BacktestCodePanel = () => (
     <Parallax speed={-0.8}>
       <div className={cx(styles.status, styles.shadow)}>
         <img src={man} alt='man' className={styles.man} />
-        <Input placeholder='Update the status...' className={styles.input} />
+        <Input placeholder='Update the status...' disabled className={styles.input} />
         <svg
           xmlns='http://www.w3.org/2000/svg'
           width='18'
