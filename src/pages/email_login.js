@@ -3,6 +3,7 @@ import { replace } from 'gatsby'
 import { Mutation } from 'react-apollo'
 import { parse } from 'query-string'
 import Layout from '../components/layout'
+import PageLoader from '../components/Loader/PageLoader'
 import { CURRENT_USER_QUERY, VERIFY_EMAIL_MUTATION } from '../gql/user'
 
 const updateCache = (
@@ -34,7 +35,7 @@ export default ({ location: { search } }) => (
           return "Can't verify this email"
         }
 
-        return 'Verifying ....'
+        return <PageLoader text='Verifying' />
       }}
     </Mutation>
   </Layout>
