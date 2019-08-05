@@ -17,7 +17,7 @@ const items = [
     value: "+43%",
   },
   {
-    title: "Icome, 1mo",
+    title: "Income, 1mo",
     value: "$9 326",
   },
 ]
