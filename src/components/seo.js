@@ -20,6 +20,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -27,7 +28,7 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const imageUrl = `${site.siteUrl}${sheets || site.defaultImage}`
+  const imageUrl = `${site.siteMetadata.siteUrl}${sheets}`
 
   return (
     <Helmet

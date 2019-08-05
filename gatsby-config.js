@@ -3,6 +3,7 @@ module.exports = {
     title: `Sheets - Crypto asset data for Google Sheets`,
     description: `Relevant access for on-chain, social development activity, prices and volume data.`,
     author: `Santiment Team`,
+    siteUrl: 'https://sheets-stage.santiment.net'
   },
   plugins: [
     {
