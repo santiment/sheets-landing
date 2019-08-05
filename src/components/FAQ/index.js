@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import cx from 'classnames'
+import React, { useState } from "react"
+import cx from "classnames"
 import Title from "../Title/Title"
 import styles from "./index.module.scss"
 
@@ -9,23 +9,22 @@ const questions = [
     answer: (
       <>
         <p className={styles.item}>
-          1) Open a new Google Sheet and select <b>Get Add-Ons</b> under
-          the <b>Add-Ons</b> tab.
+          1) In a new Google Sheet, go to <b>Add-ons</b> -> <b>Get Add-Ons</b>.
         </p>
         <p className={styles.item}>
           2) After the Google Marketplace viewer opens in your Google
-          Spreadsheet, look for <b>Santiment</b> in the search bar at the
-          top right corner and install it.
+          Spreadsheet, look for <b>Santiment</b> in the search bar at the top
+          right corner and install the SANsheets add-on.
         </p>
         <p className={styles.item}>
           3) After it has been installed, go back to your Google Spreadsheet and
-          enable the SANsheets tool by selecting <b>SANsheets</b> and then
-          selecting <b>Enable</b> under the <b>Add-Ons</b> tab.
+          enable the SANsheets tool by by going to <b>Add-ons</b> ->{" "}
+          <b>SANsheets</b> -> <b>Enable</b>.
         </p>
         <p className={styles.item}>
-          4) When this is done, you are ready and set to using the tool under
-          the <b>Free</b> version. Just write <b>=SAN</b> in an
-          empty cell and you’re ready to start fetching data!
+          4) When this is done, you are ready to start using the <b>Free</b> version
+          of SANsheets. Just type <b>=SAN</b> in an empty cell and you'll see a list
+          of available functions to help you fetch data!
         </p>
       </>
     ),
@@ -34,17 +33,20 @@ const questions = [
     question: "How to add an API key for paid access?",
     answer: (
       <>
-        <p className={styles.text} />
         <p className={styles.text}>
-          Feel free to ask{" "}
-          <a
-            href='https://santiment.net/discord'
+          1) Pick a subscription from this page and go through the login and purchase process.
+        </p>
+        <p className={styles.text}>
+          2) Find your API key in the account settings.
+        </p>
+        <p className={styles.text}>
+          3) Setup SANsheets with your API as explained in <a
+            href='https://help.santiment.net/en/articles/2864459-adding-an-api-key-to-sansheets'
             rel='noopener noreferrer'
             target='_blank'
           >
-            on our Discord
-          </a>{" "}
-          for more details.
+            this article
+          </a>.
         </p>
       </>
     ),
@@ -56,9 +58,9 @@ const questions = [
         <p className={styles.text}>
           SANsheets was built in a way that it makes it easy for anyone to gain
           access to our data without the need for coding skills. When opening
-          creating a new Google Spreadsheet, you always need to{" "}
-          <b>Enable</b> the add-on under the <b>Add-Ons</b> tab.
-          After that, you simply have to write
+          creating a new Google Spreadsheet, you always need to <b>Enable</b>{" "}
+          the add-on under the <b>Add-Ons</b> tab. After that, you simply have
+          to write
           <b>=SAN</b> in an empty cell, and you get a list of metric
           suggestions, ranging from MVRV metric to Social Volume, with
           descriptions. If you want to explore our metrics and how you can fetch
@@ -79,7 +81,8 @@ const questions = [
 
 export default () => {
   const [opened, setOpened] = useState(null)
-  const onQuestionClick = question => setOpened(question === opened ? null : question)
+  const onQuestionClick = question =>
+    setOpened(question === opened ? null : question)
 
   return (
     <section className={styles.wrapper}>
@@ -87,7 +90,10 @@ export default () => {
       <ul className={styles.questions}>
         {questions.map(({ question, answer }) => (
           <li
-            className={cx(styles.question, opened === question && styles.opened)}
+            className={cx(
+              styles.question,
+              opened === question && styles.opened
+            )}
             onClick={() => onQuestionClick(question)}
             key={question}
           >
