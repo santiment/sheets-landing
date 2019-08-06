@@ -231,12 +231,14 @@
 }
 
 .tooltipTrigger {
-  display: flex;
-  align-items: center;
+  @include responsive('phone', 'phone-xs') {
+    width: 70%;
+    text-align: center;
+  }
 }
 
 .icon {
-  margin-left: 6px;
+  margin: 0 0 -3px 6px;
   color: var(--sheets);
   fill: var(--sheets);
 }
