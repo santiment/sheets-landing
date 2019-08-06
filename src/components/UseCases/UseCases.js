@@ -10,7 +10,8 @@ import MonitorCodePanel from '../CodePanel/MonitorCodePanel/MonitorCodePanel'
 import AnalyzeCodePanel from '../CodePanel/AnalyzeCodePanel/AnalyzeCodePanel'
 import styles from './UseCases.module.scss'
 
-function onGetTemplateClick () {
+const onGetTemplateClick = link => {
+  localStorage.setItem('template', link)
   window.gtag("event", "get_template", {
     location: "Use Cases",
     text: "Get template",
@@ -21,7 +22,7 @@ const cases = [
   {
     title: 'Backtest strategies',
     code: (<BacktestCodePanel />),
-    template: '',
+    template: 'https://docs.google.com/spreadsheets/d/1YEm8qdqJvkHCTUwEmOyQLfkZqtQ0ndwo0GWxGsCRnSQ/edit?usp=sharing',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -44,7 +45,7 @@ const cases = [
   {
     title: 'Monitor portfolio',
     code: (<MonitorCodePanel />),
-    template: 'https://docs.google.com/spreadsheets/d/1vVw72CYN_uk9wkCP8ROdLI7kglk0Zur-GDrSmWWhdNs/edit',
+    template: 'https://docs.google.com/spreadsheets/d/1itY_q3KvC-KhOpY21wtmeAj5lL4qT8gbMvilgt8avZw/edit?usp=sharing',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
         <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -69,7 +70,7 @@ const cases = [
   {
     title: 'Analyze 100s of assets',
     code: (<AnalyzeCodePanel />),
-    template: '',
+    template: 'https://docs.google.com/spreadsheets/d/1RD9AMy2hLWPix0DCupl-LaN5aloFkd_BQDvzJrgU0qI/edit?usp=sharing',
     icon: (
 <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
   <circle cx="30" cy="30" r="30" fill="#8AFFCE"/>
@@ -110,8 +111,8 @@ export default () => (
                   className={styles.button}
                   as={currentUser ? 'a' : Link}
                   href={currentUser ? template : ''}
-                  to={currentUser ? '' : "/account"}
-                  onClick={onGetTemplateClick}
+                  to={currentUser ? '' : "/login"}
+                  onClick={() => onGetTemplateClick(template)}
                 >
                   Get template
                 </Button>

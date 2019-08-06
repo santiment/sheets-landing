@@ -1,17 +1,10 @@
 import React, { useState } from 'react'
 import Panel from '@santiment-network/ui/Panel/Panel'
 import Button from '@santiment-network/ui/Button'
+import {getLSItem} from '../../utils/localStorage'
 import styles from './CookiePopup.module.scss'
 
 const COOKIE_POLICY_ACCEPTED = 'COOKIE_POLICY_ACCEPTED'
-
-const getLSItem = key => {
-  if (typeof window === 'undefined') {
-    return
-  }
-
-  return localStorage.getItem(key)
-}
 
 const acceptCookiePolicy = () => {
   window.gtag('event', 'cookie_accept')
