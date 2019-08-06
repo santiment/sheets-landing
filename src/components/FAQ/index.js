@@ -26,6 +26,14 @@ const questions = [
           of SANsheets. Just type <b>=SAN</b> in an empty cell and you'll see a list
           of available functions to help you fetch data!
         </p>
+        <p className={styles.item}>
+          If you need more in-depth information on how you can install SANsheets, you can find it <a
+            href='https://help.santiment.net/en/articles/2864401-setting-up-sansheets'
+            rel='noopener noreferrer'
+            target='_blank'
+          >
+          here</a>.
+        </p>
       </>
     ),
   },
