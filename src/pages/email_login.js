@@ -4,6 +4,7 @@ import { Mutation } from 'react-apollo'
 import { parse } from 'query-string'
 import Layout from '../components/layout'
 import PageLoader from '../components/Loader/PageLoader'
+import {getLSItem} from '../utils/localStorage'
 import { CURRENT_USER_QUERY, VERIFY_EMAIL_MUTATION } from '../gql/user'
 
 const updateCache = (
@@ -20,7 +21,11 @@ const updateCache = (
       query: CURRENT_USER_QUERY,
       data: { currentUser },
     })
-    replace('/account')
+    const template = getLSItem('template')
+    if (template) {
+      localStorage.removeItem('template')
+      window.location.assign(template)
+    } else replace('/account')
   }, 1000)
 }
 
