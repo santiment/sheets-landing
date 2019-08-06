@@ -3,6 +3,7 @@ import { Query } from "react-apollo"
 import cx from "classnames"
 import RadioBtns from "@santiment-network/ui/RadioBtns"
 import Label from "@santiment-network/ui/Label"
+import Icon from "@santiment-network/ui/Icon"
 import Tooltip from "@santiment-network/ui/Tooltip"
 import Panel from "@santiment-network/ui/Panel/Panel"
 import { CURRENT_USER_QUERY } from "../../gql/user"
@@ -41,8 +42,9 @@ export default ({ classes = {}, onDialogClose }) => {
       <div className={styles.sanTokens}>
         <Tooltip
           trigger={
-            <div>
-              Holding 1000 SAN tokens will result in a 20% discount on all plans
+            <div className={styles.tooltipTrigger}>
+              <span>Holding 1000 SAN tokens will result in a 20% discount on all plans</span>
+              <Icon type='question-round' className={styles.icon} />
             </div>
           }
         >

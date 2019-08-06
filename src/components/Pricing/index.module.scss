@@ -229,3 +229,14 @@
     color: var(--sheets);
   }
 }
+
+.tooltipTrigger {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-left: 6px;
+  color: var(--sheets);
+  fill: var(--sheets);
+}
