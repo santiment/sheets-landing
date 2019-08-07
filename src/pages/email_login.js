@@ -24,8 +24,9 @@ const updateCache = (
     const template = getLSItem('template')
     if (template) {
       localStorage.removeItem('template')
-      window.location.assign(template)
-    } else replace('/account')
+      window.open(template)
+    }
+    replace('/account')
   }, 1000)
 }
 
