@@ -10,7 +10,8 @@ export const formatPrice = (price, name, billing) => {
   return [`$${parseInt(price / devider, 10)}`, '/mo']
 }
 
-export const findSheetsPlan = ({ name }) => name === 'SANSheets'
+export const sheetsProductId = "3"
+export const findSheetsPlan = ({ id }) => id === sheetsProductId
 
 export const getCurrentSheetsSubscription = user => {
   if (!user) return
@@ -19,9 +20,9 @@ export const getCurrentSheetsSubscription = user => {
   return subs.find(
     ({
       plan: {
-        product: { name },
+        product: { id },
       },
-    }) => name === 'SANSheets',
+    }) => id === sheetsProductId,
   )
 }
 
