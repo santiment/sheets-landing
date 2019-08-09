@@ -1,5 +1,4 @@
 import React from "react"
-import Parallax from "react-rellax"
 import Typed from "react-typed"
 import CodePanel from "../CodePanel"
 import Suggestions from './Suggestions'

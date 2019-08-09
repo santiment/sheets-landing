@@ -1,5 +1,4 @@
 import React from "react"
-import Parallax from "react-rellax"
 import CodePanel from "../CodePanel"
 import FloatingPanel from "../FloatingPanel/FloatingPanel"
 import pocket from "./pocket.svg"
