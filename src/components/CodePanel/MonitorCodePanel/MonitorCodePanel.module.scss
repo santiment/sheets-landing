@@ -72,24 +72,13 @@
 }
 
 .bitcoin {
-  top: -400px;
-  // left: -60px;
-  left: -100px;
-
-  // @include responsive("laptop") {
-  //   left: -20px;
-  // }
-
-    @include responsive("laptop") {
-    top: -450px;
-  }
+  top: 60px;
+  left: -60px;
 }
 
 .risk {
-  // bottom: 20px;
-  // left: 54px;
-  bottom: -500px;
-  left: 0;
+  bottom: 20px;
+  left: 54px;
 }
 
 .ticker {

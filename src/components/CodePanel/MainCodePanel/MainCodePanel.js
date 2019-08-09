@@ -70,7 +70,6 @@ class MainCodePanel extends React.PureComponent {
           </li>
         ))}
       </ul>
-      <Parallax speed={-0.7}>
         <div className={styles.favorites}>
           <div className={styles.title}>
             <img src={img} alt='preview' />
@@ -82,7 +81,6 @@ class MainCodePanel extends React.PureComponent {
             today
           </h4>
         </div>
-      </Parallax>
     </CodePanel>
   )
 }

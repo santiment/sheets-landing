@@ -12,6 +12,7 @@
   min-height: 400px;
   margin-top: 20px;
   position: relative;
+  animation: moving 7s infinite ease-in-out;
 
   @include responsive("tablet", "phone", "phone-xs") {
     display: none;
@@ -35,5 +36,19 @@
 
   :global(&__tab) {
     margin-right: 15px;
+  }
+}
+
+@keyframes moving {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

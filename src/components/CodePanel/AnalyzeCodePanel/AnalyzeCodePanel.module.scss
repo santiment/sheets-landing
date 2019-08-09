@@ -13,30 +13,22 @@
 
 .financial {
   top: 15px;
-  // top: 1835px;
   left: 115px;
 }
 
 .devact {
-  // bottom: -20px;
-  bottom: -759px;
+  bottom: -20px;
   right: 60px;
 }
 
 .social {
-  // top: 180px;
-  top: 235px;
+  top: 180px;
   left: 190px;
 }
 
 .onchain {
   left: -30px;
-  // bottom: 94px;
-  top: 630px;
-
-  //   @include responsive("laptop") {
-  //   bottom: 605px;
-  // }
+  bottom: 94px;
 }
 
 .content {
@@ -51,8 +43,7 @@
   position: absolute;
   width: 263px;
   height: 140px;
-  // top: 48px;
-  top: -520px;
+  top: 48px;
   right: -50px;
   padding: 30px 24px 18px 20px;
   display: flex;
@@ -61,11 +52,6 @@
   background-image: url("../../FunctionsTemplate/combined-template.svg");
   background-repeat: no-repeat;
   border-radius: 8px;
-
-  @include responsive("laptop") {
-    right: -40px;
-    top: -600px;
-  }
 
   &::before {
     content: "";
