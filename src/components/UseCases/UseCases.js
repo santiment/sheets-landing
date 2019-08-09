@@ -110,6 +110,7 @@ export default () => (
                   border
                   className={styles.button}
                   as={currentUser ? 'a' : Link}
+                  target='_blank'
                   href={currentUser ? template : ''}
                   to={currentUser ? '' : "/login"}
                   onClick={() => onGetTemplateClick(template)}

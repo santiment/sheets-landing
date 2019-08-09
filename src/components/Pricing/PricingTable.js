@@ -70,7 +70,7 @@ export default ({ classes = {}, onDialogClose }) => {
               <li className={styles.item}>
                 - Log in to SANbase (
                 <a
-                  rel='n oopener noreferrer'
+                  rel='noopener noreferrer'
                   target='_blank'
                   href='https://app.santiment.net/'
                 >
