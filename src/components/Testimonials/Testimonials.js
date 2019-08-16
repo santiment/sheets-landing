@@ -1,8 +1,9 @@
-import React, { useRef } from 'react'
-import cx from 'classnames'
-import Slider from 'react-slick'
-import Title from '../Title/Title'
-import styles from './Testimonials.module.scss'
+import React, { useRef } from "react"
+import cx from "classnames"
+import Slider from "react-slick"
+import FluidItem from "./FluidItem/FluidItem"
+import Title from "../Title/Title"
+import styles from "./Testimonials.module.scss"
 
 const settings = {
   infinite: true,
@@ -12,14 +13,25 @@ const settings = {
   arrows: false,
 }
 
+const pics = [
+  "nasty",
+  "ibis",
+  "dima",
+  "yura",
+  "thumbs_up",
+  "hand",
+  "nemo",
+  "garry",
+]
+
 const testimonials = [
   {
-    author: 'Neal Swaelens',
-    pic: 'neal',
-    position: 'Product Manager',
+    author: "Neal Swaelens",
+    pic: "neal",
+    position: "Product Manager",
     text:
-      'People often tend to forget how easy-to-use and powerful spreadsheets are, especially in combination with unique data and metrics. That’s why I was really thrilled to support Santiment’s development of SANsheets since it allows me to create custom-made financial models, ranging from a portfolio dashboard to backtesting frameworks. All powered by Santiment data and without the need of a single line of code.',
-  }
+      "People often tend to forget how easy-to-use and powerful spreadsheets are, especially in combination with unique data and metrics. That’s why I was really thrilled to support Santiment’s development of SANsheets since it allows me to create custom-made financial models, ranging from a portfolio dashboard to backtesting frameworks. All powered by Santiment data and without the need of a single line of code.",
+  },
 ]
 
 const Testimonials = () => {
@@ -33,6 +45,7 @@ const Testimonials = () => {
 
   return (
     <section className={styles.wrapper}>
+      {pics.map(pic => <FluidItem key={pic} pic={pic} />)}
       <Title className={styles.title}>
         What people
         <br />
