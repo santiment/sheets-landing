@@ -6,6 +6,7 @@ import Layout from '../components/layout'
 import PageLoader from '../components/Loader/PageLoader'
 import {getLSItem} from '../utils/localStorage'
 import { CURRENT_USER_QUERY, VERIFY_EMAIL_MUTATION } from '../gql/user'
+import styles from './email_login.module.scss'
 
 const updateCache = (
   cache,
@@ -38,10 +39,23 @@ export default ({ location: { search } }) => (
           verifyEmail({ variables: parse(search) })
         }
         if (error) {
-          return "Can't verify this email"
+          return (
+            <div className={styles.wrapper}>
+              <h2>Login failed</h2>
+              <br/>
+              <p>
+                Maybe you are trying to login with an old email link. Please, make
+                sure, that you are using the latest link
+              </p>
+            </div>
+          )
         }
 
-        return <PageLoader text='Verifying' />
+        return (
+          <div className={styles.wrapper}>
+            <PageLoader text='Verifying' className={styles.loader} />
+          </div>
+        )
       }}
     </Mutation>
   </Layout>
