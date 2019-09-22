@@ -25,15 +25,7 @@ const pics = [
   'garry',
 ]
 
-const testimonials = [
-  {
-    author: 'Neal Swaelens',
-    pic: 'neal',
-    position: 'Product Manager',
-    text:
-      'People often tend to forget how easy-to-use and powerful spreadsheets are, especially in combination with unique data and metrics. That’s why I was really thrilled to support Santiment’s development of SANsheets since it allows me to create custom-made financial models, ranging from a portfolio dashboard to backtesting frameworks. All powered by Santiment data and without the need of a single line of code.',
-  },
-]
+const testimonials = ['neal']
 
 const Testimonials = () => {
   const slider = useRef(null)
@@ -77,18 +69,21 @@ const Testimonials = () => {
           </svg>
         </div>
         <Slider {...settings} ref={slider}>
-          {testimonials.map(({ author, text, position, pic }) => (
-            <div key={author} className={styles.testimonial}>
-              <div className={styles.slider__top}>
-                <p className={styles.text}>{text}</p>
+          {testimonials.map(author => {
+            const id = `testimonials.${author}.`
+            return (
+              <div key={author} className={styles.testimonial}>
+                <div className={styles.slider__top}>
+                  <p className={styles.text}>{tr(id + 'text')}</p>
+                </div>
+                <div className={styles.slider__bottom}>
+                  <div className={cx(styles.pic, styles[`pic_${author}`])} />
+                  <h3 className={styles.author}>{tr(id + 'name')}</h3>
+                  <h4 className={styles.position}>{tr(id + 'position')}</h4>
+                </div>
               </div>
-              <div className={styles.slider__bottom}>
-                <div className={cx(styles.pic, styles[`pic_${pic}`])} />
-                <h3 className={styles.author}>{author}</h3>
-                <h4 className={styles.position}>{position}</h4>
-              </div>
-            </div>
-          ))}
+            )
+          })}
         </Slider>
 
         <div
