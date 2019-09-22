@@ -23,37 +23,26 @@ export default {
       </Button>
     ),
     features: [
-      'Access to basic signals',
-      'Up to 10 active signals at a time',
-      'Sanbase metrics - 2 years of historical data',
-      'Sanbase metrics - up to last 30 days of data',
-      'Limited access in Google plugin for sheets',
+      "Limited access in Google plugin for sheets",
+      "Timeseries metrics - 2 years of historical data",
+      "Timeseries metrics - up to last 30 days of data",
     ],
   },
   BASIC: {
-    title: 'Basic',
-    desc: 'Great for short-term analysis and prototyping',
-    link: 'Upgrade now',
+    title: "Basic",
+    desc: "Great for short-term analysis and prototyping",
+    link: "Upgrade now",
     Component: PlanActionDialog,
     features: [
-      'Access to all signal types',
-      'Up to 10 active signals at a time',
-      'Sanbase metrics - 2 years of historical data',
-      'Sanbase metrics - up to last 7 days of data',
-      'Exclusive market reports',
-      'Limited access in Google plugin for sheets',
     ],
   },
   PRO: {
+    title: "Pro",
+    // isPopular: true,
+    desc: "Advanced metrics & serious backtesting potential",
     Component: PlanActionDialog,
-    link: 'Upgrade now',
+    link: "Upgrade now",
     features: [
-      'Access to all signal types',
-      'Unlimited active signals',
-      'Sanbase metrics - 3 years of historical data',
-      'Sanbase metrics - including present-day data',
-      'Exclusive market reports',
-      'Full access in Google plugin for sheets',
     ],
   },
   ENTERPRISE: {
@@ -67,12 +56,9 @@ export default {
       />
     ),
     features: [
-      'Full access in Google plugin for sheets',
-      'Access to all signal types',
-      'Unlimited active signals',
-      'Sanbase metrics - 3 years of historical data',
-      'Sanbase metrics - including present-day data',
-      'Exclusive market reports',
+      "Timeseries metrics - 3 years of historical data",
+      "Timeseries metrics - including present-day data",
+      "Full access in Google plugin for sheets",
     ],
   },
 }
