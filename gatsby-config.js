@@ -3,24 +3,37 @@ module.exports = {
     title: `Sheets - Crypto asset data for Google Sheets`,
     description: `Relevant access for on-chain, social development activity, prices and volume data.`,
     author: `Santiment Team`,
-    siteUrl: 'https://sheets.santiment.net'
+    siteUrl: 'https://sheets.santiment.net',
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-env-variables`,
+      resolve: `gatsby-plugin-intl`,
       options: {
-        whitelist: ["BACKEND_URL"],
+        // language JSON resource path
+        path: `${__dirname}/src/intl`,
+        // supported language
+        languages: [`en`, `ja`],
+        // language file path
+        defaultLanguage: `en`,
+        // option to redirect to `/ko` when connecting `/`
+        // redirect: true,
       },
     },
     {
-      resolve: "gatsby-source-graphql",
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        whitelist: ['BACKEND_URL'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-graphql',
       options: {
         // This type will contain remote schema Query type
-        typeName: "SAN",
+        typeName: 'SAN',
         // This is the field under which it's accessible
-        fieldName: "san",
+        fieldName: 'san',
         // URL to query from
-        url: "https://api.santiment.net/graphql",
+        url: 'https://api.santiment.net/graphql',
       },
     },
     `gatsby-plugin-react-helmet`,
