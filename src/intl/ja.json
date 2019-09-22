@@ -246,5 +246,12 @@
   "pricing.discount.step.refresh":"このページを更新して、ご購入手続きを完了してください。",
   "pricing.discount.step.system":"SANベースアカウントに、1000以上のSANトークンが確認されると、自動的に20％オフが適用されます。",
   "pricing.discount.note":"ご注意",
-  "pricing.discount.note.text":"20％オフを適用するには、1000以上のSANトークンをホールドする必要があります。あなたのウォレットに必要なトークンがあるか、システムで確認されます。"
+  "pricing.discount.note.text":"20％オフを適用するには、1000以上のSANトークンをホールドする必要があります。あなたのウォレットに必要なトークンがあるか、システムで確認されます。",
+
+  "login": "Ｅメールでログインする",
+  "login.interest": "当社製品にご興味をお持ちいただきありがとうございます。",
+  "login.email": "メールアドレスを入力すると、ログインリンクが届きます",
+  "login.email.sent": "メールを送信しました",
+  "login.email.confirm": "メールアカウントにアクセスし、確認のためリンクをクリックしてください。",
+  "login.options": "その他の方法でログイン"
 }

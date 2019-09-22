@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import Panel from '@santiment-network/ui/Panel/Panel'
 import Input from '@santiment-network/ui/Input'
 import Button from '@santiment-network/ui/Button'
@@ -8,6 +8,7 @@ import cx from 'classnames'
 import { Mutation } from 'react-apollo'
 import Layout from '../../components/layout'
 import { EMAIL_LOGIN_MUTATION } from '../../gql/user'
+import { tr } from '../../utils/translate'
 import styles from './index.module.scss'
 
 export default () => {
@@ -24,20 +25,17 @@ export default () => {
         ) => (
           <Panel className={styles.wrapper}>
             <h2 className={cx(styles.title, styles.email__title)}>
-              Thanks for your interest in our product!
+              {tr('login.interest')}
             </h2>
             {success ? (
               <h3 className={styles.email__subtitle}>
-                We sent an email to you.
-                <br/>
-                Please login in to email provider and
-                click the confirm link
+                {tr('login.email.sent')}
+                <br />
+                {tr('login.email.confirm')}
               </h3>
             ) : (
               <>
-                <h3 className={styles.email__subtitle}>
-                  Enter your email and you'll receive a login link
-                </h3>
+                <h3 className={styles.email__subtitle}>{tr('login.email')}</h3>
                 <form
                   className={styles.email__form}
                   action=''
@@ -71,7 +69,7 @@ export default () => {
             )}
             <Link to='/login' className={styles.email__link}>
               <Icon className={styles.email__pointer} type='pointer-right' />
-              All login options
+              {tr('login.options')}
             </Link>
           </Panel>
         )}
