@@ -1,86 +1,66 @@
-import React, { useState } from "react"
-import cx from "classnames"
-import Title from "../Title/Title"
-import styles from "./index.module.scss"
+import React, { useState } from 'react'
+import cx from 'classnames'
+import Title from '../Title/Title'
+import { tr } from '../../utils/translate'
+import styles from './index.module.scss'
 
 const questions = [
   {
-    question: "How do I install SANsheets?",
+    question: tr('faq.install'),
     answer: (
       <>
+        <p className={styles.item}>1) {tr('faq.install.p.1')}</p>
+        <p className={styles.item}>2) {tr('faq.install.p.2')} </p>
+        <p className={styles.item}>3) {tr('faq.install.p.3')} </p>
+        <p className={styles.item}>4) {tr('faq.install.p.4')} </p>
         <p className={styles.item}>
-          1) In a new Google Sheet, go to <b>Add-ons</b> -> <b>Get Add-Ons</b>.
-        </p>
-        <p className={styles.item}>
-          2) After the Google Marketplace viewer opens in your Google
-          Spreadsheet, look for <b>Santiment</b> in the search bar at the top
-          right corner and install the SANsheets add-on.
-        </p>
-        <p className={styles.item}>
-          3) After it has been installed, go back to your Google Spreadsheet and
-          enable the SANsheets tool by by going to <b>Add-ons</b> ->{" "}
-          <b>SANsheets</b> -> <b>Enable</b>.
-        </p>
-        <p className={styles.item}>
-          4) When this is done, you are ready to start using the <b>Free</b> version
-          of SANsheets. Just type <b>=SAN</b> in an empty cell and you'll see a list
-          of available functions to help you fetch data!
-        </p>
-        <p className={styles.item}>
-          If you need more in-depth information on how you can install SANsheets, you can find it <a
+          {tr('faq.install.left')}
+          <a
             href='https://help.santiment.net/en/articles/2864401-setting-up-sansheets'
             rel='noopener noreferrer'
             target='_blank'
           >
-          here</a>.
+            {tr('faq.install.link')}
+          </a>
+          {tr('faq.install.right')}
         </p>
       </>
     ),
   },
   {
-    question: "How to add an API key for paid access?",
+    question: tr('faq.key'),
     answer: (
       <>
+        <p className={styles.text}>1) {tr('faq.key.p.1')} </p>
+        <p className={styles.text}>2) {tr('faq.key.p.2')}</p>
         <p className={styles.text}>
-          1) Pick a subscription from this page and go through the login and purchase process.
-        </p>
-        <p className={styles.text}>
-          2) Find your API key in the account settings.
-        </p>
-        <p className={styles.text}>
-          3) Setup SANsheets with your API as explained in <a
+          3) {tr('faq.key.left')}
+          <a
             href='https://help.santiment.net/en/articles/2864459-adding-an-api-key-to-sansheets'
             rel='noopener noreferrer'
             target='_blank'
           >
-            this article
-          </a>.
+            {tr('faq.key.link')}
+          </a>
+          {tr('faq.key.right')}
         </p>
       </>
     ),
   },
   {
-    question: "How do I fetch metrics and pricing?",
+    question: tr('faq.fetch'),
     answer: (
       <>
         <p className={styles.text}>
-          SANsheets was built in a way that it makes it easy for anyone to gain
-          access to our data without the need for coding skills. When opening
-          creating a new Google Spreadsheet, you always need to <b>Enable</b>{" "}
-          the add-on under the <b>Add-Ons</b> tab. After that, you simply have
-          to write
-          <b>=SAN</b> in an empty cell, and you get a list of metric
-          suggestions, ranging from MVRV metric to Social Volume, with
-          descriptions. If you want to explore our metrics and how you can fetch
-          them in SANsheets, take a look at{" "}
+          {tr('faq.fetch.left')}
           <a
             href='https://help.santiment.net/en/articles/3001303-full-list-of-available-sansheets-functions'
             rel='noopener noreferrer'
             target='_blank'
           >
-            its dedicated page
-          </a>{" "}
-          on our knowledge base.
+            {tr('faq.fetch.link')}
+          </a>{' '}
+          {tr('faq.fetch.right')}
         </p>
       </>
     ),
@@ -94,16 +74,16 @@ export default () => {
 
   return (
     <section className={styles.wrapper}>
-      <Title>Frequently asked questions</Title>
+      <Title>{tr('faq.title')}</Title>
       <ul className={styles.questions}>
-        {questions.map(({ question, answer }) => (
+        {questions.map(({ question, answer }, i) => (
           <li
             className={cx(
               styles.question,
-              opened === question && styles.opened
+              opened === question && styles.opened,
             )}
             onClick={() => onQuestionClick(question)}
-            key={question}
+            key={i}
           >
             <div className={styles.question__top}>
               <h3 className={styles.question__text}>{question}</h3>

@@ -1,8 +1,9 @@
-import React, { useRef } from "react"
-import { Link } from "gatsby"
-import Icon from "@santiment-network/ui/Icon"
-import styles from "./Header.module.scss"
-import AccountBtn from "../AccountBtn/AccountBtn"
+import React, { useRef } from 'react'
+import { Link } from 'gatsby-plugin-intl'
+import Icon from '@santiment-network/ui/Icon'
+import styles from './Header.module.scss'
+import AccountBtn from '../AccountBtn/AccountBtn'
+import { tr } from '../../utils/translate'
 
 const Header = ({ isAccountPage }) => {
   const toggle = useRef(null)
@@ -40,21 +41,21 @@ const Header = ({ isAccountPage }) => {
         <label htmlFor='hamburger' className={styles.close}>
           <Icon type='close' />
         </label>
-           <Link className={styles.link} to='/#metrics' onClick={closeNav}>
-          Metrics
+        <Link className={styles.link} to='/#metrics' onClick={closeNav}>
+          {tr('header.metrics')}
         </Link>
         <Link className={styles.link} to='/#use-cases' onClick={closeNav}>
-          Use cases
+          {tr('header.use_cases')}
         </Link>
         <Link className={styles.link} to='/#pricing' onClick={closeNav}>
-          Pricing
+          {tr('header.pricing')}
         </Link>
         <a
           className={styles.link}
           href='mailto:support@santiment.net'
           onClick={closeNav}
         >
-          Support
+          {tr('header.support')}
         </a>
         <AccountBtn isAccountPage={isAccountPage} onClick={closeNav} />
       </nav>

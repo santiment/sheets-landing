@@ -1,6 +1,7 @@
 import React from 'react'
 import Icon from '@santiment-network/ui/Icon'
 import list from './prices'
+import { tr } from '../../utils/translate'
 import styles from './Enterprise.module.scss'
 
 const features = [
@@ -26,11 +27,9 @@ const Enterprise = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.left}>
-        <div className={styles.title}>Custom</div>
-        <div className={styles.description}>
-          For organizations that need advanced data and support
-        </div>
-        <Btn label='Contact sales' />
+        <div className={styles.title}>{tr('plan.custom.title')}</div>
+        <div className={styles.description}>{tr('plan.custom.desc')}</div>
+        <Btn label={tr('cta.contact')} />
       </div>
       <div className={styles.right}>
         {features.map(feature => (

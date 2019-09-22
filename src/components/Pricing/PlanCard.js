@@ -1,15 +1,18 @@
 import React from 'react'
+import { injectIntl } from 'gatsby-plugin-intl'
 import cx from 'classnames'
 import RestrictBtn from './PlanRestrictBtn'
 import Features from './Features'
 import PLANS from './prices'
 import { formatPrice, getAlternativeBillingPlan } from '../../utils/plans'
+import { tr, trStr } from '../../utils/translate'
 import styles from './PlanCard.module.scss'
 
 const toggleCardDetails = ({ currentTarget }) =>
   currentTarget.classList.toggle(styles.card_opened)
 
 const PlanCard = ({
+  intl,
   id,
   name,
   amount,
@@ -22,11 +25,11 @@ const PlanCard = ({
   className,
   onDialogClose,
   classes = {},
-  btnProps
+  btnProps,
 }) => {
   const card = PLANS[name]
   const sameAsUserPlan = id === userPlan
-  const [price, priceType] = formatPrice(amount, name, billing)
+  let [price, priceType] = formatPrice(amount, name, billing)
   const [realPrice] = formatPrice(amount, name)
 
   const { amount: altAmount, interval: altInterval } =
@@ -35,6 +38,12 @@ const PlanCard = ({
   const [altPrice] = formatPrice(altAmount, null, altInterval)
   const isCustom = price === 'Custom'
 
+  if (priceType) {
+    priceType = tr('billing.month.short')
+  }
+
+  const intlId = `plan.${name.toLowerCase()}`
+  const title = trStr(intl, intlId + '.title')
   return (
     <div
       onClick={toggleCardDetails}
@@ -44,18 +53,18 @@ const PlanCard = ({
         classes.wrapper,
         card.isPopular && styles.card_popular,
         sameAsUserPlan && styles.card_active,
-        sameAsUserPlan && classes.wrapper_active
+        sameAsUserPlan && classes.wrapper_active,
       )}
     >
       <div
         className={cx(
           styles.card__top,
 
-          classes.top
+          classes.top,
         )}
       >
         <h3 className={styles.card__title}>
-          {card.title}
+          {title}
           {card.isPopular && (
             <span className={cx(styles.popular, classes.popular)}>Popular</span>
           )}
@@ -83,7 +92,15 @@ const PlanCard = ({
           </div>
         )}
         <div className={styles.discount}>
-          {card.discount || `${altPrice} if billed ${altInterval}ly`}
+          {card.discount ? (
+            tr(card.discount)
+          ) : (
+            <>
+              {tr('price.bill_discount.left')}
+              {altPrice}
+              {tr(`price.bill_discount.${altInterval}`)}
+            </>
+          )}
         </div>
         {!isLoggedIn || sameAsUserPlan || isSubscriptionCanceled ? (
           <RestrictBtn
@@ -92,7 +109,7 @@ const PlanCard = ({
           />
         ) : (
           <card.Component
-            title={card.title}
+            title={title}
             label={card.link}
             price={realPrice}
             billing={billing}
@@ -108,4 +125,4 @@ const PlanCard = ({
   )
 }
 
-export default PlanCard
+export default injectIntl(PlanCard)

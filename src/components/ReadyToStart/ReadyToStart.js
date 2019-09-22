@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import Title from '../Title/Title'
 import Button from '@santiment-network/ui/Button'
+import { tr } from '../../utils/translate'
 import styles from './ReadyToStart.module.scss'
 
 function onGetAccessClick() {
@@ -14,11 +15,11 @@ function onGetAccessClick() {
 export default () => (
   <section className={styles.wrapper}>
     <div className={styles.container}>
-      <Title>Ready to get started?</Title>
+      <Title>{tr('ready.title')}</Title>
       <p className={styles.text}>
-        Click below to access the Santiment API or join the Discord
+        {tr('ready.text.top')}
         <br className={styles.br} />
-         {' '}channel to share your solutions with the world
+        {tr('ready.text.bottom')}
       </p>
       <Button
         as={Link}
@@ -28,7 +29,7 @@ export default () => (
         className={styles.btn}
         onClick={onGetAccessClick}
       >
-        Get access
+        {tr('ready.btn')}
       </Button>
     </div>
   </section>

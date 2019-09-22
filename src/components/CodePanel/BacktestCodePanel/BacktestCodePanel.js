@@ -1,16 +1,18 @@
-import React from "react"
-import cx from "classnames"
-import Input from "@santiment-network/ui/Input"
-import CodePanel from "../CodePanel"
-import financial from "../FloatingPanel/financial.svg"
-import man from "../../../images/ibis.jpg"
-import eth from "../FloatingPanel/eth-circle.svg"
-import btc from "../FloatingPanel/btc.svg"
-import styles from "./BacktestCodePanel.module.scss"
+import React from 'react'
+import { injectIntl } from 'gatsby-plugin-intl'
+import cx from 'classnames'
+import Input from '@santiment-network/ui/Input'
+import CodePanel from '../CodePanel'
+import financial from '../FloatingPanel/financial.svg'
+import man from '../../../images/ibis.jpg'
+import eth from '../FloatingPanel/eth-circle.svg'
+import btc from '../FloatingPanel/btc.svg'
+import { tr, trStr } from '../../../utils/translate'
+import styles from './BacktestCodePanel.module.scss'
 
 const lines = [433, 197, 366, 473, 315, 447, 536, 238]
 
-const BacktestCodePanel = () => (
+const BacktestCodePanel = ({ intl }) => (
   <CodePanel className={styles.code}>
     <img
       src={btc}
@@ -59,16 +61,14 @@ const BacktestCodePanel = () => (
     <div className={cx(styles.tracking, styles.shadow)}>
       <img src={financial} alt='financial' className={styles.financial} />
       <div>
-        <h4 className={styles.tille}>Ethereum price tracking</h4>
-        <p className={styles.desc}>
-          Track the activity of selected address based on the Ethereum
-        </p>
+        <h4 className={styles.tille}>{tr('usecases.backtest.card.title')}</h4>
+        <p className={styles.desc}>{tr('usecases.backtest.card.text')}</p>
       </div>
     </div>
     <div className={cx(styles.status, styles.shadow)}>
       <img src={man} alt='man' className={styles.man} />
       <Input
-        placeholder='Update the status...'
+        placeholder={trStr(intl, 'usecases.backtest.status')}
         disabled
         className={styles.input}
       />
@@ -109,4 +109,4 @@ const BacktestCodePanel = () => (
   </CodePanel>
 )
 
-export default BacktestCodePanel
+export default injectIntl(BacktestCodePanel)
