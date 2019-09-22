@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import { Query } from 'react-apollo'
 import Button from '@santiment-network/ui/Button'
 import { CURRENT_USER_QUERY } from '../../gql/user'

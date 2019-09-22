@@ -23,26 +23,40 @@ export default {
       </Button>
     ),
     features: [
-      "Limited access in Google plugin for sheets",
-      "Timeseries metrics - 2 years of historical data",
-      "Timeseries metrics - up to last 30 days of data",
+      'Limited access in Google plugin for sheets',
+      'Timeseries metrics - 2 years of historical data',
+      'Timeseries metrics - up to last 30 days of data',
     ],
   },
   BASIC: {
-    title: "Basic",
-    desc: "Great for short-term analysis and prototyping",
-    link: "Upgrade now",
+    title: 'Basic',
+    desc: 'Great for short-term analysis and prototyping',
+    link: 'Upgrade now',
     Component: PlanActionDialog,
     features: [
+      'Limited access in Google plugin for sheets',
+      'Timeseries metrics - 2 years of historical data',
+      'Timeseries metrics - up to last 7 days of data',
     ],
   },
   PRO: {
-    title: "Pro",
-    // isPopular: true,
-    desc: "Advanced metrics & serious backtesting potential",
     Component: PlanActionDialog,
-    link: "Upgrade now",
+    link: 'Upgrade now',
     features: [
+      'Full access in Google plugin for sheets',
+      'Timeseries metrics - 3 years of historical data',
+      'Timeseries metrics - including present-day data',
+      <span>
+        Bonus: Full access{' '}
+        <a
+          className={styles.featureLink}
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://app.santiment.net/'
+        >
+          Sanbase app
+        </a>
+      </span>,
     ],
   },
   ENTERPRISE: {
@@ -56,9 +70,9 @@ export default {
       />
     ),
     features: [
-      "Timeseries metrics - 3 years of historical data",
-      "Timeseries metrics - including present-day data",
-      "Full access in Google plugin for sheets",
+      'Timeseries metrics - 3 years of historical data',
+      'Timeseries metrics - including present-day data',
+      'Full access in Google plugin for sheets',
     ],
   },
 }

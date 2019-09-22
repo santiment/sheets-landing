@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import cx from 'classnames'
 import planetSvg from '../../images/planet.svg'
 import { tr } from '../../utils/translate'
