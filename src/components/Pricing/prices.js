@@ -24,11 +24,11 @@ export default {
       </Button>
     ),
     features: [
-      'Data access to last 3 month',
-      'Minus last 24 hours',
-      <>
-        Standard metrics <span className={styles.ast}>*</span>
-      </>,
+      'Limited access in Google plugin for sheets',
+      'Access to basic signals',
+      'Up to 10 active signals at a time',
+      'Sanbase metrics - 2 years of historical data',
+      'Sanbase metrics - up to last 30 days of data'
     ],
   },
   BASIC: {
@@ -37,29 +37,31 @@ export default {
     link: 'Upgrade now',
     Component: PlanActionDialog,
     features: [
-      'Data access to last 6 months',
-      'Real time',
-      <>
-        Standard metrics <span className={styles.ast}>*</span>
-      </>
+      'Limited access in Google plugin for sheets',
+      'Access to all signal types',
+      'Up to 10 active signals at a time',
+      'Sanbase metrics - 2 years of historical data',
+      'Sanbase metrics - up to last 7 days of data',
+      'Exclusive market reports'
     ],
   },
   PRO: {
     title: 'Pro',
-    isPopular: true,
+    // isPopular: true,
     desc: 'Advanced metrics & serious backtesting potential',
     Component: PlanActionDialog,
     link: 'Upgrade now',
     features: [
-      'Data access to last 12 months',
-      'Real time',
-      <>
-        Advanced metrics <span className={styles.ast}>*</span>
-      </>
+      'Full access in Google plugin for sheets',
+      'Access to all signal types',
+      'Unlimited active signals',
+      'Sanbase metrics - 3 years of historical data',
+      'Sanbase metrics - including present-day data',
+      'Exclusive market reports'
     ],
   },
   ENTERPRISE: {
-    title: 'Corporate',
+    title: 'Custom',
     desc: 'For organizations that need advanced data and support',
     discount: 'Based on your needs',
     link: 'Contact us',
@@ -71,9 +73,12 @@ export default {
       />
     ),
     features: [
-      'Unlimited historical data access',
-      `Custom time series`,
-      'Early access to new metrics',
+      'Full access in Google plugin for sheets',
+      'Access to all signal types',
+      'Unlimited active signals',
+      'Sanbase metrics - 3 years of historical data',
+      'Sanbase metrics - including present-day data',
+      'Exclusive market reports'
     ],
   },
 }

@@ -17,6 +17,7 @@ import {
   getCurrentSheetsSubscription,
   formatPrice,
   getAlternativeBillingPlan,
+  noBasicPlan
 } from "../../utils/plans"
 import styles from "./index.module.scss"
 
@@ -35,12 +36,9 @@ const billingOptions = [
   { index: "month", content: "Bill monthly" },
 ]
 
-export default ({ classes = {}, onDialogClose }) => {
-  const [billing, setBilling] = React.useState("year")
-  return (
-    <>
-      <div className={styles.sanTokens}>
-        <Tooltip
+const DiscountTooltip = () => (
+  <div className={styles.sanTokens}>
+<Tooltip
           trigger={
             <div className={styles.tooltipTrigger}>
               <span>
@@ -103,7 +101,14 @@ export default ({ classes = {}, onDialogClose }) => {
             </p>
           </Panel>
         </Tooltip>
-      </div>
+        </div>
+)
+
+export default ({ classes = {}, onDialogClose }) => {
+  const [billing, setBilling] = React.useState("year")
+  return (
+    <>
+      {/* <DiscountTooltip /> */}
       <div className={cx(styles.billing, classes.billing)}>
         <RadioBtns
           options={billingOptions}
@@ -131,6 +136,7 @@ export default ({ classes = {}, onDialogClose }) => {
                   <>
                     <div className={styles.cards}>
                       {sheets.plans
+                        .filter(noBasicPlan)
                         .filter(
                           ({ name, interval }) =>
                             interval === billing || name === "FREE"
@@ -234,14 +240,6 @@ export default ({ classes = {}, onDialogClose }) => {
                           )
                         })}
                     </div>
-                    <PricingDetailsToggle
-                      isLoggedIn={currentUser}
-                      plans={sheets.plans}
-                      userPlan={userPlan}
-                      billing={billing}
-                      subscription={subscription}
-                      onDialogClose={onDialogClose}
-                    />
                   </>
                 )
               }}

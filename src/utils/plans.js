@@ -10,8 +10,10 @@ export const formatPrice = (price, name, billing) => {
   return [`$${parseInt(price / devider, 10)}`, '/mo']
 }
 
-export const sheetsProductId = "3"
+export const sheetsProductId = "2" // NOTE(haritonasty): the same as on Sanbase
 export const findSheetsPlan = ({ id }) => id === sheetsProductId
+
+export const noBasicPlan = ({ name }) => name !== 'BASIC'
 
 export const getCurrentSheetsSubscription = user => {
   if (!user) return

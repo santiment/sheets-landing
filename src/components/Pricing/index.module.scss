@@ -124,6 +124,10 @@
   line-height: 20px;
   color: var(--waterloo);
   margin-right: -5px;
+
+  @include responsive('laptop', 'desktop') {
+    max-width: 280px;
+  }
 }
 
 .price {
