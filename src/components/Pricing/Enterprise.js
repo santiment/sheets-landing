@@ -8,7 +8,8 @@ const features = [
   'Unlimited active signals',
   'Sanbase metrics - 3 years of historical data',
   'Sanbase metrics - including present-day data',
-  'Exclusive market reports'
+  'Exclusive market reports',
+  'Full access in Google plugin for sheets'
 ]
 
 const { Component: Btn } = list.ENTERPRISE

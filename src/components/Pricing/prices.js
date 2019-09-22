@@ -24,11 +24,11 @@ export default {
       </Button>
     ),
     features: [
-      'Limited access in Google plugin for sheets',
       'Access to basic signals',
       'Up to 10 active signals at a time',
       'Sanbase metrics - 2 years of historical data',
-      'Sanbase metrics - up to last 30 days of data'
+      'Sanbase metrics - up to last 30 days of data',
+      'Limited access in Google plugin for sheets',
     ],
   },
   BASIC: {
@@ -37,12 +37,12 @@ export default {
     link: 'Upgrade now',
     Component: PlanActionDialog,
     features: [
-      'Limited access in Google plugin for sheets',
       'Access to all signal types',
       'Up to 10 active signals at a time',
       'Sanbase metrics - 2 years of historical data',
       'Sanbase metrics - up to last 7 days of data',
-      'Exclusive market reports'
+      'Exclusive market reports',
+      'Limited access in Google plugin for sheets'
     ],
   },
   PRO: {
@@ -52,12 +52,12 @@ export default {
     Component: PlanActionDialog,
     link: 'Upgrade now',
     features: [
-      'Full access in Google plugin for sheets',
       'Access to all signal types',
       'Unlimited active signals',
       'Sanbase metrics - 3 years of historical data',
       'Sanbase metrics - including present-day data',
-      'Exclusive market reports'
+      'Exclusive market reports',
+      'Full access in Google plugin for sheets'
     ],
   },
   ENTERPRISE: {
