@@ -204,20 +204,74 @@
   }
 }
 
+
 .billing {
   display: flex;
   justify-content: center;
-  padding: 25px 0 40px;
-  --green: var(--sheets);
+  margin-bottom: 80px;
+  margin-top: 32px;
+
+  @include responsive('phone-xs') {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__toggle path {
+    display: none;
+  }
+
+  &__option {
+    @include text('body-2');
+
+    color: var(--waterloo);
+    margin: 0 32px;
+    cursor: pointer;
+
+    @include responsive('phone-xs') {
+      margin: 8px 0;
+    }
+
+    &_active {
+      color: var(--mirage);
+      font-weight: 900;
+    }
+
+    &_year {
+      position: relative;
+    }
+  }
+
+  &__save {
+    position: absolute;
+
+    @include text('body-3', 'm');
+
+    color: var(--jungle-green);
+    top: calc(100% + 13px);
+    left: calc(100% + 12px);
+    white-space: nowrap;
+
+    &::before {
+      content: '';
+      position: absolute;
+      background: url('./arrow.svg') no-repeat;
+      width: 27px;
+      height: 18px;
+      left: -27px;
+      top: -7px;
+    }
+  }
 }
 
 .bill {
   margin-right: 30px;
+  cursor: pointer;
 
   &:last-child {
     margin: 0;
   }
 }
+
 
 .sanTokens {
   cursor: pointer;
