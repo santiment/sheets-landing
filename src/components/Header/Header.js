@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import Icon from '@santiment-network/ui/Icon'
 import styles from './Header.module.scss'
 import AccountBtn from '../AccountBtn/AccountBtn'

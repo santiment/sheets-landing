@@ -1,8 +1,10 @@
 import React from 'react'
+import { injectIntl } from 'gatsby-plugin-intl'
 import cx from 'classnames'
 import Input from '@santiment-network/ui/Input'
 import { CardElement } from 'react-stripe-elements'
 import vars from '@santiment-network/ui/variables.scss'
+import { trStr } from '../../utils/translate'
 import styles from './CheckoutForm.module.scss'
 
 const style = {
@@ -19,26 +21,32 @@ const style = {
   },
 }
 
-const CheckoutForm = ({ stripe, plan }) => {
+const CheckoutForm = ({ intl, stripe, plan }) => {
   return (
     <>
       <label className={cx(styles.label, styles.label_card)}>
-        Card details
+        {trStr(intl, 'payment.card_details')}
         <CardElement style={style} />
       </label>
 
-      <label className={styles.label}>Billing address</label>
+      <label className={styles.label}>
+        {trStr(intl, 'payment.bill_address')}
+      </label>
       <Input
         className={styles.input}
-        placeholder='Full Name'
+        placeholder={trStr(intl, 'payment.full_name')}
         required
         name='name'
       />
       <div className={styles.row}>
-        <Input className={styles.input} placeholder='Country' required />
+        <Input
+          className={styles.input}
+          placeholder={trStr(intl, 'payment.country')}
+          required
+        />
         <Input
           className={cx(styles.input, styles.input_right)}
-          placeholder='City'
+          placeholder={trStr(intl, 'payment.city')}
           required
           name='address_city'
         />
@@ -46,20 +54,20 @@ const CheckoutForm = ({ stripe, plan }) => {
       <div className={styles.row}>
         <Input
           className={styles.input}
-          placeholder='State/Region'
+          placeholder={trStr(intl, 'payment.state')}
           required
           name='address_state'
         />
         <Input
           className={cx(styles.input, styles.input_right)}
-          placeholder='Street Address'
+          placeholder={trStr(intl, 'payment.street')}
           required
           name='address_line1'
         />
       </div>
       <Input
         className={styles.input}
-        placeholder='Phone Number'
+        placeholder={trStr(intl, 'payment.phone')}
         type='tel'
         required
       />
@@ -67,4 +75,4 @@ const CheckoutForm = ({ stripe, plan }) => {
   )
 }
 
-export default CheckoutForm
+export default injectIntl(CheckoutForm)
