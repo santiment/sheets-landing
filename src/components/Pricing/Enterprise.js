@@ -4,12 +4,20 @@ import list from './prices'
 import styles from './Enterprise.module.scss'
 
 const features = [
-  'Access to all signal types',
-  'Unlimited active signals',
-  'Sanbase metrics - 3 years of historical data',
-  'Sanbase metrics - including present-day data',
-  'Exclusive market reports',
-  'Full access in Google plugin for sheets'
+  'Timeseries metrics - 3 years of historical data',
+  'Full access in Google plugin for sheets',
+  'Timeseries metrics- including present-day data',
+  <span>
+        Bonus: Full access{' '}
+        <a
+          className={styles.featureLink}
+          target='_blank'
+          rel='noopener noreferrer'
+          href='https://app.santiment.net/'
+        >
+          Sanbase app
+        </a>
+  </span>,
 ]
 
 const { Component: Btn } = list.ENTERPRISE
