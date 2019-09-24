@@ -30,7 +30,6 @@ const PlanCard = ({
   const card = PLANS[name]
   const sameAsUserPlan = id === userPlan
   let [price, priceType] = formatPrice(amount, name, billing)
-  const [realPrice] = formatPrice(amount, name)
 
   const { amount: altAmount, interval: altInterval } =
     getAlternativeBillingPlan(product.plans, name, billing) || {}
@@ -111,7 +110,7 @@ const PlanCard = ({
           <card.Component
             title={title}
             label={card.link}
-            price={realPrice}
+            price={amount}
             billing={billing}
             planId={+id}
             subscription={subscription}
