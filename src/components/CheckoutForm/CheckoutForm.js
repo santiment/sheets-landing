@@ -66,7 +66,7 @@ const CheckoutForm = ({ intl, stripe, plan }) => {
         </label>
 
         <label className={cx(styles.label, styles.label_card)}>
-          {tr('payment.card_details')}
+          Card number
           <CardElement style={style} />
         </label>
 
