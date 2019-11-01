@@ -75,6 +75,10 @@
   width: 100%;
   justify-content: center;
   margin: 14px 0 16px;
+
+  & span {
+    padding: 0 4px;
+  }
 }
 
 .expl {

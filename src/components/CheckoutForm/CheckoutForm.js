@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import { injectIntl } from 'gatsby-plugin-intl'
 import cx from 'classnames'
 import Input from '@santiment-network/ui/Input'
-import Icon from '@santiment-network/ui/Icon'
+// import Icon from '@santiment-network/ui/Icon'
 import { CardElement } from 'react-stripe-elements'
 import vars from '@santiment-network/ui/variables.scss'
-import { tr } from '../../utils/translate'
+import { tr, trStr } from '../../utils/translate'
 import visaSrc from './visa.png'
 import mastercardSrc from './mastercard.png'
 import styles from './CheckoutForm.module.scss'
@@ -27,7 +27,7 @@ const style = {
 const DiscountInput = () => {
   return (
     <label className={cx(styles.label, styles.label_card)}>
-      Discount code
+      {tr('billing.discount_code', 'Discount code')}
       <Input className={styles.input} placeholder='2H8vZG5P' name='coupon' />
     </label>
   )
@@ -59,14 +59,14 @@ const CheckoutForm = ({ intl, stripe, plan }) => {
           {tr('payment.full_name')}
           <Input
             className={styles.input}
-            placeholder='John Doe'
+            placeholder={trStr(intl, 'billing.username')}
             required
             name='name'
           />
         </label>
 
         <label className={cx(styles.label, styles.label_card)}>
-          Card number
+          {tr('billing.card_number', 'Card number')}
           <CardElement style={style} />
         </label>
 
@@ -82,10 +82,11 @@ const CheckoutForm = ({ intl, stripe, plan }) => {
       </div>
 
       <div className={styles.toggle} onClick={onToggleClick}>
-        <Icon type={visible ? 'subtract-round' : 'plus-round-small'} /> Add{' '}
+        {/* <Icon type={visible ? 'subtract-round' : 'plus-round-small'} /> */}
         {tr('payment.bill_address')}
       </div>
-      {visible && (
+      {/* {visible && ( */}
+      {true && (
         <div className={styles.form}>
           <label className={cx(styles.label, styles.label_card)}>
             {tr('payment.street')}
@@ -93,6 +94,7 @@ const CheckoutForm = ({ intl, stripe, plan }) => {
               className={styles.input}
               placeholder='670 Glen Creek St.'
               name='address_line1'
+              required
             />
           </label>
           <label className={cx(styles.label, styles.label_card)}>
@@ -101,6 +103,7 @@ const CheckoutForm = ({ intl, stripe, plan }) => {
               className={styles.input}
               placeholder='Seattle'
               name='address_city'
+              required
             />
           </label>
           <label className={cx(styles.label, styles.label_card)}>
@@ -109,6 +112,7 @@ const CheckoutForm = ({ intl, stripe, plan }) => {
               className={styles.input}
               placeholder='Washington'
               name='address_state'
+              required
             />
           </label>
         </div>

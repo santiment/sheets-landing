@@ -120,7 +120,7 @@ const PaymentDialog = ({
             {(subscribe, { called, error, data }) => {
               return (
                 <Dialog
-                  title='Payment details'
+                  title={tr('billing.payment_details', 'Payment details')}
                   classes={styles}
                   open={paymentVisible}
                   onClose={hidePayment}
@@ -191,7 +191,7 @@ const PaymentDialog = ({
                     <div className={styles.plan}>
                       <div className={styles.plan__left}>
                         <Icon type='checkmark' className={styles.plan__check} />
-                        {title} {billing}ly
+                        {title} {billing === 'year' ? trStr(intl, 'price.yearly') : trStr(intl, 'price.monthly')}
                       </div>
                       <div className={styles.plan__right}>
                         <div>
@@ -214,22 +214,21 @@ const PaymentDialog = ({
                       type='submit'
                       className={styles.btn}
                     >
-                      Go {title.toUpperCase()} now
+                      {tr('plan.title.left', `Go `)}  { title.toUpperCase() }  {tr('plan.title.right', ` now`)}
                     </Dialog.Approve>
                     <h5 className={styles.expl}>
-                      Your card will be charged
+                      {tr('billing.card_below_info_left', "Your card will be charged")}
                       <b> {billing === 'year' ? yearPrice : monthPrice} </b>
-                      every {billing} until you decide to downgrade or
-                      unsubscribe. Next billing date will be
-                      <b> {getNextPaymentDates(billing)}</b>
+                      {tr('billing.every', "every")} {billing === 'year' ? trStr(intl,'billing.year') : trStr(intl,'billing.month')} {tr('billing.card_below_info_middle', " until you decide to downgrade or unsubscribe. Next billing date will be")}
+                      <b> {getNextPaymentDates(billing)}</b> {tr('billing.card_below_info_right', " ")}
                     </h5>
                   </Dialog.ScrollContent>
                   <div className={styles.bottom}>
                     <div className={styles.bottom__info}>
-                      <IconLock /> Fully secured checkout
+                      <IconLock /> {tr('billing.fully_secured', "Fully secured checkout")}
                     </div>
                     <div className={styles.bottom__info}>
-                      <IconDollar /> 30 day money back guarantee
+                      <IconDollar /> {tr('billing.money_back', "30 day money back guarantee")}
                     </div>
                   </div>
                 </Dialog>
