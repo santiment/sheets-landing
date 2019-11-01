@@ -157,6 +157,12 @@
   "footer.company.jobs": "求人情報",
   "footer.company.contact": "お問いあわせ先",
 
+  "footer.company.about.link": "https://santiment.net/jp/about-santiment/",
+  "footer.company.customers.link": "https://santiment.net/jp/customers/",
+  "footer.company.team.link": "https://santiment.net/jp/about-santiment/team/",
+  "footer.company.jobs.link": "https://santiment.net/jp/about-santiment/jobs/",
+  "footer.company.contact.link": "https://santiment.net/jp/about-santiment/contact/",
+
   "footer.resources": "リソース",
   "footer.resources.start": "スタート",
   "footer.resources.docs": "ドキュメント",

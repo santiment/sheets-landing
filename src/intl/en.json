@@ -157,6 +157,12 @@
   "footer.company.jobs": "Jobs",
   "footer.company.contact": "Contact us",
 
+  "footer.company.about.link": "https://santiment.net/about-santiment/",
+  "footer.company.customers.link": "https://santiment.net/customers/",
+  "footer.company.team.link": "https://santiment.net/about-santiment/team/",
+  "footer.company.jobs.link": "https://santiment.net/about-santiment/jobs/",
+  "footer.company.contact.link": "https://santiment.net/about-santiment/contact/",
+
   "footer.resources": "Resources",
   "footer.resources.start": "Getting started",
   "footer.resources.docs": "Docs",
