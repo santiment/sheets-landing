@@ -5,6 +5,7 @@ import Toggle from '@santiment-network/ui/Toggle'
 import { CURRENT_USER_QUERY } from '../../gql/user'
 import { PLANS_QUERY } from '../../gql/plans'
 import Enterprise from './Enterprise'
+import TokensTooltip from './TokensTooltip'
 import Plan from './Plan'
 import {
   findSheetsPlan,
@@ -56,6 +57,7 @@ export default ({ classes = {}, onDialogClose }) => {
       <div className={cx(styles.billing, classes.billing)}>
         <Billing selected={billing} onClick={setBilling} />
       </div>
+      <TokensTooltip />
       <Query query={CURRENT_USER_QUERY}>
         {({ data: { currentUser } }) => {
           const subscription = getCurrentSheetsSubscription(currentUser)

@@ -73,7 +73,7 @@
 .billing {
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 55px;
   margin-top: 32px;
 
   @include responsive('phone-xs') {

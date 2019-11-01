@@ -1,8 +1,9 @@
 import React from 'react'
+import { injectIntl } from 'gatsby-plugin-intl'
 import { Link } from 'gatsby'
 import cx from 'classnames'
 import planetSvg from '../../images/planet.svg'
-import { tr } from '../../utils/translate'
+import { tr, trStr } from '../../utils/translate'
 import styles from './Footer.module.scss'
 
 const langProps = [
@@ -89,7 +90,7 @@ const categories = [
   },
 ]
 
-const Footer = () => {
+const Footer = ({intl}) => {
   const { link, label } = langProps[+isJapanese()]
   return (
     <footer className={styles.footer}>
@@ -106,7 +107,7 @@ const Footer = () => {
                   target='_blank'
                   rel='noopener noreferrer'
                   children={tr(`footer.${title}.${children}`)}
-                  href={href}
+                  href={title === 'company' ? trStr(intl, `footer.${title}.${children}.link`) : href}
                   className={cx(styles.text, styles.category__item)}
                 />
               ))}
@@ -145,4 +146,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default injectIntl(Footer)

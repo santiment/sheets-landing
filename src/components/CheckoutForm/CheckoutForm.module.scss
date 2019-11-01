@@ -31,7 +31,7 @@
   color: var(--waterloo);
   fill: var(--waterloo);
   margin: 0 0 15px;
-  cursor: pointer;
+  // cursor: pointer;
   user-select: none;
 
   svg {
@@ -40,10 +40,10 @@
     margin: 0 5px -1px 0;
   }
 
-  &:hover {
-    color: var(--jungle-green);
-    fill: var(--jungle-green);
-  }
+  // &:hover {
+  //   color: var(--jungle-green);
+  //   fill: var(--jungle-green);
+  // }
 }
 
 .row {
