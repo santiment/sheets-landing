@@ -23,6 +23,7 @@
 
   &:hover {
     color: var(--jungle-green-hover);
+    fill: var(--jungle-green-hover);
   }
 }
 
@@ -32,6 +33,7 @@
 
 .title {
   color: var(--waterloo);
+  margin-right: 10px;
 
   @include text('body-3');
 }
