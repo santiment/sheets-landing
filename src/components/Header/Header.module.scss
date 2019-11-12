@@ -113,7 +113,7 @@
 .dividerRight {
   height: 32px;
   border-left: 1px solid var(--porcelain);
-  margin: 0 24px;
+  margin: 0 12px 0 24px;
 
   @include responsive('phone', 'phone-xs') {
     display: none;
