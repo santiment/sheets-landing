@@ -34,6 +34,8 @@
 .title {
   color: var(--waterloo);
   margin-right: 10px;
+  display: flex;
+  align-items: center;
 
   @include text('body-3');
 }
@@ -56,7 +58,7 @@
   }
 
   @include responsive('phone', 'phone-xs') {
-    width: 250px;
+    width: 300px;
   }
 }
 
