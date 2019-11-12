@@ -1,10 +1,15 @@
 @import '~@santiment-network/ui/mixins.scss';
 @import '~@santiment-network/ui/variables.scss';
+
 .header {
+  background: var(--white);
+}
+
+.container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  height: 70px;
   user-select: none;
   max-width: 1140px;
   margin: 0 auto;
@@ -19,6 +24,11 @@
   }
 }
 
+.left {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -30,25 +40,6 @@
   &__icon {
     width: 40px;
     height: 40px;
-  }
-
-  &__text {
-    display: flex;
-    flex-direction: column;
-    margin-left: 10px;
-  }
-
-  &__title {
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 0.8;
-    margin-bottom: 3px;
-  }
-
-  &__desc {
-    color: var(--waterloo);
-    font-size: 13px;
-    line-height: 1;
   }
 }
 
@@ -70,6 +61,9 @@
 }
 
 .nav {
+  display: flex;
+  align-items: center;
+
   @include responsive('phone', 'phone-xs') {
     display: none;
     position: fixed;
@@ -90,13 +84,61 @@
 }
 
 .link {
-  font-size: 14px;
   color: var(--waterloo);
-  margin-right: 35px;
+  margin-right: 32px;
+
+  @include text('body-2');
 
   @include responsive('phone', 'phone-xs') {
     margin-right: 0;
     margin-bottom: 20px;
     color: var(--athens);
+  }
+}
+
+.linkLast {
+  margin-right: 6px;
+}
+
+.dividerLeft {
+  height: 40px;
+  border-left: 1px solid var(--porcelain);
+  margin-left: 12px;
+
+  @include responsive('phone', 'phone-xs') {
+    display: none;
+  }
+}
+
+.dividerRight {
+  height: 32px;
+  border-left: 1px solid var(--porcelain);
+  margin: 0 24px;
+
+  @include responsive('phone', 'phone-xs') {
+    display: none;
+  }
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  cursor: pointer;
+}
+
+.productName {
+  margin: 0 8px;
+  @include text('body-2', 'm');
+
+  color: $rhino;
+}
+
+.headerIcon {
+  fill: var(--waterloo);
+
+  &:hover {
+    fill: var(--dodger-blue);
   }
 }
