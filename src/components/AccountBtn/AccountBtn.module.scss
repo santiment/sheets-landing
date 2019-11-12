@@ -10,3 +10,11 @@
     fill: var(--sheets);
   }
 }
+
+.profileIcon {
+  fill: var(--waterloo);
+
+  &:hover{
+    fill: var(--jungle-green-hover)
+  }
+}
