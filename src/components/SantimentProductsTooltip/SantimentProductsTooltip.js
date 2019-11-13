@@ -28,42 +28,32 @@ const PRODUCTS = [
     to: 'https://neuro.santiment.net'
   }
 ]
-
 const ProductItem = ({ product: { to, img, title, description } }) => {
-  const [showLink, setShowLink] = useState(false)
-
   return (
-    <a
-      href={to}
-      className={styles.product}
-      onMouseEnter={() => setShowLink(true)}
-      onMouseLeave={() => {
-        setShowLink(false)
-      }}
-    >
-      <img className={styles.productImg} src={img} alt={title} />
-      <div className={styles.productInfo}>
-        <div className={styles.productTitle}>{title}</div>
-        <div className={styles.productDescription}> {tr(description)}</div>
-        {showLink && (
+    <a className={styles.wrapper} href={to}>
+      <div className={cx(styles.product, styles.wrapper__product)}>
+        <img className={styles.product__img} src={img} alt={title} />
+        <div className={styles.product__info}>
+          <div className={styles.product__title}>{title}</div>
+          <div className={styles.product__description}>{tr(description)}</div>
+
           <MakeLink
-            className={styles.productLink}
+            className={cx(styles.wrapper__link)}
             to={to}
-            as='div'
+            as={'div'}
             title={'Go to ' + title}
           />
-        )}
+        </div>
       </div>
     </a>
   )
 }
 
-const MakeLink = ({ to, title, className, as = 'a' }) => {
-  const El = as
-  return <El href={to} className={cx(styles.link, className)} >
+const MakeLink = ({ to, title, className, as: El = 'a' }) => (
+  <El href={to} className={cx(styles.link, className)}>
     {title} <Icon className={styles.linkArrow} type='pointer-right' />
   </El>
-}
+)
 
 const OpenTrigger = () => <Icon type='arrow-down' />
 const CloseTrigger = () => <Icon type='arrow-up' />
@@ -73,14 +63,18 @@ const SantimentProductsTooltip = ({ className, children }) => {
 
   return (
     <Tooltip
+      passOpenStateAs='isActive'
       closeTimeout={150}
       position='bottom'
       align='start'
       offsetY={20}
+      className={styles.tooltip}
       trigger={
-        <div className={styles.trigger} >
+        <div className={cx(className, styles.trigger)}>
           {children}
-          <div className={cx(className, styles.arrow, isOpen && styles.opened)}>{isOpen ? <CloseTrigger /> : <OpenTrigger />}</div>
+          <div className={cx(styles.arrow, isOpen && styles.opened)}>
+            {isOpen ? <CloseTrigger /> : <OpenTrigger />}
+          </div>
         </div>
       }
       onOpen={() => {

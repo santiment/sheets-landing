@@ -103,7 +103,7 @@
 .dividerLeft {
   height: 40px;
   border-left: 1px solid var(--porcelain);
-  margin-left: 12px;
+  margin: 0 12px;
 
   @include responsive('phone', 'phone-xs') {
     display: none;
