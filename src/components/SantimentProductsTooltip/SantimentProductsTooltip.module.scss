@@ -37,18 +37,25 @@
 
 .title {
   color: var(--waterloo);
+  margin-right: 10px;
 
   @include text('body-3');
 }
 
 .products {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .wrapper {
   width: 363px;
   min-height: 146px;
   padding: 24px 12px 9px 12px;
+
+  @include responsive('phone', 'phone-xs') {
+    width: initial;
+    max-width: 363px;
+  }
 
   &:hover {
     background: var(--athens);
