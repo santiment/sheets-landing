@@ -44,7 +44,7 @@ export default {
     link: 'Upgrade now',
     features: [
       'Full access in Google plugin for sheets',
-      'Timeseries metrics - 3 years of historical data',
+      'Timeseries metrics - 5 years of historical data',
       'Timeseries metrics - including present-day data',
       <span>
         Bonus: Full access{' '}
