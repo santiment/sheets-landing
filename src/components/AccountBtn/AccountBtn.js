@@ -19,7 +19,7 @@ const btnProps = {
         text: 'Sign up',
       }),
   },
-  true: { className: styles.account, children: <Icon type='profile' /> },
+  true: { className: styles.account, children: <Icon type='profile' className={styles.profileIcon} /> },
 }
 
 const AccountBtn = ({ isAccountPage }) => {
