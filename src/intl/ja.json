@@ -190,6 +190,7 @@
   "cta.default_plan": "基本プラン",
   "cta.change_plan": "このプランへの変更",
   "cta.contact": "お問い合わせ先",
+  "cta.contact_info": "連絡先",
 
   "plan.custom.price": "カスタム",
   "billing.month": "月",

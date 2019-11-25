@@ -190,6 +190,7 @@
   "cta.default_plan": "Default plan",
   "cta.change_plan": "Change to this plan",
   "cta.contact": "Your current plan",
+  "cta.contact_info": "Contact Information",
 
   "plan.custom.price": "Custom",
   "billing.month": "month",

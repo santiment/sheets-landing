@@ -3,6 +3,7 @@ import Button from '@santiment-network/ui/Button'
 import PaymentDialog from '../PaymentDialog/PaymentDialog'
 import ChangePlanDialog from '../ChangePlanDialog/ChangePlanDialog'
 import PipedriveDialogBtn from '../Pipedrive/Pipedrive'
+import { isJapanese } from "../Footer/Footer"
 import { tr } from '../../utils/translate'
 import styles from './index.module.scss'
 
@@ -12,6 +13,9 @@ const PlanActionDialog = props =>
   ) : (
     <PaymentDialog {...props} />
   )
+
+const EN_FORM_LINK = 'https://pipedrivewebforms.com/form/90507f6b3cfe0f8218895f8e0384945b4144829'
+const JP_FORM_LINK = 'https://pipedrivewebforms.com/form/ac4b6fd0208f80e916822b0b5ac7ebca4144829'
 
 export default {
   FREE: {
@@ -62,13 +66,16 @@ export default {
   ENTERPRISE: {
     discount: 'price.bill_discount.custom',
     link: 'cta.contact',
-    Component: props => (
-      <PipedriveDialogBtn
+    Component: props => {
+      const isJp = isJapanese()
+
+      return <PipedriveDialogBtn
         {...props}
         title='Enterprise plan Pipedrive form'
-        src='https://pipedrivewebforms.com/form/0527db4d781f7c4c0760b7bc7a58549c4144829'
+        src={isJp ? JP_FORM_LINK : EN_FORM_LINK }
       />
-    ),
+    }
+    ,
     features: [
       'Timeseries metrics - 3 years of historical data',
       'Timeseries metrics - including present-day data',

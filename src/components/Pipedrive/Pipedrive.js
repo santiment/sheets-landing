@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Button from '@santiment-network/ui/Button'
 import Dialog from '@santiment-network/ui/Dialog'
 import cx from 'classnames'
+import { tr } from '../../utils/translate'
 import Loader from '../Loader/Loader'
 import styles from './Pipedrive.module.scss'
 
@@ -21,7 +22,7 @@ const PipedriveBtn = ({ title, label, src }) => {
 
   return (
     <Dialog
-      title='Contact Information'
+      title={tr('cta.contact_info')}
       classes={{ dialog: styles.dialog }}
       trigger={
         <Button className={styles.link} fluid border accent='sheets'>
