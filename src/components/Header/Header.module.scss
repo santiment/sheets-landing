@@ -116,6 +116,10 @@
   }
 }
 
+.products {
+  display: flex;
+}
+
 .product {
   display: flex;
   align-items: center;
@@ -124,7 +128,7 @@
 }
 
 .productName {
-  margin: 0 4px 0 8px;
+  margin: 0 3px 0 8px;
   @include text('body-2', 'm');
 
   color: $rhino;
