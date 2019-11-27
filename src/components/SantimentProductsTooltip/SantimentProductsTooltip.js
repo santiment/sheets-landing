@@ -67,7 +67,7 @@ const SantimentProductsTooltip = ({ className, children }) => {
       closeTimeout={150}
       position='bottom'
       align='start'
-      offsetY={20}
+      offsetY={7}
       className={styles.tooltip}
       trigger={
         <div className={cx(className, styles.trigger)}>
