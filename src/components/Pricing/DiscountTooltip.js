@@ -33,7 +33,7 @@ const DiscountTooltip = () => (
             )
           </li>
           <li className={styles.item}>
-            - Log in to SANbase (
+            - Log in to Sanbase (
             <a
               rel='noopener noreferrer'
               target='_blank'
@@ -41,11 +41,11 @@ const DiscountTooltip = () => (
             >
               https://app.santiment.net/
             </a>
-            ). If you don’t have a SANbase account, you can create one with
+            ). If you don’t have a Sanbase account, you can create one with
             email or MetaMask{" "}
           </li>
           <li className={styles.item}>
-            - After logging in to SANbase, head to{" "}
+            - After logging in to Sanbase, head to{" "}
             <a
               rel='noopener noreferrer'
               target='_blank'
@@ -59,7 +59,7 @@ const DiscountTooltip = () => (
             - Refresh this page and proceed with your purchase
           </li>
           <li className={styles.item}>
-            - Our system checks your SANbase account for 1000+ SAN during the
+            - Our system checks your Sanbase account for 1000+ SAN during the
             checkout, and automatically applies a 20% discount
           </li>
         </ul>

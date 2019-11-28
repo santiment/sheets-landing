@@ -53,7 +53,7 @@ const SettingsBilling = () => {
                   Billing history
                   <br />
                   <Label accent='waterloo'>
-                    History for all payments made on your SANbase account
+                    History for all payments made on your Sanbase account
                   </Label>
                 </div>
                 <BillingTable payments={data.payments} />
