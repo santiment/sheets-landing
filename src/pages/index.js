@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby-plugin-intl'
 import Icon from '@santiment-network/ui/Icon'
 import Button from '@santiment-network/ui/Button'
 import Layout from '../components/layout'
@@ -16,9 +15,9 @@ import { tr } from '../utils/translate'
 import styles from './index.module.scss'
 
 function onGetAccessClick() {
-  window.gtag('event', 'login_action_call', {
+  window.gtag('event', 'open-sheets-docs', {
     location: 'Main section',
-    text: 'Get access',
+    text: 'Get started',
   })
 }
 
@@ -34,8 +33,8 @@ const IndexPage = () => (
         <h1 className={styles.title}>{tr('main.title')}</h1>
         <h2 className={styles.desc}>{tr('main.desc')}</h2>
         <Button
-          as={Link}
-          to='/account'
+          as={'a'}
+          href='https://academy.santiment.net/sansheets/getting-started/setting-up'
           className={styles.access}
           variant='fill'
           accent='sheets'
