@@ -5,28 +5,29 @@ import { CURRENT_USER_QUERY } from '../gql/user'
 const updateIntercom = () => {
   if (typeof window !== 'undefined') {
     window.Intercom('update')
-  }
 
-  // Wait for the iframe to become ready (max 30 seconds)
-  const timeout = setTimeout(() => clearInterval(interval), 30000)
-  const interval = setInterval(() => {
-    const iframe = document.querySelector('.intercom-launcher-frame')
 
-    if (iframe) {
-      const intercomLauncher = iframe.contentDocument.querySelector(
-        '#intercom-container .intercom-launcher'
-      )
-      intercomLauncher.setAttribute(
-        'style',
-        'background: var(--sheets) !important;'
-      )
+    // Wait for the iframe to become ready (max 30 seconds)
+    const timeout = setTimeout(() => clearInterval(interval), 30000)
+    const interval = setInterval(() => {
+      const iframe = document.querySelector('.intercom-launcher-frame')
 
-      iframe.setAttribute('style', 'background: var(--sheets);')
+      if (iframe) {
+        const intercomLauncher = iframe.contentDocument.querySelector(
+          '#intercom-container .intercom-launcher'
+        )
+        intercomLauncher.setAttribute(
+          'style',
+          'background: var(--sheets) !important;'
+        )
 
-      clearInterval(interval)
-      clearTimeout(timeout)
-    }
+        iframe.setAttribute('style', 'background: var(--sheets);')
+
+        clearInterval(interval)
+        clearTimeout(timeout)
+      }
   }, 100)
+  }
 }
 
 const Intercom = ({ children }) => {
