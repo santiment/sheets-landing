@@ -34,7 +34,7 @@ const IndexPage = () => (
         <h2 className={styles.desc}>{tr('main.desc')}</h2>
         <Button
           as={'a'}
-          href='https://academy.santiment.net/sansheets/getting-started/setting-up'
+          href='https://academy.santiment.net/sansheets/getting-started/setting-up/'
           className={styles.access}
           variant='fill'
           accent='sheets'
