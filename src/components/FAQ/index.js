@@ -16,7 +16,7 @@ const questions = [
         <p className={styles.item}>
           {tr('faq.install.left')}
           <a
-            href='https://help.santiment.net/en/articles/2864401-setting-up-sansheets'
+            href='https://academy.santiment.net/sansheets/getting-started/setting-up/'
             rel='noopener noreferrer'
             target='_blank'
           >
@@ -36,7 +36,7 @@ const questions = [
         <p className={styles.text}>
           3) {tr('faq.key.left')}
           <a
-            href='https://help.santiment.net/en/articles/2864459-adding-an-api-key-to-sansheets'
+            href='https://academy.santiment.net/sansheets/getting-started/adding-an-api-key/'
             rel='noopener noreferrer'
             target='_blank'
           >
@@ -54,7 +54,7 @@ const questions = [
         <p className={styles.text}>
           {tr('faq.fetch.left')}
           <a
-            href='https://help.santiment.net/en/articles/3001303-full-list-of-available-sansheets-functions'
+            href='https://academy.santiment.net/sansheets/api/functions/'
             rel='noopener noreferrer'
             target='_blank'
           >

@@ -43,7 +43,7 @@ const IndexPage = () => (
           {tr('main.btn')}
         </Button>
         <a
-          href='https://help.santiment.net/en/articles/3001303-full-list-of-available-sansheets-functions'
+          href='https://academy.santiment.net/sansheets/api/functions/'
           className={styles.doc}
           target='_blank'
           rel='noopener noreferrer'
