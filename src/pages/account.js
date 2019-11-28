@@ -1,21 +1,22 @@
-import React from 'react'
-import { Link, navigate } from 'gatsby-plugin-intl'
-import { Query, Mutation } from 'react-apollo'
-import Tabs from '@santiment-network/ui/Tabs'
+import React from "react"
+import { Link, navigate } from "gatsby-plugin-intl"
+import { Query, Mutation } from "react-apollo"
+import Tabs from "@santiment-network/ui/Tabs"
 import {
   CURRENT_USER_QUERY,
   GENERATE_APIKEY_MUTATION,
   REVOKE_APIKEY_MUTATION,
   GDPR_MUTATION,
-} from '../gql/user'
-import Layout from '../components/layout'
-import SettingsAPIKeys from '../components/Settings/SettingsAPIKeys'
-import SettingsSubscription from '../components/Settings/SettingsSubscription'
-import SettingsBilling from '../components/Settings/SettingsBilling'
-import SettingsLogout from '../components/Settings/SettingsLogout'
-import GDPR from '../components/GDPR/GDPR'
-import { getCurrentSheetsSubscription } from '../utils/plans'
-import styles from './account.module.scss'
+} from "../gql/user"
+import Layout from "../components/layout"
+import SettingsGetStarted from "../components/Settings/SettingsGetStarted"
+import SettingsAPIKeys from "../components/Settings/SettingsAPIKeys"
+import SettingsSubscription from "../components/Settings/SettingsSubscription"
+import SettingsBilling from "../components/Settings/SettingsBilling"
+import SettingsLogout from "../components/Settings/SettingsLogout"
+import GDPR from "../components/GDPR/GDPR"
+import { getCurrentSheetsSubscription } from "../utils/plans"
+import styles from "./account.module.scss"
 
 const updateCache = (
   cache,
@@ -23,7 +24,7 @@ const updateCache = (
     data: {
       apikeysMutation: { apikeys },
     },
-  },
+  }
 ) => {
   const { currentUser } = cache.readQuery({ query: CURRENT_USER_QUERY })
   cache.writeQuery({
@@ -36,13 +37,21 @@ const tabs = [
   {
     index: 1,
     content: (
+      <Link className={styles.tab} to='/account#get-started'>
+        Get started
+      </Link>
+    ),
+  },
+  {
+    index: 2,
+    content: (
       <Link className={styles.tab} to='/account#api-keys'>
         API keys
       </Link>
     ),
   },
   {
-    index: 2,
+    index: 3,
     content: (
       <Link className={styles.tab} to='/account#subscription'>
         Subscription
@@ -50,7 +59,7 @@ const tabs = [
     ),
   },
   {
-    index: 3,
+    index: 4,
     content: (
       <Link className={styles.tab} to='/account#billing'>
         Billing
@@ -58,7 +67,7 @@ const tabs = [
     ),
   },
   {
-    index: 4,
+    index: 5,
     content: (
       <Link className={styles.tab} to='/account#logout'>
         Logout
@@ -68,7 +77,7 @@ const tabs = [
 ]
 
 export default ({ location: { hash } }) => {
-  const shouldHighlightRenew = hash.includes('renew')
+  const shouldHighlightRenew = hash.includes("renew")
   return (
     <Layout isAccountPage classes={styles}>
       <Query query={CURRENT_USER_QUERY}>
@@ -78,7 +87,7 @@ export default ({ location: { hash } }) => {
           }
 
           if (data && !data.currentUser) {
-            navigate('/login/email', { replace: true })
+            navigate("/login/email", { replace: true })
             return null
           }
 
@@ -91,7 +100,7 @@ export default ({ location: { hash } }) => {
                     data: {
                       updateTermsAndConditions: { privacyPolicyAccepted } = {},
                     } = {},
-                  },
+                  }
                 ) => (
                   <GDPR
                     togglePrivacyPolicy={togglePrivacyPolicy}
@@ -111,6 +120,7 @@ export default ({ location: { hash } }) => {
                 defaultSelectedIndex={1}
                 selectedClassName={styles.tab_selected}
               />
+              <SettingsGetStarted />
               <Mutation
                 mutation={GENERATE_APIKEY_MUTATION}
                 update={updateCache}

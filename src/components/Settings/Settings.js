@@ -1,4 +1,4 @@
-import React from 'react'
+	import React from 'react'
 import cx from 'classnames'
 import Panel from '@santiment-network/ui/Panel/PanelWithHeader'
 import styles from './Settings.module.scss'

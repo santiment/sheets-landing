@@ -76,3 +76,13 @@
   background: $fiord;
   color: $white;
 }
+
+
+.text {
+  color: var(--white) !important;
+  font-size: 14px;
+
+  &:hover {
+    text-decoration: none!important;
+  }
+}

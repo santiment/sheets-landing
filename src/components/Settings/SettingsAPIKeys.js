@@ -27,9 +27,9 @@ const SettingsAPIKeys = ({ apikeys = [], generateAPIKey, revokeAPIKey }) => {
       <Settings.Row>
         <div className={styles.setting__left}>
           <Label className={styles.setting__description} accent='waterloo'>
-            Setup SANsheets with your API key as explained in{' '}
+            How to setup Sansheets with your API key - explained in{' '}
             <a
-            href='https://help.santiment.net/en/articles/2864459-adding-an-api-key-to-sansheets'
+            href='https://academy.santiment.net/sansheets/getting-started/adding-an-api-key/'
             rel='noopener noreferrer'
             target='_blank'
           >
