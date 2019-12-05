@@ -4,12 +4,18 @@
   z-index: 20;
 }
 
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .container {
   background: var(--white);
   border: 1px solid var(--porcelain);
   border-radius: $border-radius;
   padding: 24px;
   box-shadow: 0 4px 12px 0 rgba(24, 27, 43, 0.04);
+  max-width: 1140px;
 
   @include border-box();
 }
@@ -17,14 +23,13 @@
 .header {
   width: 100%;
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 13px;
 }
 
 .link {
   margin-left: auto;
   color: var(--jungle-green);
   fill: var(--jungle-green);
-  min-width: 180px;
 
   &:hover {
     color: var(--jungle-green-hover);
@@ -38,7 +43,6 @@
 
 .title {
   color: var(--waterloo);
-  margin-right: 10px;
 
   @include text('body-3');
 }
@@ -46,41 +50,39 @@
 .products {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .wrapper {
-  width: 363px;
-  min-height: 146px;
-  padding: 24px 12px 9px 12px;
+  width: 358px;
+  max-height: 124px;
+  padding: 21px 9px 9px 9px;
+  transition: background 0.2s;
 
-  @include responsive('phone', 'phone-xs') {
+  @include responsive('phone-xs', 'phone') {
     width: initial;
     max-width: 363px;
   }
-
   &:hover {
     background: var(--athens);
     border-radius: $border-radius;
   }
 
   &:hover &__product {
-    transform: translate3d(0, -12px, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transform-style: preserve-3d;
+    transform: translate3d(0, -12px, 0);
   }
 
   &__link {
     margin-left: 0;
     display: flex;
     opacity: 0;
-    transform: translate3d(0, -10px, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transform-style: preserve-3d;
-    transition-duration: 0.2s;
+    transform: translate3d(0, -12px, 0);
+    transition: opacity 0.12s ease-out, transform 0.22s;
     align-items: center;
   }
 
   &:hover &__link {
-    transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-    transform-style: preserve-3d;
+    transform: translate3d(0, 0, 0);
     display: flex;
     opacity: 1;
   }
@@ -92,12 +94,13 @@
   align-items: flex-start;
   color: var(--waterloo);
   text-decoration: none;
-  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform: translate3d(0, 0, 0);
   transform-style: preserve-3d;
   transition-duration: 0.3s;
+  padding-top: 12px;
 
   &__img {
-    height: 38px;
+    height: 32px;
   }
 
   &__title {
@@ -109,7 +112,8 @@
 
   &__description {
     color: var(--waterloo);
-    margin: 8px 0;
+    margin: 5px 0 9px 0;
+    white-space: normal;
 
     @include text('body-3');
   }
@@ -117,7 +121,7 @@
   &__info {
     display: flex;
     flex-direction: column;
-    margin-top: 8px;
+    margin-top: 7px;
     margin-left: 12px;
   }
 }
@@ -129,6 +133,7 @@
   align-items: center;
   justify-content: center;
   color: var(--waterloo);
+  margin-left: 4px;
   fill: var(--waterloo);
 }
 
@@ -139,6 +144,23 @@
 }
 
 .trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sanbaseLink {
+  display: flex;
+}
+
+.graphs {
+  @include text('body-2');
+
+  color: var(--waterloo);
+  margin-left: 12px;
+  padding-left: 12px;
+  border-left: 1px solid var(--porcelain);
+  height: 32px;
   display: flex;
   align-items: center;
 }

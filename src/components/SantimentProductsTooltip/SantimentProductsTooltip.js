@@ -13,36 +13,48 @@ const PRODUCTS = [
     img: sanbaseLogoImg,
     title: 'Sanbase',
     description: 'header.product.sanbase',
-    to: 'https://app.santiment.net'
+    to: 'https://app.santiment.net',
+    showLink: true,
+    linkTitle: 'sanbase'
   },
   {
     img: sheetsLogoImg,
     title: 'Sheets',
     description: 'header.product.sheets',
-    to: 'https://sheets.santiment.net'
+    to: 'https://sheets.santiment.net',
+    showLink: true,
+    linkTitle: 'sheets'
   },
   {
     img: neuroLogoImg,
     title: 'API',
     description: 'header.product.neuro',
-    to: 'https://neuro.santiment.net'
+    to: 'https://neuro.santiment.net',
+    showLink: true,
+    linkTitle: 'API'
   }
 ]
-const ProductItem = ({ product: { to, img, title, description } }) => {
+
+const ProductItem = ({
+                       product: { to, img, title, linkTitle, description, showLink = true },
+                       className
+                     }) => {
   return (
-    <a className={styles.wrapper} href={to}>
+    <a className={cx(styles.wrapper, className)} href={to}>
       <div className={cx(styles.product, styles.wrapper__product)}>
-        <img className={styles.product__img} src={img} alt={title} />
+        {img && <img className={styles.product__img} src={img} alt={title} />}
         <div className={styles.product__info}>
           <div className={styles.product__title}>{title}</div>
           <div className={styles.product__description}>{tr(description)}</div>
 
-          <MakeLink
-            className={cx(styles.wrapper__link)}
-            to={to}
-            as={'div'}
-            title={'Go to ' + title}
-          />
+          {showLink && (
+            <MakeLink
+              className={cx(styles.wrapper__link)}
+              to={to}
+              as={'div'}
+              title={'Go to ' + linkTitle}
+            />
+          )}
         </div>
       </div>
     </a>
