@@ -25,7 +25,7 @@ const TokensTooltip = () => (
 	          <a
 	            rel='noopener noreferrer'
 	            target='_blank'
-	            href='https://help.santiment.net/en/articles/2542674-how-to-buy-san'
+	            href='https://academy.santiment.net/san-tokens/how-to-buy-san'
 	          >
 	            {tr('pricing.discount.step.buy.link')}
 	          </a>

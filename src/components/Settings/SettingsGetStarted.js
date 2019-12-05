@@ -20,7 +20,7 @@ const SettingsGetStarted = ({ apikeys = [], generateAPIKey, revokeAPIKey }) => (
         accent='sheets'
         target='_blank'
         rel='noopener noreferrer'
-        href='https://academy.santiment.net/sansheets/getting-started/setting-up/'
+        href='https://academy.santiment.net/sansheets/setting-up/'
         className={styles.text}
       >
         Read the article
