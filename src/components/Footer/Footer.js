@@ -11,7 +11,7 @@ const langProps = [
   { link: '/', label: 'English' },
 ]
 
-const isJapanese = () =>
+export const isJapanese = () =>
   typeof window === 'undefined'
     ? false
     : window.location.pathname.includes('/ja')
