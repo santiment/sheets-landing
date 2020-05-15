@@ -139,7 +139,7 @@
 
 .titleText {
   @include text("body-3");
-  color: var(--mirage);
+  color: var(--rhino);
   margin-left: 12px;
 }
 
@@ -150,7 +150,7 @@
 
 .bold {
   font-weight: bold;
-  color: var(--mirage);
+  color: var(--rhino);
   margin: 0 5px;
 }
 
@@ -176,7 +176,7 @@
   background-color: transparent;
   border: none;
   padding: 6px 10px 6px 0;
-  color: var(--mirage);
+  color: var(--rhino);
 
   &::placeholder {
     color: var(--waterloo);
@@ -186,7 +186,7 @@
 .defaultValue {
     margin-top: 4px;
     margin-left: 10px;
-    color: var(--mirage);
+    color: var(--rhino);
     font-size: 14px;
     line-height: 20px;
   }
