@@ -1,9 +1,7 @@
 import React from "react"
 import Label from "@santiment-network/ui/Label"
 import Button from "@santiment-network/ui/Button"
-import gql from "graphql-tag"
 import Settings from "./Settings"
-import { CURRENT_USER_QUERY } from "../../gql/user"
 import styles from "./SettingsAPIKeys.module.scss"
 
 const SettingsGetStarted = ({ apikeys = [], generateAPIKey, revokeAPIKey }) => (

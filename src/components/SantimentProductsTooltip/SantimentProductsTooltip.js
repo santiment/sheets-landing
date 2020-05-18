@@ -1,44 +1,41 @@
-import React, { useState } from 'react'
-import cx from 'classnames'
-import Tooltip from '@santiment-network/ui/Tooltip'
-import Icon from '@santiment-network/ui/Icon'
-import sanbaseLogoImg from './../../images/logos/logo-sanbase.svg'
-import sheetsLogoImg from './../../images/logos/logo-sheets.svg'
-import neuroLogoImg from './../../images/logos/logo-neuro.svg'
-import { tr } from '../../utils/translate'
-import styles from './SantimentProductsTooltip.module.scss'
+import React, { useState } from "react"
+import cx from "classnames"
+import Tooltip from "@santiment-network/ui/Tooltip"
+import Icon from "@santiment-network/ui/Icon"
+import sanbaseLogoImg from "./../../images/logos/logo-sanbase.svg"
+import sheetsLogoImg from "./../../images/logos/logo-sheets.svg"
+import neuroLogoImg from "./../../images/logos/logo-neuro.svg"
+import { tr } from "../../utils/translate"
+import styles from "./SantimentProductsTooltip.module.scss"
 
 const PRODUCTS = [
   {
     img: sanbaseLogoImg,
-    title: 'Sanbase',
-    description: 'header.product.sanbase',
-    to: 'https://app.santiment.net',
+    title: "Sanbase",
+    description: "header.product.sanbase",
+    to: "https://app.santiment.net",
     showLink: true,
-    linkTitle: 'sanbase'
   },
   {
     img: sheetsLogoImg,
-    title: 'Sheets',
-    description: 'header.product.sheets',
-    to: 'https://sheets.santiment.net',
+    title: "Sansheets",
+    description: "header.product.sheets",
+    to: "https://sheets.santiment.net",
     showLink: true,
-    linkTitle: 'sheets'
   },
   {
     img: neuroLogoImg,
-    title: 'API',
-    description: 'header.product.neuro',
-    to: 'https://neuro.santiment.net',
+    title: "SanAPI",
+    description: "header.product.neuro",
+    to: "https://neuro.santiment.net",
     showLink: true,
-    linkTitle: 'API'
-  }
+  },
 ]
 
 const ProductItem = ({
-                       product: { to, img, title, linkTitle, description, showLink = true },
-                       className
-                     }) => {
+  product: { to, img, title, description, showLink = true },
+  className,
+}) => {
   return (
     <a className={cx(styles.wrapper, className)} href={to}>
       <div className={cx(styles.product, styles.wrapper__product)}>
@@ -51,8 +48,8 @@ const ProductItem = ({
             <MakeLink
               className={cx(styles.wrapper__link)}
               to={to}
-              as={'div'}
-              title={'Go to ' + linkTitle}
+              as={"div"}
+              title={"Go to " + title}
             />
           )}
         </div>
@@ -61,14 +58,16 @@ const ProductItem = ({
   )
 }
 
-const MakeLink = ({ to, title, className, as: El = 'a' }) => (
+const MakeLink = ({ to, title, className, as: El = "a" }) => (
   <El href={to} className={cx(styles.link, className)}>
     {title} <Icon className={styles.linkArrow} type='pointer-right' />
   </El>
 )
 
-const OpenTrigger = () => <Icon type='arrow-down' className={styles.arrowIcon} />
-const CloseTrigger = () => <Icon type='arrow-up' className={styles.arrowIcon}/>
+const OpenTrigger = () => (
+  <Icon type='arrow-down' className={styles.arrowIcon} />
+)
+const CloseTrigger = () => <Icon type='arrow-up' className={styles.arrowIcon} />
 
 const SantimentProductsTooltip = ({ className, children }) => {
   const [isOpen, setOpen] = useState(false)
@@ -98,8 +97,11 @@ const SantimentProductsTooltip = ({ className, children }) => {
     >
       <div className={styles.container}>
         <div className={styles.header}>
-          <div className={styles.title}>{tr('header.products')}</div>
-          <MakeLink to='https://santiment.net' title={tr('header.santiment.goto')}/>
+          <div className={styles.title}>{tr("header.products")}</div>
+          <MakeLink
+            to='https://santiment.net'
+            title={tr("header.santiment.goto")}
+          />
         </div>
         <div className={styles.products}>
           {PRODUCTS.map((item, index) => (
