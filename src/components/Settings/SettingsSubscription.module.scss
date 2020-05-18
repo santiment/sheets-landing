@@ -92,7 +92,7 @@
 .deprecated {
   @include text('caption');
   display: inline-block;
-  background: #72ffff;
+  background: $lima-light;
   padding: 3px 8px;
   border-radius: 2px;
   margin-left: 10px;
