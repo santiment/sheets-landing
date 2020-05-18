@@ -10,6 +10,7 @@ export const PLANS_QUERY = gql`
         name
         amount
         interval
+        isDeprecated
       }
     }
   }

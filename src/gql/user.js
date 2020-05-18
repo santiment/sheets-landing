@@ -16,6 +16,7 @@ const userDataFragment = gql`
         name
         amount
         interval
+        isDeprecated
         product {
           id
           name

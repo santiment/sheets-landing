@@ -44,7 +44,7 @@ const ChangeBillingDialog = ({
                 sheets.plans,
                 oldName,
                 oldInterval,
-              )
+              ) || {}
 
               newPlanId = newId
               newPrice = formatPrice(amount)[0]
@@ -56,9 +56,14 @@ const ChangeBillingDialog = ({
               }
             }
 
+            // NOTE: if deprecated plan not represented in new plans
+            if (oldName && newPlanId === undefined) {
+              return null
+            }
+
             return (
               <Dialog
-                title='Change billing periond'
+                title='Change billing period'
                 trigger={
                   <Button className={sharedStyles.btn} accent='sheets'>
                     Change billing period

@@ -72,16 +72,19 @@ export default ({ classes = {}, onDialogClose }) => {
                   return null
                 }
 
+                const plans = product.plans.filter(
+                  ({ isDeprecated }) => !isDeprecated,
+                )
+
                 return (
                   <>
                     <div className={cx(styles.cards, classes.cards)}>
-                      {product.plans
+                      {plans
                         .filter(noBasicPlan)
                         .filter(
                           ({ name, interval }) =>
                             interval === billing || name === 'FREE',
                         )
-                        .sort(({ id: a }, { id: b }) => a - b)
                         .map(plan =>
                           plan.name === 'ENTERPRISE' ? (
                             <Enterprise key={plan.id} />

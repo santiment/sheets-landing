@@ -88,3 +88,15 @@
     transform: scale(1.1, 1.4);
   }
 }
+
+.deprecated {
+  @include text('caption');
+  display: inline-block;
+  background: #72ffff;
+  padding: 3px 8px;
+  border-radius: 2px;
+  margin-left: 10px;
+  font-weight: 100;
+  position: relative;
+  top: -2px;
+}
