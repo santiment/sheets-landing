@@ -39,7 +39,7 @@
 .title {
   &,
   &__mark {
-    @include text("h1", "m");
+    @include text("h1", "l");
     max-width: 480px;
 
     @include responsive("phone", "phone-xs") {
