@@ -64,13 +64,13 @@ export const categories = [
       },
       {
         children: 'Sansheets',
-        name: 'Sheets',
+        name: 'Sansheets',
         href: 'https://sheets.santiment.net/'
       },
       {
-        children: 'data',
-        name: 'Sandata',
-        href: 'https://data.santiment.net/'
+        children: 'Sangraphs',
+        name: 'Sangraphs',
+        href: 'https://graphs.santiment.net/'
       },
     ]
   }
