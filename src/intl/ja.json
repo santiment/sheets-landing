@@ -122,6 +122,8 @@
   "plan.custom.title": "エンタープライズ",
   "plan.custom.desc": "さらに専門的なデータ・サポートが必要な団体・企業向け",
 
+  "plan.pro_plus.title": "Pro +",
+
   "plan.feature.AC": "API コール/ 分",
   "plan.feature.SM": "スタンダードメトリック",
   "plan.feature.NA": "著作権情報表示不要",
@@ -135,7 +137,6 @@
   "plan.custom.feature.CDCR.top": "カスタム ディベロップメント",
   "plan.custom.feature.CDCR.bottom": "カスタムレポート",
   "plan.custom.feature.WLO": "ホワイト・レーベル　 オプション",
-
 
   "plans.details.hide": "Hide feature table",
   "plans.details.expand": "全ての機能を見る",
@@ -214,7 +215,6 @@
   "billing.card_below_info_middle": " が請求されます。次回は ",
   "billing.card_below_info_right": " のお引き落としになります。",
 
-
   "price.bill_discount.free": "無料でご利用いただけます",
   "price.bill_discount.custom": "ニーズに応じてカスタマイズ",
   "price.bill_discount.left": "月払いの場合 ",
@@ -269,13 +269,13 @@
   "pricing.discount.step.buy.link": "ご購入方法はこちら",
   "pricing.discount.step.login.left": "SANベースにログインしてください",
   "pricing.discount.step.login.right": "SANベースアカウントをお持ちでない場合、メールアドレスもしくはMetaMaskにてご登録いただけます。",
-  "pricing.discount.step.settings.left":"SANベースにログインしたら、",
-  "pricing.discount.step.settings.link":"Account settings（アカウント設定）",
-  "pricing.discount.step.settings.right":"に行き、アカウントとMetaMaskウォレットをリンクさせます。",
-  "pricing.discount.step.refresh":"このページを更新して、ご購入手続きを完了してください。",
-  "pricing.discount.step.system":"SANベースアカウントに、1000以上のSANトークンが確認されると、自動的に20％オフが適用されます。",
-  "pricing.discount.note":"ご注意",
-  "pricing.discount.note.text":"20％オフを適用するには、1000以上のSANトークンをホールドする必要があります。あなたのウォレットに必要なトークンがあるか、システムで確認されます。",
+  "pricing.discount.step.settings.left": "SANベースにログインしたら、",
+  "pricing.discount.step.settings.link": "Account settings（アカウント設定）",
+  "pricing.discount.step.settings.right": "に行き、アカウントとMetaMaskウォレットをリンクさせます。",
+  "pricing.discount.step.refresh": "このページを更新して、ご購入手続きを完了してください。",
+  "pricing.discount.step.system": "SANベースアカウントに、1000以上のSANトークンが確認されると、自動的に20％オフが適用されます。",
+  "pricing.discount.note": "ご注意",
+  "pricing.discount.note.text": "20％オフを適用するには、1000以上のSANトークンをホールドする必要があります。あなたのウォレットに必要なトークンがあるか、システムで確認されます。",
 
   "login": "Ｅメールでログインする",
   "login.interest": "当社製品にご興味をお持ちいただきありがとうございます。",
