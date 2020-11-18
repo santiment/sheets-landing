@@ -43,6 +43,9 @@ const PlanCard = ({
 
   const intlId = `plan.${name.toLowerCase()}`
   const title = trStr(intl, intlId + '.title')
+
+  if (!card) return null
+
   return (
     <div
       onClick={toggleCardDetails}
