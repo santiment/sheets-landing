@@ -15,49 +15,10 @@ import {
 import { tr } from '../../utils/translate'
 import styles from './index.module.scss'
 
-const Billing = ({ selected, onClick }) => {
-  const isYearSelected = selected === 'year'
-  return (
-    <>
-      <span
-        onClick={() => onClick('month')}
-        className={cx(
-          styles.billing__option,
-          !isYearSelected && styles.billing__option_active,
-        )}
-      >
-        {tr('pricing.bill.month')}
-      </span>
-      <Toggle
-        className={styles.billing__toggle}
-        isActive={isYearSelected}
-        onClick={() => onClick(isYearSelected ? 'month' : 'year')}
-      />
-      <span
-        className={cx(
-          styles.billing__option,
-          styles.billing__option_year,
-          isYearSelected && styles.billing__option_active,
-        )}
-        onClick={() => onClick('year')}
-      >
-        {tr('pricing.bill.year')}
-        <span className={styles.billing__save}>
-          {tr('pricing.bill.year.save')}
-        </span>
-      </span>
-    </>
-  )
-}
-
 export default ({ classes = {}, onDialogClose }) => {
-  const [billing, setBilling] = React.useState('year')
+  const [billing, setBilling] = React.useState('month')
   return (
     <>
-      <div className={cx(styles.billing, classes.billing)}>
-        <Billing selected={billing} onClick={setBilling} />
-      </div>
-      <TokensTooltip />
       <Query query={CURRENT_USER_QUERY}>
         {({ data: { currentUser } }) => {
           const subscription = getCurrentSheetsSubscription(currentUser)
@@ -80,12 +41,12 @@ export default ({ classes = {}, onDialogClose }) => {
                   <>
                     <div className={cx(styles.cards, classes.cards)}>
                       {plans
-                        .filter(noBasicPlan)
                         .filter(
                           ({ name, interval }) =>
-                            interval === billing || name === 'FREE',
+                            interval === billing &&
+                            (name === 'FREE' || name === 'BASIC'),
                         )
-                        .map(plan =>
+                        .map((plan) =>
                           plan.name === 'ENTERPRISE' ? (
                             <Enterprise key={plan.id} />
                           ) : (
