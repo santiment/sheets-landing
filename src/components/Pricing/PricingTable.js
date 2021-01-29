@@ -7,11 +7,7 @@ import { PLANS_QUERY } from '../../gql/plans'
 import Enterprise from './Enterprise'
 import TokensTooltip from './TokensTooltip'
 import Plan from './Plan'
-import {
-  findSheetsPlan,
-  getCurrentSheetsSubscription,
-  noBasicPlan,
-} from '../../utils/plans'
+import { findSheetsPlan, getCurrentSheetsSubscription } from '../../utils/plans'
 import { tr } from '../../utils/translate'
 import styles from './index.module.scss'
 

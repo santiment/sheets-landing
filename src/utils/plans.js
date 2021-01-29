@@ -13,7 +13,7 @@ export const formatPrice = (price, name, billing) => {
 export const sheetsProductId = '2' // NOTE(haritonasty): the same as on Sanbase
 export const findSheetsPlan = ({ id }) => id === sheetsProductId
 
-export const noBasicPlan = ({ name }) => name === 'BASIC'
+export const noBasicPlan = ({ name }) => name !== 'BASIC'
 
 export const getCurrentSheetsSubscription = (user) => {
   if (!user) return
