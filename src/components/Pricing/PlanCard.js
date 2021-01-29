@@ -28,6 +28,7 @@ const PlanCard = ({
   btnProps,
 }) => {
   const card = PLANS[name]
+  const { firstMonthPrice } = card
   const sameAsUserPlan = id === userPlan
   let [price, priceType] = formatPrice(amount, name, billing)
 
@@ -89,8 +90,17 @@ const PlanCard = ({
       <div className={cx(styles.details, isCustom && styles.details_custom)}>
         {!isCustom && (
           <div className={cx(styles.price, classes.price)}>
-            {price}
-            <span className={styles.price__type}>{priceType}</span>
+            {firstMonthPrice ? (
+              <>
+                {firstMonthPrice}
+                <span className={styles.price__type}> first month</span>
+              </>
+            ) : (
+              <>
+                {price}
+                <span className={styles.price__type}>{priceType}</span>
+              </>
+            )}
           </div>
         )}
         <div className={styles.discount}>
@@ -119,6 +129,7 @@ const PlanCard = ({
             subscription={subscription}
             onDialogClose={onDialogClose}
             btnProps={btnProps}
+            card={card}
           />
         )}
         <Features data={card.features} classes={{ ...styles, ...classes }} />

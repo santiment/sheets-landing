@@ -22,7 +22,7 @@ import sharedStyles from '../Pricing/index.module.scss'
 function useFormLoading() {
   const [loading, setLoading] = useState(false)
   function toggleLoading() {
-    setLoading(state => !state)
+    setLoading((state) => !state)
   }
   return [loading, toggleLoading]
 }
@@ -40,9 +40,9 @@ function updateCache(cache, { data: { subscribe } }) {
   })
 }
 
-const Form = props => <Panel as='form' {...props} />
+const Form = (props) => <Panel as='form' {...props} />
 
-const getTokenDataByForm = form => {
+const getTokenDataByForm = (form) => {
   const res = {}
   new FormData(form).forEach((value, key) => {
     if (key === 'name' || key === 'coupon') {
@@ -65,7 +65,7 @@ const getPrices = (amount, billing) => {
 
 const NEXT_DATE_GET_SET_MONTH = ['setMonth', 'getMonth']
 const NEXT_DATE_GET_SET_YEAR = ['setFullYear', 'getFullYear']
-const getNextPaymentDates = billing => {
+const getNextPaymentDates = (billing) => {
   const [setter, getter] =
     billing === 'year' ? NEXT_DATE_GET_SET_YEAR : NEXT_DATE_GET_SET_MONTH
 
@@ -86,12 +86,14 @@ const PaymentDialog = ({
   price,
   planId,
   stripe,
+  card,
   disabled,
   onDialogClose = () => {},
 }) => {
   const [loading, toggleLoading] = useFormLoading()
   const [paymentVisible, setPaymentVisiblity] = useState(false)
   const [yearPrice, monthPrice] = getPrices(price, billing)
+  const { firstMonthPrice } = card || {}
 
   function hidePayment() {
     setPaymentVisiblity(false)
@@ -126,7 +128,7 @@ const PaymentDialog = ({
                   onClose={hidePayment}
                   as={Form}
                   modalProps={{
-                    onSubmit: e => {
+                    onSubmit: (e) => {
                       e.preventDefault()
 
                       if (loading) return
@@ -174,7 +176,7 @@ const PaymentDialog = ({
                           onDialogClose()
                           return getBilling()
                         })
-                        .catch(e => {
+                        .catch((e) => {
                           addNot({
                             variant: 'error',
                             title: `Error during the payment`,
@@ -191,17 +193,37 @@ const PaymentDialog = ({
                     <div className={styles.plan}>
                       <div className={styles.plan__left}>
                         <Icon type='checkmark' className={styles.plan__check} />
-                        {title} {billing === 'year' ? trStr(intl, 'price.yearly') : trStr(intl, 'price.monthly')}
+                        {title}{' '}
+                        {billing === 'year'
+                          ? trStr(intl, 'price.yearly')
+                          : trStr(intl, 'price.monthly')}
                       </div>
                       <div className={styles.plan__right}>
-                        <div>
-                          <b className={styles.plan__year}>{yearPrice}</b> /{' '}
-                          {trStr(intl, 'billing.year')}
-                        </div>
-                        <div>
-                          <b className={styles.plan__month}>{monthPrice}</b> /
-                          {trStr(intl, 'billing.month')}
-                        </div>
+                        {firstMonthPrice ? (
+                          <>
+                            <div>
+                              <b className={styles.plan__year}>
+                                {firstMonthPrice}
+                              </b>{' '}
+                              first month
+                            </div>
+                            <div>
+                              <b className={styles.plan__month}>{monthPrice}</b>
+                              /mo afterwards
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            <div>
+                              <b className={styles.plan__year}>{yearPrice}</b> /{' '}
+                              {trStr(intl, 'billing.year')}
+                            </div>
+                            <div>
+                              <b className={styles.plan__month}>{monthPrice}</b>{' '}
+                              /{trStr(intl, 'billing.month')}
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
 
@@ -214,21 +236,35 @@ const PaymentDialog = ({
                       type='submit'
                       className={styles.btn}
                     >
-                      {tr('plan.title.left', `Go `)}  { title.toUpperCase() }  {tr('plan.title.right', ` now`)}
+                      {tr('plan.title.left', `Go `)} {title.toUpperCase()}{' '}
+                      {tr('plan.title.right', ` now`)}
                     </Dialog.Approve>
                     <h5 className={styles.expl}>
-                      {tr('billing.card_below_info_left', "Your card will be charged")}
+                      {tr(
+                        'billing.card_below_info_left',
+                        'Your card will be charged',
+                      )}
                       <b> {billing === 'year' ? yearPrice : monthPrice} </b>
-                      {tr('billing.every', "every")} {billing === 'year' ? trStr(intl,'billing.year') : trStr(intl,'billing.month')} {tr('billing.card_below_info_middle', " until you decide to downgrade or unsubscribe. Next billing date will be")}
-                      <b> {getNextPaymentDates(billing)}</b> {tr('billing.card_below_info_right', " ")}
+                      {tr('billing.every', 'every')}{' '}
+                      {billing === 'year'
+                        ? trStr(intl, 'billing.year')
+                        : trStr(intl, 'billing.month')}{' '}
+                      {tr(
+                        'billing.card_below_info_middle',
+                        ' until you decide to downgrade or unsubscribe. Next billing date will be',
+                      )}
+                      <b> {getNextPaymentDates(billing)}</b>{' '}
+                      {tr('billing.card_below_info_right', ' ')}
                     </h5>
                   </Dialog.ScrollContent>
                   <div className={styles.bottom}>
                     <div className={styles.bottom__info}>
-                      <IconLock /> {tr('billing.fully_secured', "Fully secured checkout")}
+                      <IconLock />{' '}
+                      {tr('billing.fully_secured', 'Fully secured checkout')}
                     </div>
                     <div className={styles.bottom__info}>
-                      <IconDollar /> {tr('billing.money_back', "30 day money back guarantee")}
+                      <IconDollar />{' '}
+                      {tr('billing.money_back', '30 day money back guarantee')}
                     </div>
                   </div>
                 </Dialog>
@@ -243,7 +279,7 @@ const PaymentDialog = ({
 
 const InjectedForm = injectIntl(injectStripe(PaymentDialog))
 
-export default props => (
+export default (props) => (
   <Elements>
     <InjectedForm {...props} />
   </Elements>

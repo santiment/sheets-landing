@@ -36,13 +36,16 @@ export default {
   },
   BASIC: {
     title: 'Basic',
-    desc: 'Great for short-term analysis and prototyping',
     link: 'Upgrade now',
     Component: PlanActionDialog,
+    firstMonthPrice: '$5',
+    discount: 'price.bill_discount.basic',
     features: [
-      'Limited access in Google plugin for sheets',
-      'Timeseries metrics - 2 years of historical data',
-      'Timeseries metrics - up to last 7 days of data',
+      'Access to Sansheets',
+      'Access to Sansheets ready templates',
+      'Access to paywalled insights',
+      'Access to paywalled reports',
+      'Has same timeframe restrictions as for timeseries metrics as free plan',
     ],
   },
   PRO: {

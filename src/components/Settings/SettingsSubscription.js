@@ -7,6 +7,7 @@ import Button from '@santiment-network/ui/Button'
 import Panel from '@santiment-network/ui/Panel/Panel'
 import Settings from './Settings'
 import PlansTableDialog from '../PlansTableDialog'
+import PLANS from '../Pricing/prices'
 import CancelSubscriptionDialog from '../CancelSubscriptionDialog/CancelSubscriptionDialog'
 import ChangeBillingDialog from '../ChangeBillingDialog/ChangeBillingDialog'
 import { formatPrice } from '../../utils/plans'
@@ -29,6 +30,7 @@ const PlanText = ({ subscription }) => {
       cancelAtPeriodEnd,
       plan: { amount, name, interval, isDeprecated },
     } = subscription
+    const { firstMonthPrice } = PLANS[name] || {}
 
     const { MMMM, DD, YYYY } = getDateFormats(new Date(currentPeriodEnd))
     const [price] = formatPrice(amount, name)
@@ -44,7 +46,9 @@ const PlanText = ({ subscription }) => {
         </div>
         <div className={styles.desc}>
           {price} per {interval}.{' '}
-          {notCanceled && <ChangeBillingDialog subscription={subscription} />}
+          {!firstMonthPrice && notCanceled && (
+            <ChangeBillingDialog subscription={subscription} />
+          )}
         </div>
         <div className={styles.desc}>
           Will automatically {PERIOD_END_ACTION[cancelAtPeriodEnd]} on {MMMM}{' '}
@@ -57,9 +61,7 @@ const PlanText = ({ subscription }) => {
   return (
     <>
       <div className={styles.title}>Free Plan</div>
-      <div className={styles.desc}>
-        You can see data generated 24h ago.
-      </div>
+      <div className={styles.desc}>You can see data generated 24h ago.</div>
       <div className={styles.desc}>Upgrade your plan to get more abilities</div>
     </>
   )

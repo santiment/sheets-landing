@@ -137,6 +137,8 @@
   "plan.custom.feature.CDCR.bottom": "Custom reports",
   "plan.custom.feature.WLO": "White-label options",
 
+  "plan.basic.title": "Insider",
+
   "plan.pro_plus.title": "Pro +",
 
   "plans.details.hide": "Hide feature table",
@@ -217,6 +219,7 @@
   "billing.card_below_info_right": " ",
 
   "price.bill_discount.free": "Free forever",
+  "price.bill_discount.basic": "$25/mo afterwards",
   "price.bill_discount.custom": "Based on your needs",
   "price.bill_discount.left": " ",
   "price.bill_discount.month": " if billed monthly",
