@@ -46,13 +46,14 @@ const Footer = ({ intl }) => {
           <ul className={styles.categories}>
             {categories.map(({ links }, idx) => (
               <li key={idx} className={styles.category}>
-                {links.map(({ children, href, name = '' }, i) => (
+                {links.map(({ children, href, onClick, name = '' }, i) => (
                   <a
                     key={i}
                     target='_blank'
                     rel='noopener noreferrer'
                     children={tr(`footer.${children}`, name)}
                     href={href}
+                    onClick={evt => onClick ? onClick(evt) : null}
                     className={cx(styles.text, styles.category__item)}
                   />
                 ))}
