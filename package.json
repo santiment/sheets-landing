@@ -21,7 +21,6 @@
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sharp": "^2.1.1",
     "gatsby-source-filesystem": "^2.0.37",
-    "gatsby-source-graphql": "^2.0.18",
     "gatsby-transformer-sharp": "^2.1.19",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
