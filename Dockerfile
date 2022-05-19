@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:10
 
 ARG GIT_HEAD
 RUN GIT_HEAD=$GIT_HEAD
