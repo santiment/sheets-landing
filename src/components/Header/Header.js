@@ -23,7 +23,7 @@ const Header = ({ isAccountPage }) => {
           <div className={styles.product}>
             <div className={styles.products}>
               <a className={styles.logo} href='https://app.santiment.net/'>
-                <img src={mainLogo} />
+                <img src={mainLogo} alt="main logo" />
                 <div className={styles.productName}>Sansheets</div>
               </a>
               <SantimentProductsTooltip/>
