@@ -1,18 +1,15 @@
 import React from 'react'
 import { Query } from 'react-apollo'
 import cx from 'classnames'
-import Toggle from '@santiment-network/ui/Toggle'
 import { CURRENT_USER_QUERY } from '../../gql/user'
 import { PLANS_QUERY } from '../../gql/plans'
 import Enterprise from './Enterprise'
-import TokensTooltip from './TokensTooltip'
 import Plan from './Plan'
 import { findSheetsPlan, getCurrentSheetsSubscription } from '../../utils/plans'
-import { tr } from '../../utils/translate'
 import styles from './index.module.scss'
 
 export default ({ classes = {}, onDialogClose }) => {
-  const [billing, setBilling] = React.useState('month')
+  const [billing] = React.useState('month')
   return (
     <>
       <Query query={CURRENT_USER_QUERY}>
