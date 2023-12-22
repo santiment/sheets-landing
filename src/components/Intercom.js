@@ -29,6 +29,8 @@ const updateIntercom = () => {
   }
 }
 
+let isFpromTracked = false
+
 const Intercom = ({ children }) => {
   updateIntercom()
   return (
@@ -42,8 +44,9 @@ const Intercom = ({ children }) => {
             name,
           })
 
-          if (currentUser) {
+          if (currentUser && !isFpromTracked) {
             if (window.$FPROM) {
+              isFpromTracked = true
               const { id, email, username } = currentUser
               window.$FPROM.trackSignup({ id, email, username })
             }
