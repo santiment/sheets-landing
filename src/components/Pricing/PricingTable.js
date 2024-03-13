@@ -1,33 +1,33 @@
-import React from 'react'
-import { Query } from 'react-apollo'
-import cx from 'classnames'
-import { CURRENT_USER_QUERY } from '../../gql/user'
-import { PLANS_QUERY } from '../../gql/plans'
-import Enterprise from './Enterprise'
-import Plan from './Plan'
-import { findSheetsPlan, getCurrentSheetsSubscription } from '../../utils/plans'
-import styles from './index.module.scss'
+import React from "react"
+import { Query } from "react-apollo"
+import cx from "classnames"
+import { CURRENT_USER_QUERY } from "../../gql/user"
+import { PLANS_QUERY } from "../../gql/plans"
+import Enterprise from "./Enterprise"
+import Plan from "./Plan"
+import { findSheetsPlan, getCurrentSheetsSubscription } from "../../utils/plans"
+import styles from "./index.module.scss"
 
 export default ({ classes = {}, onDialogClose }) => {
-  const [billing] = React.useState('month')
+  const [billing] = React.useState("month")
   return (
     <>
       <Query query={CURRENT_USER_QUERY}>
-        {({ data: { currentUser } }) => {
+        {({ data: { currentUser } = {} }) => {
           const subscription = getCurrentSheetsSubscription(currentUser)
           const userPlan = subscription && subscription.plan.id
           const isSubscriptionCanceled =
             subscription && subscription.cancelAtPeriodEnd
           return (
             <Query query={PLANS_QUERY}>
-              {({ data: { productsWithPlans = [] } }) => {
+              {({ data: { productsWithPlans = [] } = {} }) => {
                 const product = productsWithPlans.find(findSheetsPlan)
                 if (!product) {
                   return null
                 }
 
                 const plans = product.plans.filter(
-                  ({ isDeprecated }) => !isDeprecated,
+                  ({ isDeprecated }) => !isDeprecated
                 )
 
                 return (
@@ -37,10 +37,10 @@ export default ({ classes = {}, onDialogClose }) => {
                         .filter(
                           ({ name, interval }) =>
                             interval === billing &&
-                            (name === 'FREE' || name === 'BASIC'),
+                            (name === "FREE" || name === "BASIC")
                         )
-                        .map((plan) =>
-                          plan.name === 'ENTERPRISE' ? (
+                        .map(plan =>
+                          plan.name === "ENTERPRISE" ? (
                             <Enterprise key={plan.id} />
                           ) : (
                             <Plan
@@ -53,7 +53,7 @@ export default ({ classes = {}, onDialogClose }) => {
                               subscription={subscription}
                               isSubscriptionCanceled={isSubscriptionCanceled}
                             />
-                          ),
+                          )
                         )}
                     </div>
                   </>
