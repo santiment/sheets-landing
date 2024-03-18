@@ -1,8 +1,4 @@
 import React from "react"
-import { Link } from "gatsby-plugin-intl"
-import { Query } from "react-apollo"
-import Button from "@santiment-network/ui/Button"
-import { CURRENT_USER_QUERY } from "../../gql/user"
 import Title from "../Title/Title"
 import Subtitle from "../Subtitle/Subtitle"
 import BacktestCodePanel from "../CodePanel/BacktestCodePanel/BacktestCodePanel"
@@ -11,20 +7,10 @@ import AnalyzeCodePanel from "../CodePanel/AnalyzeCodePanel/AnalyzeCodePanel"
 import { tr } from "../../utils/translate"
 import styles from "./UseCases.module.scss"
 
-const onGetTemplateClick = link => {
-  localStorage.setItem("template", link)
-  window.gtag("event", "get_template", {
-    location: "Use Cases",
-    text: "Get template",
-  })
-}
-
 const cases = [
   {
     type: "backtest",
     code: <BacktestCodePanel />,
-    template:
-      "https://docs.google.com/spreadsheets/d/1YEm8qdqJvkHCTUwEmOyQLfkZqtQ0ndwo0GWxGsCRnSQ/edit?usp=sharing",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -68,8 +54,6 @@ const cases = [
   {
     type: "monitor",
     code: <MonitorCodePanel />,
-    template:
-      "https://docs.google.com/spreadsheets/d/1itY_q3KvC-KhOpY21wtmeAj5lL4qT8gbMvilgt8avZw/edit?usp=sharing",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -153,8 +137,6 @@ const cases = [
   {
     type: "analyze",
     code: <AnalyzeCodePanel />,
-    template:
-      "https://docs.google.com/spreadsheets/d/1RD9AMy2hLWPix0DCupl-LaN5aloFkd_BQDvzJrgU0qI/edit?usp=sharing",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -198,41 +180,25 @@ const cases = [
 ]
 
 export default () => (
-  <Query query={CURRENT_USER_QUERY}>
-    {({ data: { currentUser } = {} }) => (
-      <section id="use-cases">
-        <ul className={styles.cases}>
-          {cases.map(({ icon, type, code, template }) => {
-            const id = `usecases.${type}.`
-            return (
-              <li key={type} className={styles.wrapper}>
-                <div className={styles.case}>
-                  {icon}
-                  <Title small className={styles.case__title}>
-                    {tr(id + "title")}
-                  </Title>
-                  <Subtitle className={styles.case__desc}>
-                    {tr(id + "desc")}
-                  </Subtitle>
-                  <Button
-                    accent="sheets"
-                    border
-                    className={styles.button}
-                    as={currentUser ? "a" : Link}
-                    target="_blank"
-                    href={currentUser ? template : ""}
-                    to={currentUser ? "" : "/login"}
-                    onClick={() => onGetTemplateClick(template)}
-                  >
-                    {tr("usecases.get_template")}
-                  </Button>
-                </div>
-                {code}
-              </li>
-            )
-          })}
-        </ul>
-      </section>
-    )}
-  </Query>
+  <section id="use-cases">
+    <ul className={styles.cases}>
+      {cases.map(({ icon, type, code }) => {
+        const id = `usecases.${type}.`
+        return (
+          <li key={type} className={styles.wrapper}>
+            <div className={styles.case}>
+              {icon}
+              <Title small className={styles.case__title}>
+                {tr(id + "title")}
+              </Title>
+              <Subtitle className={styles.case__desc}>
+                {tr(id + "desc")}
+              </Subtitle>
+            </div>
+            {code}
+          </li>
+        )
+      })}
+    </ul>
+  </section>
 )
