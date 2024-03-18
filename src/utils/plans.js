@@ -1,21 +1,21 @@
-import { client } from '../apollo/client'
-import { USER_PAYMENTS } from '../gql/user'
+import { client } from "../apollo/client"
+import { USER_PAYMENTS } from "../gql/user"
 
 export const formatPrice = (price, name, billing) => {
-  if (name === 'FREE') return ['$0']
-  if (!price) return ['Custom']
+  if (name === "FREE") return ["$0"]
+  if (!price) return ["Custom"]
 
-  const devider = 100 * (billing === 'year' ? 12 : 1)
+  const devider = 100 * (billing === "year" ? 12 : 1)
 
-  return [`$${parseInt(price / devider, 10)}`, '/mo']
+  return [`$${parseInt(price / devider, 10)}`, "/mo"]
 }
 
-export const sheetsProductId = '2' // NOTE(haritonasty): the same as on Sanbase
+export const sheetsProductId = "2" // NOTE(haritonasty): the same as on Sanbase
 export const findSheetsPlan = ({ id }) => id === sheetsProductId
 
-export const noBasicPlan = ({ name }) => name !== 'BASIC'
+export const noBasicPlan = ({ name }) => name !== "BASIC"
 
-export const getCurrentSheetsSubscription = (user) => {
+export const getCurrentSheetsSubscription = user => {
   if (!user) return
   const { subscriptions: subs } = user
 
@@ -24,19 +24,18 @@ export const getCurrentSheetsSubscription = (user) => {
       plan: {
         product: { id },
       },
-    }) => id === sheetsProductId,
+    }) => id === sheetsProductId
   )
 }
 
 export const getBilling = () =>
-  client.query({ query: USER_PAYMENTS, fetchPolicy: 'network-only' })
+  client.query({ query: USER_PAYMENTS, fetchPolicy: "network-only" })
 
 export const getAlternativeBillingPlan = (
   plans,
   currentPlan,
-  currentInterval,
+  currentInterval
 ) =>
   plans.find(
-    ({ name, interval }) =>
-      name === currentPlan && interval !== currentInterval,
+    ({ name, interval }) => name === currentPlan && interval !== currentInterval
   )

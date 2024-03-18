@@ -1,12 +1,12 @@
-import React from 'react'
-import { replace } from 'gatsby'
-import { Mutation } from 'react-apollo'
-import { parse } from 'query-string'
-import Layout from '../components/layout'
-import PageLoader from '../components/Loader/PageLoader'
-import {getLSItem} from '../utils/localStorage'
-import { CURRENT_USER_QUERY, VERIFY_EMAIL_MUTATION } from '../gql/user'
-import styles from './email_login.module.scss'
+import React from "react"
+import { replace } from "gatsby"
+import { Mutation } from "react-apollo"
+import { parse } from "query-string"
+import Layout from "../components/layout"
+import PageLoader from "../components/Loader/PageLoader"
+import { getLSItem } from "../utils/localStorage"
+import { CURRENT_USER_QUERY, VERIFY_EMAIL_MUTATION } from "../gql/user"
+import styles from "./email_login.module.scss"
 
 const updateCache = (
   cache,
@@ -14,7 +14,7 @@ const updateCache = (
     data: {
       emailLoginVerify: { user },
     },
-  },
+  }
 ) => {
   const currentUser = { ...user }
   setTimeout(() => {
@@ -22,12 +22,12 @@ const updateCache = (
       query: CURRENT_USER_QUERY,
       data: { currentUser },
     })
-    const template = getLSItem('template')
+    const template = getLSItem("template")
     if (template) {
-      localStorage.removeItem('template')
-      window.open(template, 'template', 'width=1000,height=700')
+      localStorage.removeItem("template")
+      window.open(template, "template", "width=1000,height=700")
     }
-    replace('/account')
+    replace("/account")
   }, 1000)
 }
 
@@ -42,10 +42,10 @@ export default ({ location: { search } }) => (
           return (
             <div className={styles.wrapper}>
               <h2>Login failed</h2>
-              <br/>
+              <br />
               <p>
-                Maybe you are trying to login with an old email link. Please, make
-                sure, that you are using the latest link
+                Maybe you are trying to login with an old email link. Please,
+                make sure, that you are using the latest link
               </p>
             </div>
           )
@@ -53,7 +53,7 @@ export default ({ location: { search } }) => (
 
         return (
           <div className={styles.wrapper}>
-            <PageLoader text='Verifying' className={styles.loader} />
+            <PageLoader text="Verifying" className={styles.loader} />
           </div>
         )
       }}

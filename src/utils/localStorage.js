@@ -1,5 +1,5 @@
 export const getLSItem = key => {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return
   }
 

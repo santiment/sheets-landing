@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-import Button from '@santiment-network/ui/Button'
-import Dialog from '@santiment-network/ui/Dialog'
-import PricingTable from './Pricing/PricingTable'
-import styles from './PlansTableDialog.module.scss'
+import React, { useState } from "react"
+import Button from "@santiment-network/ui/Button"
+import Dialog from "@santiment-network/ui/Dialog"
+import PricingTable from "./Pricing/PricingTable"
+import styles from "./PlansTableDialog.module.scss"
 
 const PlanDialog = ({ subscription }) => {
   const [opened, setOpened] = useState(false)
@@ -18,12 +18,12 @@ const PlanDialog = ({ subscription }) => {
   return (
     <Dialog
       open={opened}
-      title='Existing plans'
+      title="Existing plans"
       classes={styles}
       onClose={closeDialog}
       trigger={
-        <Button accent='sheets' variant='fill' onClick={openDialog}>
-          {subscription ? 'Change' : 'Upgrade'} plan
+        <Button accent="sheets" variant="fill" onClick={openDialog}>
+          {subscription ? "Change" : "Upgrade"} plan
         </Button>
       }
     >
