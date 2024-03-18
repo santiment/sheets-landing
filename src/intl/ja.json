@@ -101,6 +101,12 @@
   "usecases.analyze.social": "ソーシャル",
   "usecases.analyze.devact": "ディベロッパーアクティビティ",
 
+  "usecases.matrix.title": "Asset Activity Matrix",
+  "usecases.matrix.desc": "This template is a paradise for altcoin traders who enjoy swing trading between the hottest (or coldest) assets in crypto on a daily or weekly basis.",
+  "usecases.matrix.fantom": "Fantom",
+  "usecases.matrix.merit_circle": "Merit-circle",
+  "usecases.matrix.decentraland": "Decentraland",
+
   "pricing.title.top": "ニーズに合ったプランを",
   "pricing.title.bottom": "ご選択ください",
 

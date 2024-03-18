@@ -1,0 +1,38 @@
+.content {
+  position: relative;
+  height: 365px;
+  background: url("./grid.svg") no-repeat;
+  background-position-x: -86px;
+  background-position-y: -100px;
+  background-size: 130%;
+}
+
+.fantom {
+  left: -26px;
+  top: 158px;
+}
+
+.merit_circle {
+  top: 26px;
+  left: 255px;
+}
+
+.decentraland {
+  top: 165px;
+  left: 463px;
+}
+
+.emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  top: -27px;
+  right: -27px;
+  background: var(--white);
+  font-size: 36px;
+  border: 1px solid var(--porcelain);
+  border-radius: 50%;
+}
