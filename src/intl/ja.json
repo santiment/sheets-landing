@@ -106,7 +106,10 @@
   "usecases.matrix.fantom": "Fantom",
   "usecases.matrix.merit_circle": "Merit-circle",
   "usecases.matrix.decentraland": "Decentraland",
-
+  
+  "usecases.mvrv.title": "MVRV Opportunity & Danger Zone",
+  "usecases.mvrv.desc": "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
+ 
   "pricing.title.top": "ニーズに合ったプランを",
   "pricing.title.bottom": "ご選択ください",
 

@@ -6,7 +6,9 @@ import BacktestIcon from "./icons/BackTestIcon"
 import MonitorIcon from "./icons/MonitorIcon"
 import AnalyzeIcon from "./icons/AnalyzeIcon"
 import MatrixIcon from "./icons/MatrixIcon"
+import MvrvIcon from "./icons/MvrvIcon"
 import MatrixCodePanel from "../CodePanel/MatrixCodePanel/MatrixCodePanel"
+import MvrvCodePanel from "../CodePanel/MvrvCodePanel/MvrvCodePanel"
 
 export const cases = [
   {
@@ -28,5 +30,10 @@ export const cases = [
     type: "matrix",
     code: <MatrixCodePanel />,
     icon: <MatrixIcon />,
+  },
+  {
+    type: "mvrv",
+    code: <MvrvCodePanel />,
+    icon: <MvrvIcon />,
   },
 ]

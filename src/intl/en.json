@@ -108,6 +108,9 @@
   "usecases.matrix.merit_circle": "Merit-circle",
   "usecases.matrix.decentraland": "Decentraland",
 
+  "usecases.mvrv.title": "MVRV Opportunity & Danger Zone",
+  "usecases.mvrv.desc": "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 
