@@ -1,6 +1,10 @@
 @import "~@santiment-network/ui/mixins";
 @import "~@santiment-network/ui/variables";
 
+.container {
+  background: url('./waves.svg') no-repeat top / contain;
+}
+
 .wrapper {
   display: flex;
 

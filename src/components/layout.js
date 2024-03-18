@@ -27,7 +27,7 @@ const Layout = ({ children, isAccountPage, classes = {} }) => (
   <StripeProviderSSR>
     <Intercom>
       <Notifications>
-        <div className={styles.container}>
+        <div className={cx(styles.container, classes.container)}>
           {envScript}
           <Header isAccountPage={isAccountPage} />
           <main className={cx(styles.main, classes.main)}>{children}</main>

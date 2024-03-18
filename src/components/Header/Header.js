@@ -15,7 +15,7 @@ const Header = ({ isAccountPage }) => {
   }
 
   return (
-    <header className={styles.header}>
+    <header>
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.product}>
