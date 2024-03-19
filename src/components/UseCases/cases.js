@@ -9,6 +9,8 @@ import MatrixIcon from "./icons/MatrixIcon"
 import MvrvIcon from "./icons/MvrvIcon"
 import MatrixCodePanel from "../CodePanel/MatrixCodePanel/MatrixCodePanel"
 import MvrvCodePanel from "../CodePanel/MvrvCodePanel/MvrvCodePanel"
+import MeanAgeIcon from "./icons/MeanAgeIcon"
+import MeanAgeCodePanel from "../CodePanel/MeanAgeCodePanel/MeanAgeCodePanel"
 
 export const cases = [
   {
@@ -35,5 +37,10 @@ export const cases = [
     type: "mvrv",
     code: <MvrvCodePanel />,
     icon: <MvrvIcon />,
+  },
+  {
+    type: "mean_age",
+    code: <MeanAgeCodePanel />,
+    icon: <MeanAgeIcon />,
   },
 ]

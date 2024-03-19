@@ -113,6 +113,9 @@
   "usecases.mvrv.danger_zone": "Danger zone",
   "usecases.mvrv.opportunity_zone": "Opportunity zone",
 
+  "usecases.mean_age.title": "Mean Age & Mean Dollar Age",
+  "usecases.mean_age.desc": "This metric identifies accumulation and sell cycles for any network.",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 
