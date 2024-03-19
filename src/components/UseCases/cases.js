@@ -13,6 +13,8 @@ import MeanAgeIcon from "./icons/MeanAgeIcon"
 import MeanAgeCodePanel from "../CodePanel/MeanAgeCodePanel/MeanAgeCodePanel"
 import TopHoldersIcon from "./icons/TopHoldersIcon"
 import TopHoldersCodePanel from "../CodePanel/TopHoldersCodePanel/TopHoldersCodePanel"
+import NvtIcon from "./icons/NvtIcon"
+import NvtCodePanel from "../CodePanel/NvtCodePanel/NvtCodePanel"
 
 export const cases = [
   {
@@ -49,5 +51,10 @@ export const cases = [
     type: "top_holders",
     code: <TopHoldersCodePanel />,
     icon: <TopHoldersIcon />,
+  },
+  {
+    type: "nvt",
+    code: <NvtCodePanel />,
+    icon: <NvtIcon />,
   },
 ]

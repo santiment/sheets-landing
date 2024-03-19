@@ -122,6 +122,12 @@
   "usecases.top_holders.eth.description": "Ethereum % 30-Day Total Cumulative: ",
   "usecases.top_holders.balance": "Balance",
 
+  "usecases.nvt.title": "NVT Template",
+  "usecases.nvt.desc": "This template calculates the NVT for BTC, ETH, and several ERC-20 coins, and assigns a bullish or bearish value to their historical and present-day performance.",
+  "usecases.nvt.bearish": "Bearish",
+  "usecases.nvt.bullish": "Bullish",
+  "usecases.nvt.neutral": "Neutral",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 
