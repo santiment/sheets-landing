@@ -128,6 +128,11 @@
   "usecases.nvt.bullish": "Bullish",
   "usecases.nvt.neutral": "Neutral",
 
+  "usecases.funding.title": "Funding Rate",
+  "usecases.funding.desc": "Paying attention to how many traders are longing or shorting an asset provides a guide on how much greed or fear you can capitalize on.",
+  "usecases.funding.fear": "Fear",
+  "usecases.funding.greed": "Greed",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 

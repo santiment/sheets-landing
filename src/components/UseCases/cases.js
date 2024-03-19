@@ -15,6 +15,8 @@ import TopHoldersIcon from "./icons/TopHoldersIcon"
 import TopHoldersCodePanel from "../CodePanel/TopHoldersCodePanel/TopHoldersCodePanel"
 import NvtIcon from "./icons/NvtIcon"
 import NvtCodePanel from "../CodePanel/NvtCodePanel/NvtCodePanel"
+import FundingIcon from "./icons/FundingIcon"
+import FundingCodePanel from "../CodePanel/FundingCodePanel/FundingCodePanel"
 
 export const getCases = locale =>
   [
@@ -60,6 +62,11 @@ export const getCases = locale =>
             type: "nvt",
             code: <NvtCodePanel />,
             icon: <NvtIcon />,
+          },
+          {
+            type: "funding",
+            code: <FundingCodePanel />,
+            icon: <FundingIcon />,
           },
         ]
       : []
