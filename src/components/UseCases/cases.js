@@ -16,45 +16,51 @@ import TopHoldersCodePanel from "../CodePanel/TopHoldersCodePanel/TopHoldersCode
 import NvtIcon from "./icons/NvtIcon"
 import NvtCodePanel from "../CodePanel/NvtCodePanel/NvtCodePanel"
 
-export const cases = [
-  {
-    type: "backtest",
-    code: <BacktestCodePanel />,
-    icon: <BacktestIcon />,
-  },
-  {
-    type: "monitor",
-    code: <MonitorCodePanel />,
-    icon: <MonitorIcon />,
-  },
-  {
-    type: "analyze",
-    code: <AnalyzeCodePanel />,
-    icon: <AnalyzeIcon />,
-  },
-  {
-    type: "matrix",
-    code: <MatrixCodePanel />,
-    icon: <MatrixIcon />,
-  },
-  {
-    type: "mvrv",
-    code: <MvrvCodePanel />,
-    icon: <MvrvIcon />,
-  },
-  {
-    type: "mean_age",
-    code: <MeanAgeCodePanel />,
-    icon: <MeanAgeIcon />,
-  },
-  {
-    type: "top_holders",
-    code: <TopHoldersCodePanel />,
-    icon: <TopHoldersIcon />,
-  },
-  {
-    type: "nvt",
-    code: <NvtCodePanel />,
-    icon: <NvtIcon />,
-  },
-]
+export const getCases = locale =>
+  [
+    {
+      type: "backtest",
+      code: <BacktestCodePanel />,
+      icon: <BacktestIcon />,
+    },
+    {
+      type: "monitor",
+      code: <MonitorCodePanel />,
+      icon: <MonitorIcon />,
+    },
+    {
+      type: "analyze",
+      code: <AnalyzeCodePanel />,
+      icon: <AnalyzeIcon />,
+    },
+  ].concat(
+    locale === "en"
+      ? [
+          {
+            type: "matrix",
+            code: <MatrixCodePanel />,
+            icon: <MatrixIcon />,
+          },
+          {
+            type: "mvrv",
+            code: <MvrvCodePanel />,
+            icon: <MvrvIcon />,
+          },
+          {
+            type: "mean_age",
+            code: <MeanAgeCodePanel />,
+            icon: <MeanAgeIcon />,
+          },
+          {
+            type: "top_holders",
+            code: <TopHoldersCodePanel />,
+            icon: <TopHoldersIcon />,
+          },
+          {
+            type: "nvt",
+            code: <NvtCodePanel />,
+            icon: <NvtIcon />,
+          },
+        ]
+      : []
+  )
