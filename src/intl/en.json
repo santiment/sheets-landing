@@ -116,6 +116,12 @@
   "usecases.mean_age.title": "Mean Age & Mean Dollar Age",
   "usecases.mean_age.desc": "This metric identifies accumulation and sell cycles for any network.",
 
+  "usecases.top_holders.title": "Top Holders Supply",
+  "usecases.top_holders.desc": "This template monitors how the biggest addresses in crypto are behaving to give you a key edge in seeing whether key stakeholders are preparing to pump.",
+  "usecases.top_holders.eth": "Ethereum",
+  "usecases.top_holders.eth.description": "Ethereum % 30-Day Total Cumulative: ",
+  "usecases.top_holders.balance": "Balance",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 
