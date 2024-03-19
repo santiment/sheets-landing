@@ -109,6 +109,8 @@
   
   "usecases.mvrv.title": "MVRV Opportunity & Danger Zone",
   "usecases.mvrv.desc": "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
+  "usecases.mvrv.danger_zone": "Danger zone",
+  "usecases.mvrv.opportunity_zone": "Opportunity zone",
  
   "pricing.title.top": "ニーズに合ったプランを",
   "pricing.title.bottom": "ご選択ください",

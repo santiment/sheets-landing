@@ -3,3 +3,27 @@
   top: -58px;
   left: -98px;
 }
+
+.danger_zone {
+  top: 265px;
+  left: -28px;
+}
+
+.opportunity_zone {
+  top: 66px;
+  right: -24px;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.red {
+  background: var(--persimmon-hover);
+}
+
+.green {
+  background: var(--green);
+}

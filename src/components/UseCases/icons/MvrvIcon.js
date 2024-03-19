@@ -1,6 +1,6 @@
 import React from "react"
 
-const AnalyzeIcon = () => {
+const MvrvIcon = () => {
   return (
     <svg
       width="60"
@@ -131,4 +131,4 @@ const AnalyzeIcon = () => {
   )
 }
 
-export default AnalyzeIcon
+export default MvrvIcon
