@@ -1,6 +1,10 @@
 @import "~@santiment-network/ui/mixins";
 @import "~@santiment-network/ui/variables";
 
+.container {
+  background: url('./waves.svg') no-repeat top / contain;
+}
+
 .wrapper {
   display: flex;
 
@@ -15,12 +19,11 @@
     right: 0;
     height: 850px;
   }
+
   &::before {
-    background: linear-gradient(
-        180deg,
+    background: linear-gradient(180deg,
         rgba(255, 255, 255, 0) 46%,
-        var(--white) 100%
-      );
+        var(--white) 100%);
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -37,6 +40,7 @@
 }
 
 .title {
+
   &,
   &__mark {
     @include text("h1", "l");
@@ -86,6 +90,7 @@
   margin-right: 32px;
   height: 50px;
   @include text("body-2");
+
   @include responsive("phone", "phone-xs") {
     margin-right: 25px;
     font-size: 14px;

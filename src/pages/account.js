@@ -37,7 +37,7 @@ const tabs = [
   {
     index: 1,
     content: (
-      <Link className={styles.tab} to='/account#get-started'>
+      <Link className={styles.tab} to="/account#get-started">
         Get started
       </Link>
     ),
@@ -45,7 +45,7 @@ const tabs = [
   {
     index: 2,
     content: (
-      <Link className={styles.tab} to='/account#api-keys'>
+      <Link className={styles.tab} to="/account#api-keys">
         API keys
       </Link>
     ),
@@ -53,7 +53,7 @@ const tabs = [
   {
     index: 3,
     content: (
-      <Link className={styles.tab} to='/account#subscription'>
+      <Link className={styles.tab} to="/account#subscription">
         Subscription
       </Link>
     ),
@@ -61,7 +61,7 @@ const tabs = [
   {
     index: 4,
     content: (
-      <Link className={styles.tab} to='/account#billing'>
+      <Link className={styles.tab} to="/account#billing">
         Billing
       </Link>
     ),
@@ -69,7 +69,7 @@ const tabs = [
   {
     index: 5,
     content: (
-      <Link className={styles.tab} to='/account#logout'>
+      <Link className={styles.tab} to="/account#logout">
         Logout
       </Link>
     ),

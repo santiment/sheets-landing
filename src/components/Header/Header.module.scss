@@ -1,10 +1,6 @@
 @import '~@santiment-network/ui/mixins.scss';
 @import '~@santiment-network/ui/variables.scss';
 
-.header {
-  background: var(--white);
-}
-
 .container {
   display: flex;
   align-items: center;
@@ -77,7 +73,7 @@
     align-items: center;
     justify-content: center;
 
-    :global(#hamburger):checked + & {
+    :global(#hamburger):checked+& {
       display: flex;
     }
   }
@@ -97,23 +93,7 @@
 }
 
 .linkLast {
-  margin-right: 6px;
-}
-
-.dividerLeft {
-  height: 40px;
-  border-left: 1px solid var(--porcelain);
-  margin: 0 12px;
-}
-
-.dividerRight {
-  height: 32px;
-  border-left: 1px solid var(--porcelain);
-  margin: 0 12px 0 24px;
-
-  @include responsive('phone', 'phone-xs') {
-    display: none;
-  }
+  margin-right: 42px;
 }
 
 .products {

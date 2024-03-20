@@ -1,0 +1,35 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.graph {
+  position: absolute;
+  top: -51px;
+  left: -71px;
+  width: 129%;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--circle);
+}
+
+.bearish {
+  --circle: var(--lima);
+  top: 73px;
+  left: -27px;
+}
+
+.bullish {
+  --circle: var(--persimmon);
+  top: 325px;
+  left: 288px;
+
+}
+
+.neutral {
+  --circle: #FFCB47;
+  top: 74px;
+  left: 481px;
+}

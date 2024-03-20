@@ -1,0 +1,28 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.graph {
+  position: absolute;
+  top: -45px;
+  left: -62px;
+  width: 125%;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--circle);
+}
+
+.fear {
+  --circle: var(--lima);
+  top: 301px;
+  left: -27px;
+}
+
+.greed {
+  --circle: var(--persimmon);
+  top: 69px;
+  left: 508px;
+}

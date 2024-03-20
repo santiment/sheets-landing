@@ -10,6 +10,7 @@
   padding: 14px 16px;
   display: flex;
   align-items: center;
+  gap: 14px;
 
   &:after {
     position: absolute;
@@ -27,8 +28,7 @@
 }
 
 .title {
-	color: var(--rhino);
-	@include text('body-1');
-	margin-left: 14px;
+  color: var(--rhino);
+  @include text('body-1');
   white-space: nowrap;
 }

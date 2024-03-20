@@ -1,11 +1,17 @@
+@import "~@santiment-network/ui/mixins.scss";
+
 .login {
-  padding: 6px 35px;
+  @include text('body-2');
+
+  padding: 7px 32px;
   background: transparent;
+  height: fit-content;
 }
 
 .account {
   display: inline-block;
   vertical-align: middle;
+
   &:hover {
     fill: var(--sheets);
   }
@@ -17,7 +23,7 @@
   height: 17px;
   margin-top: 2px;
 
-  &:hover{
+  &:hover {
     fill: var(--jungle-green-hover)
   }
 }

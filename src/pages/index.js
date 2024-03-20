@@ -26,7 +26,7 @@ function onDocumentationClick() {
 }
 
 const IndexPage = () => (
-  <Layout>
+  <Layout classes={{ container: styles.container }}>
     <SEO title="Spreadsheet Crypto: Explore Google Spreadsheet Crypto Templates" />
     <section className={styles.wrapper}>
       <div className={styles.main}>
