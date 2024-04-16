@@ -100,17 +100,6 @@
   "usecases.analyze.onchain": "オンチェーン",
   "usecases.analyze.social": "ソーシャル",
   "usecases.analyze.devact": "ディベロッパーアクティビティ",
-
-  "usecases.matrix.title": "Asset Activity Matrix",
-  "usecases.matrix.desc": "This template is a paradise for altcoin traders who enjoy swing trading between the hottest (or coldest) assets in crypto on a daily or weekly basis.",
-  "usecases.matrix.fantom": "Fantom",
-  "usecases.matrix.merit_circle": "Merit-circle",
-  "usecases.matrix.decentraland": "Decentraland",
-  
-  "usecases.mvrv.title": "MVRV Opportunity & Danger Zone",
-  "usecases.mvrv.desc": "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
-  "usecases.mvrv.danger_zone": "Danger zone",
-  "usecases.mvrv.opportunity_zone": "Opportunity zone",
  
   "pricing.title.top": "ニーズに合ったプランを",
   "pricing.title.bottom": "ご選択ください",
