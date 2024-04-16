@@ -18,8 +18,8 @@ import NvtCodePanel from "../CodePanel/NvtCodePanel/NvtCodePanel"
 import FundingIcon from "./icons/FundingIcon"
 import FundingCodePanel from "../CodePanel/FundingCodePanel/FundingCodePanel"
 
-export const getCases = locale =>
-  [
+export const getCases = locale => {
+  const commonCases = [
     {
       type: "backtest",
       code: <BacktestCodePanel />,
@@ -35,39 +35,42 @@ export const getCases = locale =>
       code: <AnalyzeCodePanel />,
       icon: <AnalyzeIcon />,
     },
-  ].concat(
-    locale === "en"
-      ? [
-          {
-            type: "matrix",
-            code: <MatrixCodePanel />,
-            icon: <MatrixIcon />,
-          },
-          {
-            type: "mvrv",
-            code: <MvrvCodePanel />,
-            icon: <MvrvIcon />,
-          },
-          {
-            type: "mean_age",
-            code: <MeanAgeCodePanel />,
-            icon: <MeanAgeIcon />,
-          },
-          {
-            type: "top_holders",
-            code: <TopHoldersCodePanel />,
-            icon: <TopHoldersIcon />,
-          },
-          {
-            type: "nvt",
-            code: <NvtCodePanel />,
-            icon: <NvtIcon />,
-          },
-          {
-            type: "funding",
-            code: <FundingCodePanel />,
-            icon: <FundingIcon />,
-          },
-        ]
-      : []
-  )
+  ]
+
+  if (locale !== "en") {
+    return commonCases
+  }
+
+  return commonCases.concat([
+    {
+      type: "matrix",
+      code: <MatrixCodePanel />,
+      icon: <MatrixIcon />,
+    },
+    {
+      type: "mvrv",
+      code: <MvrvCodePanel />,
+      icon: <MvrvIcon />,
+    },
+    {
+      type: "mean_age",
+      code: <MeanAgeCodePanel />,
+      icon: <MeanAgeIcon />,
+    },
+    {
+      type: "top_holders",
+      code: <TopHoldersCodePanel />,
+      icon: <TopHoldersIcon />,
+    },
+    {
+      type: "nvt",
+      code: <NvtCodePanel />,
+      icon: <NvtIcon />,
+    },
+    {
+      type: "funding",
+      code: <FundingCodePanel />,
+      icon: <FundingIcon />,
+    },
+  ])
+}
