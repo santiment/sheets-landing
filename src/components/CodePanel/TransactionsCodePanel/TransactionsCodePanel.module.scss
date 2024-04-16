@@ -1,0 +1,65 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.code {
+  height: 430px;
+}
+
+.graph {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.price {
+  position: absolute;
+  color: var(--waterloo);
+
+  @include text("body-3", "m");
+
+  &__btc {
+    top: 139px;
+    left: 45px;
+  }
+
+  &__matic {
+    top: 182px;
+    left: 313px;
+  }
+
+  &__sand {
+    top: 238px;
+    left: 470px;
+  }
+}
+
+.emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: -30px;
+  right: -30px;
+  background: var(--white);
+  font-size: 32px;
+  border: 1px solid var(--porcelain);
+  border-radius: 50%;
+}
+
+.btc {
+  top: 78px;
+  left: -15px;
+}
+
+.matic {
+  top: 105px;
+  left: 298px;
+}
+
+.sand {
+  top: 163px;
+  left: 520px;
+}

@@ -17,6 +17,8 @@ import NvtIcon from "./icons/NvtIcon"
 import NvtCodePanel from "../CodePanel/NvtCodePanel/NvtCodePanel"
 import FundingIcon from "./icons/FundingIcon"
 import FundingCodePanel from "../CodePanel/FundingCodePanel/FundingCodePanel"
+import TransactionsIcon from "./icons/TransactionsIcon"
+import TransactionsCodePanel from "../CodePanel/TransactionsCodePanel/TransactionsCodePanel"
 
 export const getCases = locale => {
   const commonCases = [
@@ -71,6 +73,11 @@ export const getCases = locale => {
       type: "funding",
       code: <FundingCodePanel />,
       icon: <FundingIcon />,
+    },
+    {
+      type: "transactions",
+      code: <TransactionsCodePanel />,
+      icon: <TransactionsIcon />,
     },
   ])
 }

@@ -133,6 +133,9 @@
   "usecases.funding.fear": "Fear",
   "usecases.funding.greed": "Greed",
 
+  "usecases.transactions.title": "Top Transactions",
+  "usecases.transactions.desc": "This makes it easy to see which networks are seeing major whale movement.",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 
