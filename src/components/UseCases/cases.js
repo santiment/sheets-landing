@@ -19,6 +19,8 @@ import FundingIcon from "./icons/FundingIcon"
 import FundingCodePanel from "../CodePanel/FundingCodePanel/FundingCodePanel"
 import TransactionsIcon from "./icons/TransactionsIcon"
 import TransactionsCodePanel from "../CodePanel/TransactionsCodePanel/TransactionsCodePanel"
+import SocDominanceIcon from "./icons/SocDominanceIcon"
+import SocDominanceCodePanel from "../CodePanel/SocDominanceCodePanel/SocDominanceCodePanel"
 
 export const getCases = locale => {
   const commonCases = [
@@ -78,6 +80,11 @@ export const getCases = locale => {
       type: "transactions",
       code: <TransactionsCodePanel />,
       icon: <TransactionsIcon />,
+    },
+    {
+      type: "soc_dominance",
+      code: <SocDominanceCodePanel />,
+      icon: <SocDominanceIcon />,
     },
   ])
 }

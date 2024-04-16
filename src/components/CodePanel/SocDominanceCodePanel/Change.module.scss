@@ -1,0 +1,9 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.change {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: var(--blue);
+}

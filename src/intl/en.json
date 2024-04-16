@@ -136,6 +136,9 @@
   "usecases.transactions.title": "Top Transactions",
   "usecases.transactions.desc": "This makes it easy to see which networks are seeing major whale movement.",
 
+  "usecases.soc_dominance.title": "Social Dominance Divergence",
+  "usecases.soc_dominance.desc": "Measuring each asset against its normal resting discussion rate average helps notify when any asset is suddenly getting increased attention.",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 
