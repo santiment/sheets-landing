@@ -1,13 +1,13 @@
-import React from 'react'
-import cx from 'classnames'
-import Tooltip from '@santiment-network/ui/Tooltip'
-import Icon from '@santiment-network/ui/Icon'
-import Panel from '@santiment-network/ui/Panel/Panel'
-import styles from './CheckoutForm/CheckoutForm.module.scss'
+import React from "react"
+import cx from "classnames"
+import Tooltip from "@santiment-network/ui/Tooltip"
+import Icon from "@santiment-network/ui/Icon"
+import Panel from "@santiment-network/ui/Panel/Panel"
+import styles from "./CheckoutForm/CheckoutForm.module.scss"
 
 const Trigger = ({ isActive, ...props }) => (
   <Icon
-    type='help-round'
+    type="help-round"
     className={cx(styles.icon, isActive && styles.icon_active)}
     {...props}
   />
@@ -17,10 +17,10 @@ const CVCExplanation = () => {
   return (
     <Tooltip
       className={styles.tooltip}
-      passOpenStateAs='isActive'
+      passOpenStateAs="isActive"
       trigger={<Trigger />}
     >
-      <Panel className={styles.tooltip__content} variant='tooltip'>
+      <Panel className={styles.tooltip__content} variant="tooltip">
         <p className={styles.tooltip__text}>
           Your security code is a 3 or 4 digit code on your credit card,
           separate from the 16-digit card number.

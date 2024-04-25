@@ -102,6 +102,43 @@
   "usecases.analyze.social": "Social",
   "usecases.analyze.devact": "Dev. activity",
 
+  "usecases.matrix.title": "Asset Activity Matrix",
+  "usecases.matrix.desc": "This template is a paradise for altcoin traders who enjoy swing trading between the hottest (or coldest) assets in crypto on a daily or weekly basis.",
+  "usecases.matrix.fantom": "Fantom",
+  "usecases.matrix.merit_circle": "Merit-circle",
+  "usecases.matrix.decentraland": "Decentraland",
+
+  "usecases.mvrv.title": "MVRV Opportunity & Danger Zone",
+  "usecases.mvrv.desc": "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
+  "usecases.mvrv.danger_zone": "Danger zone",
+  "usecases.mvrv.opportunity_zone": "Opportunity zone",
+
+  "usecases.mean_age.title": "Mean Age & Mean Dollar Age",
+  "usecases.mean_age.desc": "This metric identifies accumulation and sell cycles for any network.",
+
+  "usecases.top_holders.title": "Top Holders Supply",
+  "usecases.top_holders.desc": "This template monitors how the biggest addresses in crypto are behaving to give you a key edge in seeing whether key stakeholders are preparing to pump.",
+  "usecases.top_holders.eth": "Ethereum",
+  "usecases.top_holders.eth.description": "Ethereum % 30-Day Total Cumulative: ",
+  "usecases.top_holders.balance": "Balance",
+
+  "usecases.nvt.title": "NVT Template",
+  "usecases.nvt.desc": "This template calculates the NVT for BTC, ETH, and several ERC-20 coins, and assigns a bullish or bearish value to their historical and present-day performance.",
+  "usecases.nvt.bearish": "Bearish",
+  "usecases.nvt.bullish": "Bullish",
+  "usecases.nvt.neutral": "Neutral",
+
+  "usecases.funding.title": "Funding Rate",
+  "usecases.funding.desc": "Paying attention to how many traders are longing or shorting an asset provides a guide on how much greed or fear you can capitalize on.",
+  "usecases.funding.fear": "Fear",
+  "usecases.funding.greed": "Greed",
+
+  "usecases.transactions.title": "Top Transactions",
+  "usecases.transactions.desc": "This makes it easy to see which networks are seeing major whale movement.",
+
+  "usecases.soc_dominance.title": "Social Dominance Divergence",
+  "usecases.soc_dominance.desc": "Measuring each asset against its normal resting discussion rate average helps notify when any asset is suddenly getting increased attention.",
+
   "pricing.title.top": "Choose the right plan",
   "pricing.title.bottom": "for your aims",
 

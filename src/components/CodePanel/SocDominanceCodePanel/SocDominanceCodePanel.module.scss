@@ -1,0 +1,34 @@
+@import "~@santiment-network/ui/mixins";
+@import "~@santiment-network/ui/variables";
+
+.code {
+  height: 430px;
+}
+
+.graph {
+  position: absolute;
+  bottom: -129px;
+  left: -110px;
+}
+
+
+.ftt,
+.iota,
+.doge {
+  gap: 48px;
+}
+
+.ftt {
+  top: 98px;
+  left: -43px;
+}
+
+.iota {
+  top: 62px;
+  left: 248px;
+}
+
+.doge {
+  top: 143px;
+  left: 443px;
+}

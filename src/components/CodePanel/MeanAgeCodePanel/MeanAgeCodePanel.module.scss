@@ -1,0 +1,94 @@
+.graph {
+  position: absolute;
+  top: -58px;
+  left: -98px;
+}
+
+.snow1,
+.snow2,
+.fire1,
+.fire2,
+.fire3 {
+  width: 64px;
+  height: 64px;
+
+  &>span {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+.snow1 {
+  top: 64px;
+  left: 85px;
+}
+
+.snow2 {
+  top: 107px;
+  left: 404px;
+}
+
+.fire1 {
+  top: 291px;
+  left: -41px;
+}
+
+.fire2 {
+  top: 305px;
+  left: 248px;
+}
+
+.fire3 {
+  top: 296px;
+  left: 548px;
+}
+
+.triangle {
+  --y: 82%;
+  --x: 83%;
+
+  border: solid transparent;
+  border-width: 0 12px 24px;
+  border-bottom-color: #f1f3f9;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: -12px;
+
+    border: inherit;
+    border-bottom-color: white;
+  }
+}
+
+.bottomRight,
+.bottomLeft,
+.topRight,
+.topLeft {
+  position: absolute;
+}
+
+.bottomRight {
+  rotate: 134deg;
+  top: var(--y);
+  left: var(--x);
+}
+
+.bottomLeft {
+  rotate: 227deg;
+  top: var(--y);
+  right: var(--x);
+}
+
+.topRight {
+  rotate: 46deg;
+  bottom: var(--y);
+  left: var(--x);
+}
+
+.topLeft {
+  rotate: 313deg;
+  bottom: var(--y);
+  right: var(--x);
+}
