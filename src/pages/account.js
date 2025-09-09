@@ -11,11 +11,8 @@ import {
 import Layout from "../components/layout"
 import SettingsGetStarted from "../components/Settings/SettingsGetStarted"
 import SettingsAPIKeys from "../components/Settings/SettingsAPIKeys"
-import SettingsSubscription from "../components/Settings/SettingsSubscription"
-import SettingsBilling from "../components/Settings/SettingsBilling"
 import SettingsLogout from "../components/Settings/SettingsLogout"
 import GDPR from "../components/GDPR/GDPR"
-import { getCurrentSheetsSubscription } from "../utils/plans"
 import styles from "./account.module.scss"
 
 const updateCache = (
@@ -53,21 +50,13 @@ const tabs = [
   {
     index: 3,
     content: (
-      <Link className={styles.tab} to="/account#subscription">
-        Subscription
-      </Link>
-    ),
-  },
-  {
-    index: 4,
-    content: (
       <Link className={styles.tab} to="/account#billing">
         Billing
       </Link>
     ),
   },
   {
-    index: 5,
+    index: 4,
     content: (
       <Link className={styles.tab} to="/account#logout">
         Logout
@@ -77,7 +66,6 @@ const tabs = [
 ]
 
 export default ({ location: { hash } }) => {
-  const shouldHighlightRenew = hash.includes("renew")
   return (
     <Layout isAccountPage classes={styles}>
       <Query query={CURRENT_USER_QUERY}>
@@ -140,11 +128,6 @@ export default ({ location: { hash } }) => {
                   </Mutation>
                 )}
               </Mutation>
-              <SettingsSubscription
-                subscription={getCurrentSheetsSubscription(data.currentUser)}
-                shouldHighlightRenew={shouldHighlightRenew}
-              />
-              <SettingsBilling />
               <SettingsLogout />
             </>
           )
