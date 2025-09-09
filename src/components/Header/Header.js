@@ -40,9 +40,14 @@ const Header = ({ isAccountPage }) => {
           <Link className={styles.link} to="/#use-cases" onClick={closeNav}>
             {tr("header.use_cases")}
           </Link>
-          <Link className={styles.link} to="/#pricing" onClick={closeNav}>
+          <a
+            className={styles.link}
+            href="https://app.santiment.net/pricing"
+            target="_blank"
+            onClick={closeNav}
+          >
             {tr("header.pricing")}
-          </Link>
+          </a>
           <a
             className={cx(styles.link, styles.linkLast)}
             href="mailto:support@santiment.net"
