@@ -3,7 +3,6 @@ import Icon from "@santiment-network/ui/Icon"
 import Button from "@santiment-network/ui/Button"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Pricing from "../components/Pricing"
 import ForWhom from "../components/ForWhom/ForWhom"
 import Advantages from "../components/Advantages/Advantages"
 import UseCases from "../components/UseCases/UseCases"
@@ -58,7 +57,6 @@ const IndexPage = () => (
     <ForWhom />
     <Advantages />
     <UseCases />
-    <Pricing />
     <FAQ />
     <Testimonials />
     <ReadyToStart />
