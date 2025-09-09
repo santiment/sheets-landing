@@ -6,7 +6,13 @@ This is the source for [`Sheets Landing Page`](https://sheets.santiment.net).
 
 ## Running locally
 
-If you have yarn you can run the app simply:
+1. Use Node v14
+2. Yarn V1 is needed. Install it first
+```bash
+npm install --global yarn
+```
+
+3. To run the app:
 
 ```bash
 yarn
