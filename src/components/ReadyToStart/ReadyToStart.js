@@ -4,6 +4,7 @@ import Title from '../Title/Title'
 import Button from '@santiment-network/ui/Button'
 import { tr } from '../../utils/translate'
 import styles from './ReadyToStart.module.scss'
+import { getLoginLink } from '../../utils/login'
 
 function onGetAccessClick() {
   window.gtag('event', 'login_action_call', {
@@ -23,7 +24,7 @@ export default () => (
       </p>
       <Button
         as={Link}
-        to='/account'
+        to={getLoginLink()}
         variant='fill'
         accent='sheets'
         className={styles.btn}

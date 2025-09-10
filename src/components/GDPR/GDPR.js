@@ -10,7 +10,7 @@ const GDPRPage = ({ togglePrivacyPolicy, privacyPolicyAccepted }) => {
   const toggleGDPR = () => setGDPR(!isGDPR)
 
   if (privacyPolicyAccepted) {
-    replace("/account")
+    replace("/")
   }
 
   return (

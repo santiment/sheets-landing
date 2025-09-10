@@ -27,7 +27,7 @@ const updateCache = (
       localStorage.removeItem("template")
       window.open(template, "template", "width=1000,height=700")
     }
-    replace("/account")
+    replace("/")
   }, 1000)
 }
 

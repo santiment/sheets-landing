@@ -7,6 +7,7 @@ import Subtitle from '../Subtitle/Subtitle'
 import Features from '../Features/Features'
 import styles from './Advantages.module.scss'
 import { tr } from '../../utils/translate'
+import { getLoginLink } from '../../utils/login'
 
 const advantages = [
   {
@@ -95,7 +96,7 @@ export default injectIntl(({ intl }) => (
         </Subtitle>
         <Button
           as={Link}
-          to='/account'
+          to={getLoginLink()}
           variant='fill'
           accent='sheets'
           className={styles.btn}

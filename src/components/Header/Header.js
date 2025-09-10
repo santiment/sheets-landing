@@ -18,12 +18,8 @@ const Header = ({ isAccountPage }) => {
     <header>
       <div className={styles.container}>
         <div className={styles.left}>
-          <div className={styles.product}>
-            <div className={styles.products}>
-              <a className={styles.logo} href="https://app.santiment.net/">
-                <img src={logo} alt="sheets logo" />
-              </a>
-            </div>
+          <div className={styles.products}>
+            <img src={logo} alt="sheets logo" />
           </div>
         </div>
         <label htmlFor="hamburger">
@@ -40,9 +36,14 @@ const Header = ({ isAccountPage }) => {
           <Link className={styles.link} to="/#use-cases" onClick={closeNav}>
             {tr("header.use_cases")}
           </Link>
-          <Link className={styles.link} to="/#pricing" onClick={closeNav}>
+          <a
+            className={styles.link}
+            href="https://app.santiment.net/pricing"
+            target="_blank"
+            onClick={closeNav}
+          >
             {tr("header.pricing")}
-          </Link>
+          </a>
           <a
             className={cx(styles.link, styles.linkLast)}
             href="mailto:support@santiment.net"

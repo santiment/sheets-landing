@@ -6,6 +6,7 @@ import { Query } from 'react-apollo'
 import { CURRENT_USER_QUERY } from '../../gql/user'
 import { tr } from '../../utils/translate'
 import styles from './AccountBtn.module.scss'
+import { getLoginLink } from '../../utils/login'
 
 const btnProps = {
   false: {
@@ -29,7 +30,7 @@ const AccountBtn = ({ isAccountPage }) => {
         return (
           <Button
             as={Link}
-            to='/account'
+            to={getLoginLink()}
             variant='flat'
             isActive={isAccountPage}
             {...btnProps[Boolean(currentUser)]}

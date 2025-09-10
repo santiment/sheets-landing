@@ -9,7 +9,7 @@ export const categories = [
       {
         children: 'pricing',
         name: 'Pricing',
-        href: 'https://santiment.net/pricing/'
+        href: 'https://app.santiment.net/pricing/'
       },
       { children: 'team', name: 'Team', href: 'https://santiment.net/team/' },
       { children: 'jobs', name: 'Jobs', href: 'https://santiment.net/jobs/' },
