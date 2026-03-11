@@ -1,16 +1,21 @@
-FROM node:14
+FROM node:20-alpine AS base
 
-ARG GIT_HEAD
-RUN GIT_HEAD=$GIT_HEAD
+RUN apk add git
+RUN npm install -g pnpm@8
 
 WORKDIR /app
 
-COPY ./package.json /app/package.json
-COPY ./yarn.lock /app/yarn.lock
+COPY package.json pnpm-lock.yaml /app
 
-RUN yarn install --production
+RUN pnpm i --frozen-lockfile
 
-COPY ./ /app
+FROM base AS builder
+ENV NODE_ENV=production
+ENV ASTRO_TELEMETRY_DISABLED=1
 
-RUN yarn build
+ARG BACKEND_URL
+ARG SITE_URL
 
+COPY . /app
+
+RUN pnpm build

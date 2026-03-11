@@ -1,0 +1,129 @@
+---
+import { Image } from "astro:assets"
+
+import CodePanel from "../CodePanel.astro"
+import { btcIcon, ethCircleIcon, financialIcon } from "../FloatingPanel/assets"
+
+import man from "$assets/ibis.jpg"
+---
+
+<CodePanel class="w-[60%]">
+  <img
+    src={btcIcon}
+    alt="btc"
+    class="absolute left-10 top-10 rounded-full border-4 border-white shadow-panel"
+  />
+
+  <img
+    src={ethCircleIcon}
+    alt="eth"
+    class="absolute left-[300px] top-[220px] rounded-full border-4 border-white shadow-panel"
+  />
+
+  <div
+    class="absolute -left-[38px] top-[224px] flex flex-col items-center rounded-lg bg-white p-[14px_20px] shadow-panel"
+  >
+    <div class="flex w-full items-center justify-between text-waterloo">
+      <span>BTC / USD</span>
+
+      <span class="flex items-center gap-1 text-blue">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="6"
+          height="4"
+          fill="none"
+        >
+          <path
+            fill="#5275FF"
+            d="M2.66.16c.18-.21.5-.21.68 0L5.9 3.31c.23.28.03.69-.33.69H.43a.42.42 0 0 1-.33-.7L2.66.17z"
+          ></path>
+        </svg>
+        7.26%
+      </span>
+    </div>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="192"
+      height="40"
+      fill="none"
+      class="mt-4"
+    >
+      <path
+        stroke="#5275FF"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M1 39C25.3 27.4 28.6 1 51.2 1c18.2 0 22.7 29 39.5 26.4 13.7-2.1 12.1-18 27.3-15.8 13.5 1.8 16.7 29.3 30.4 16.8 15.2-13.7 29-1 42.6-13.7"
+      ></path>
+    </svg>
+  </div>
+
+  <div
+    class="absolute -right-[30px] top-[75px] flex items-start gap-4 rounded-lg bg-white p-[16px_20px] shadow-panel"
+  >
+    <img src={financialIcon} alt="" class="-mt-1" />
+    <div>
+      <h4 class="mb-1.5 text-lg font-medium text-rhino">
+        Ethereum price tracking
+      </h4>
+
+      <p class="w-[250px] text-sm text-waterloo">
+        Track the activity of selected address based on the Ethereum
+      </p>
+    </div>
+  </div>
+
+  <div class="absolute bottom-[33px] right-[36px] shadow-panel">
+    <Image
+      src={man}
+      alt=""
+      width={32}
+      height={32}
+      class="absolute left-3.5 top-3.5 size-8 rounded-full object-cover"
+    />
+
+    <input
+      disabled
+      placeholder="Update the status..."
+      class="w-full rounded border border-porcelain bg-athens px-[57px] py-[30px] pr-[80px] text-sm text-mystic outline-none placeholder:text-casper"
+    />
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="18"
+      height="18"
+      fill="none"
+      class="absolute right-6 top-5 fill-[#7a859e]"
+    >
+      <path
+        d="M7 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM6.86 10.28a1 1 0 1 0-1.72 1.04 4.5 4.5 0 0 0 7.72 0 1 1 0 0 0-1.72-1.04 2.5 2.5 0 0 1-4.28 0z"
+      ></path>
+      <path
+        fill-rule="evenodd"
+        d="M9 .5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM2.5 9a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0z"
+        clip-rule="evenodd"></path>
+    </svg>
+
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="17"
+      height="17"
+      fill="none"
+      class="absolute right-[57px] top-5 fill-[#7a859e]"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.7.3a1 1 0 0 1 .25 1.03l-5 14.5a1 1 0 0 1-1.86.09l-3-6.5a1 1 0 0 1 .2-1.13l2.5-2.5a1 1 0 1 1 1.42 1.42l-2.01 2 1.67 3.61 3.52-10.2L4.18 6.12 6.4 7.16a1 1 0 1 1-.84 1.82L1.08 6.9a1 1 0 0 1 .1-1.86l14.5-5A1 1 0 0 1 16.7.3z"
+        clip-rule="evenodd"></path>
+    </svg>
+  </div>
+
+  <ul class="space-y-6 px-10 py-8">
+    {
+      [433, 197, 366, 473, 315, 447, 536, 238].map((w) => (
+        <li class="h-5 rounded-full bg-[#f0f2f7]" style={`width:${w}px`} />
+      ))
+    }
+  </ul>
+</CodePanel>

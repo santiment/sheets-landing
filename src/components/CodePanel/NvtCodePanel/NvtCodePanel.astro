@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets"
+
+import CodePanel from "../CodePanel.astro"
+import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
+
+import graph from "./assets/graph.svg"
+---
+
+<CodePanel class="w-[60%]">
+  <Image
+    class="absolute left-[-71px] top-[-51px] w-[129%]"
+    src={graph}
+    alt=""
+  />
+
+  <FloatingPanel class="-left-[27px] top-[73px]" title="Bearish">
+    <div slot="before" class="h-5 w-5 rounded-full bg-lima"></div>
+  </FloatingPanel>
+
+  <FloatingPanel class="left-[288px] top-[325px]" title="Bullish">
+    <div slot="before" class="h-5 w-5 rounded-full bg-red"></div>
+  </FloatingPanel>
+
+  <FloatingPanel class="left-[481px] top-[74px]" title="Neutral">
+    <div slot="before" class="h-5 w-5 rounded-full bg-[#FFCB47]"></div>
+  </FloatingPanel>
+</CodePanel>

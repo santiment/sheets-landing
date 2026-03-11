@@ -1,0 +1,23 @@
+---
+import { cn } from "san-webkit-next/ui/utils"
+
+type Props = {
+  title: string
+  icon?: string
+  class?: string
+}
+
+const { title, icon, class: className } = Astro.props
+---
+
+<div
+  class={cn([
+    "absolute flex items-center gap-3.5 rounded-lg border border-[#f1f3f9] bg-white px-4 py-3.5 shadow-panel",
+    className,
+  ])}
+>
+  <slot name="before" />
+  {icon && <img src={icon} alt="" />}
+  <span class="whitespace-nowrap text-lg text-rhino">{title}</span>
+  <slot />
+</div>

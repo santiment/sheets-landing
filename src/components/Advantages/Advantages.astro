@@ -1,0 +1,250 @@
+---
+import { Image } from "astro:assets"
+
+import interest from "$assets/interest.svg"
+
+const advantages = [
+  {
+    key: "onchain",
+    label: "On-chain",
+    title: "4.0+ TB of\non-chain data",
+    features: [
+      "Token Age Consumed",
+      "Exchange Inflow/Outflow",
+      "Token Circulation/Velocity",
+      "Daily Active Addresses",
+      "Network Growth",
+      "Top 100 transactions",
+      "RV, MVRV, NVT",
+      "Top Token Holders",
+      "Eth Mining Metrics",
+    ],
+  },
+  {
+    key: "social",
+    label: "Social",
+    title: "200+ GB\nof text data",
+    features: [
+      "Data from forums and chats",
+      "Telegram, Twitter, Reddit and more",
+      "Data from private trader chats",
+      "Volume of social mentions",
+      "Social mentions for crypto projects",
+      "Comprehensive word clouds",
+      "Top Social Gainers",
+      "Sentiment score",
+      "# of project's Twitter followers",
+    ],
+  },
+  {
+    key: "fin",
+    label: "Financial",
+    title: "1200+ projects",
+    features: [
+      "Price",
+      "Volume",
+      "Market Cap",
+      "Open, Close, High, Low",
+      "227 exchange wallets",
+    ],
+  },
+  {
+    key: "dev",
+    label: "Developer activity",
+    title: "4.5 TB of processed data",
+    features: [
+      "Github data for 970+ projects",
+      "1.7 BN Github events",
+      "New way of measuring Dev Activity",
+      "Hourly updates",
+      "Historical data starts from 2013",
+    ],
+  },
+]
+---
+
+<section id="metrics" class="mb-[165px] md:mb-20 sm:mb-10">
+  <div
+    class="grid gap-6 [grid-template-areas:'chain_social_financial'_'chain_social_financial'_'chain_social_developer'_'interest_interest_developer'] sm:[grid-template-areas:'chain'_'social'_'financial'_'developer'_'interest']"
+  >
+    <div
+      class="rounded-lg bg-[#f7f8fb] p-[30px_40px] md:p-[30px]"
+      style="grid-area:chain"
+    >
+      {
+        (() => {
+          const a = advantages[0]
+          return (
+            <>
+              <p class="mb-2 text-lg text-sheets">{a.label}</p>
+
+              <h3
+                class="mb-7 text-left text-4xl font-bold"
+                style="white-space:pre-line"
+              >
+                {a.title}
+              </h3>
+
+              <ul class="space-y-2.5">
+                {a.features.map((f) => (
+                  <li class="flex items-start gap-6 pl-6 text-base leading-5 md:text-sm">
+                    <svg
+                      class="-ml-6 mt-1.5 shrink-0 fill-sheets"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9.293.293a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L3.586 4.586 7.879.293a1 1 0 0 1 1.414 0z"
+                      />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        })()
+      }
+    </div>
+
+    <div
+      class="rounded-lg bg-[#f7f8fb] p-[30px_40px] md:p-[30px]"
+      style="grid-area:social"
+    >
+      {
+        (() => {
+          const a = advantages[1]
+          return (
+            <>
+              <p class="mb-2 text-lg text-sheets">{a.label}</p>
+              <h3
+                class="mb-7 text-left text-4xl font-bold"
+                style="white-space:pre-line"
+              >
+                {a.title}
+              </h3>
+              <ul class="space-y-2.5">
+                {a.features.map((f) => (
+                  <li class="flex items-start gap-6 pl-6 text-base leading-5 md:text-sm">
+                    <svg
+                      class="-ml-6 mt-1.5 shrink-0 fill-sheets"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9.293.293a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L3.586 4.586 7.879.293a1 1 0 0 1 1.414 0z"
+                      />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        })()
+      }
+    </div>
+
+    <div
+      class="relative overflow-hidden rounded bg-[#f7f8fb] p-8"
+      style="grid-area:interest"
+    >
+      <h3 class="mb-3 text-left text-xl font-bold">Sounds interesting?</h3>
+      <p class="mb-5 max-w-[270px] text-left text-sm text-waterloo md:text-xs">
+        Create your custom solutions by using our API and comprehensive set of
+        data
+      </p>
+      <a
+        href="https://app.santiment.net/"
+        class="inline-flex h-auto items-center rounded-sm bg-sheets px-11 py-2 text-base font-medium text-white transition-opacity hover:opacity-80"
+      >
+        Try free now
+      </a>
+      <Image
+        src={interest}
+        alt=""
+        aria-hidden="true"
+        class="pointer-events-none absolute right-0 top-[45px] h-[222px] w-[200px]"
+      />
+    </div>
+
+    <div
+      class="rounded-lg bg-[#f7f8fb] p-[30px_40px] md:p-[30px]"
+      style="grid-area:financial"
+    >
+      {
+        (() => {
+          const a = advantages[2]
+
+          return (
+            <>
+              <p class="mb-2 text-lg text-sheets">{a.label}</p>
+              <h3 class="mb-7 text-left text-4xl font-bold">{a.title}</h3>
+              <ul class="space-y-2.5">
+                {a.features.map((f) => (
+                  <li class="flex items-start gap-6 pl-6 text-base leading-5 md:text-sm">
+                    <svg
+                      class="-ml-6 mt-1.5 shrink-0 fill-sheets"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9.293.293a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L3.586 4.586 7.879.293a1 1 0 0 1 1.414 0z"
+                      />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        })()
+      }
+    </div>
+
+    <div
+      class="rounded-lg bg-[#f7f8fb] p-[30px_40px] md:p-[30px]"
+      style="grid-area:developer"
+    >
+      {
+        (() => {
+          const a = advantages[3]
+          return (
+            <>
+              <p class="mb-2 text-lg text-sheets">{a.label}</p>
+              <h3 class="mb-7 text-left text-4xl font-bold">{a.title}</h3>
+              <ul class="space-y-2.5">
+                {a.features.map((f) => (
+                  <li class="flex items-start gap-6 pl-6 text-base leading-5 md:text-sm">
+                    <svg
+                      class="-ml-6 mt-1.5 shrink-0 fill-sheets"
+                      width="10"
+                      height="8"
+                      viewBox="0 0 10 8"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M9.293.293a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414 0l-2-2a1 1 0 1 1 1.414-1.414L3.586 4.586 7.879.293a1 1 0 0 1 1.414 0z"
+                      />
+                    </svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )
+        })()
+      }
+    </div>
+  </div>
+</section>

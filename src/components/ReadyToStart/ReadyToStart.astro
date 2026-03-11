@@ -1,0 +1,28 @@
+---
+import girlImage from "./assets/girl.svg?url"
+---
+
+<section class="mb-0 flex h-[550px] w-full items-start justify-center">
+  <div
+    class="w-full pt-[50px] text-center sm:pt-[170px]"
+    style={`background: linear-gradient(180deg, white 0%, rgba(255,255,255,0) 27%, rgba(255,255,255,0) 73%, white 100%), url('${girlImage}') no-repeat 37% 73%`}
+  >
+    <h2 class="text-4xl font-bold text-rhino sm:text-3xl">
+      Ready to get started?
+    </h2>
+
+    <p class="mx-auto mt-4 text-sm text-waterloo">
+      Click below to access the Santiment API or join the Discord<br
+        class="sm:hidden"
+      />
+      channel to share your solutions with the world
+    </p>
+
+    <a
+      href="https://academy.santiment.net/sansheets/setting-up/"
+      class="mt-6 inline-flex h-[50px] items-center rounded-sm bg-sheets px-[45px] text-base font-medium text-white transition-opacity hover:opacity-80"
+    >
+      Get access
+    </a>
+  </div>
+</section>

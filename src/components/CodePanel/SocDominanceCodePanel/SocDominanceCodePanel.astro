@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets"
+
+import CodePanel from "../CodePanel.astro"
+import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
+
+import graph from "./assets/graph.svg"
+
+const changes = [
+  { title: "$FTT", pos: "top-[98px] -left-[43px]", value: 7.26 },
+  { title: "$IOTA", pos: "top-[62px] left-[248px]", value: 9.82 },
+  { title: "$DOGE", pos: "top-[143px] left-[443px]", value: 3.54 },
+]
+---
+
+<CodePanel class="h-[430px] w-[60%]">
+  <Image class="absolute -bottom-[129px] -left-[110px]" src={graph} alt="" />
+
+  {
+    changes.map(({ title, pos, value }) => (
+      <FloatingPanel class={`${pos} gap-12`} title={title}>
+        <div class="flex items-center gap-1">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="12"
+            height="12"
+            viewBox="0 0 12 12"
+            fill="none"
+          >
+            <circle cx="6" cy="6" r="6" fill="#E3FBE3" />
+            <path
+              d="M5.68746 3.8398C5.84764 3.64323 6.15216 3.64324 6.31232 3.83983L8.68051 6.74647C8.89008 7.00368 8.70356 7.38469 8.36807 7.38469H3.63133C3.29583 7.38469 3.10931 7.00366 3.31891 6.74645L5.68746 3.8398Z"
+              fill="#5275FF"
+            />
+          </svg>
+          <span class="text-xs text-blue">{value}%</span>
+        </div>
+      </FloatingPanel>
+    ))
+  }
+</CodePanel>

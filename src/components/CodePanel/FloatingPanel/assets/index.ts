@@ -1,0 +1,7 @@
+export { default as btcIcon } from "./btc.svg?url"
+export { default as starIcon } from "./star.svg?url"
+export { default as ethCircleIcon } from "./eth-circle.svg?url"
+export { default as financialIcon } from "./financial.svg?url"
+export { default as socialIcon } from "./social.svg?url"
+export { default as devactIcon } from "./devact.svg?url"
+export { default as onchainIcon } from "./onchain.svg?url"

@@ -1,0 +1,28 @@
+---
+import Footer from "san-webkit-next/ui/app/Footer"
+
+import Advantages from "$components/Advantages/Advantages.astro"
+import FAQ from "$components/FAQ/FAQ.svelte"
+import ForWhom from "$components/ForWhom/ForWhom.astro"
+import Hero from "$components/Hero.astro"
+import ReadyToStart from "$components/ReadyToStart/ReadyToStart.astro"
+import SEO from "$components/SEO.astro"
+import Testimonials from "$components/Testimonials/Testimonials.astro"
+import UseCases from "$components/UseCases/UseCases.astro"
+import Layout from "$layouts/Layout.astro"
+---
+
+<Layout>
+  <div class="container">
+    <SEO slot="seo" />
+    <Hero />
+    <ForWhom />
+    <Advantages />
+    <UseCases />
+    <FAQ client:load />
+    <Testimonials />
+    <ReadyToStart />
+  </div>
+
+  <Footer />
+</Layout>

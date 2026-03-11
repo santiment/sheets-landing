@@ -1,0 +1,37 @@
+---
+import CodePanel from "../CodePanel.astro"
+import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
+
+import matrixGridImage from "./assets/grid.svg?url"
+---
+
+<CodePanel class="w-[60%]">
+  <div
+    class="relative h-[365px]"
+    style={`background: url('${matrixGridImage}') no-repeat; background-position: -86px -100px; background-size: 130%`}
+  >
+    <FloatingPanel class="-left-[26px] top-[158px]" title="Fantom">
+      <div
+        class="absolute -right-[27px] -top-[27px] flex size-[54px] items-center justify-center rounded-full border border-porcelain bg-white text-3xl"
+      >
+        🔥
+      </div>
+    </FloatingPanel>
+
+    <FloatingPanel class="left-[255px] top-[26px]" title="Merit-circle">
+      <div
+        class="absolute -right-[27px] -top-[27px] flex size-[54px] items-center justify-center rounded-full border border-porcelain bg-white text-3xl"
+      >
+        ❄️
+      </div>
+    </FloatingPanel>
+
+    <FloatingPanel class="left-[463px] top-[165px]" title="Decentraland">
+      <div
+        class="absolute -right-[27px] -top-[27px] flex size-[54px] items-center justify-center rounded-full border border-porcelain bg-white text-3xl"
+      >
+        🔥
+      </div>
+    </FloatingPanel>
+  </div>
+</CodePanel>

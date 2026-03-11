@@ -1,0 +1,19 @@
+---
+import { cn } from "san-webkit-next/ui/utils"
+
+const { class: className } = Astro.props
+---
+
+<div
+  class={cn(
+    "relative mt-5 min-h-[400px] min-w-[600px] animate-float rounded-lg border border-zircon bg-white shadow-code md:hidden",
+    className,
+  )}
+>
+  <div class="flex h-9 items-center gap-2.5 border-b border-zircon px-3">
+    <div class="size-3.5 rounded-full bg-porcelain" />
+    <div class="size-3.5 rounded-full bg-porcelain" />
+    <div class="size-3.5 rounded-full bg-porcelain" />
+  </div>
+  <slot />
+</div>

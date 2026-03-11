@@ -1,0 +1,58 @@
+---
+import { ClientRouter } from "astro:transitions"
+
+import "../app.css"
+import "san-webkit-next/app.css"
+
+import Notifications from "san-webkit-next/ui/core/Notifications"
+
+import Nav from "$components/Nav/Nav.astro"
+import GoogleAnalytics from "$components/scripts/GoogleAnalytics.astro"
+import Intercom from "$components/scripts/Intercom.astro"
+import Posthog from "$components/scripts/Posthog.astro"
+import TwitterPixel from "$components/scripts/TwitterPixel.astro"
+
+type Props = {
+  class?: string
+}
+
+const { class: className = "" } = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="theme-color" content="#1aa168" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="apple-touch-icon" href="/logo.png" />
+    <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous" />
+
+    <slot name="seo" />
+    <slot name="head" />
+
+    <ClientRouter />
+  </head>
+
+  <body class={className}>
+    <Nav />
+
+    <main>
+      <slot />
+    </main>
+
+    <Notifications client:only="svelte" />
+
+    {
+      import.meta.env.PROD && (
+        <>
+          <Intercom />
+          <GoogleAnalytics id="G-H53MB0V33X" />
+          <TwitterPixel id="o0e0e" />
+          <Posthog />
+        </>
+      )
+    }
+  </body>
+</html>

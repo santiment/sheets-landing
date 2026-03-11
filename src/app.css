@@ -1,0 +1,10 @@
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--casper) var(--porcelain);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}

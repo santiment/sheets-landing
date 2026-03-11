@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets"
+
+import { cn } from "san-webkit-next/ui/utils"
+
+import CodePanel from "../CodePanel.astro"
+import { btcIcon, starIcon } from "../FloatingPanel/assets"
+import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
+
+import pocket from "./assets/pocket.svg"
+
+const items = [
+  { title: "Total", value: "$148k", dot: "bg-blue" },
+  {
+    title: "Profit",
+    value: "+43%",
+    dot: "bg-purple",
+    highlight: true,
+  },
+  { title: "Income, 1mo", value: "$9 326", dot: "bg-cyan" },
+]
+---
+
+<CodePanel class="ml-[5%] w-1/2">
+  <div class="flex h-full items-center justify-between px-[70px] py-[37px]">
+    <FloatingPanel
+      class="-left-[60px] top-[60px]"
+      icon={btcIcon}
+      title="Bitcoin"
+    >
+      <span class="text-xs text-mystic">BTC</span>
+    </FloatingPanel>
+
+    <FloatingPanel
+      class="bottom-[20px] left-[54px]"
+      title="Low risk"
+      icon={starIcon}
+    />
+
+    <Image src={pocket} alt="" />
+
+    <ul class="w-[190px]">
+      {
+        items.map(({ title, value, dot, highlight }) => (
+          <li
+            class={cn(
+              "relative mt-2.5 flex flex-col pb-[9px] pl-[38px] pr-5 pt-2.5",
+              highlight && "rounded-lg border border-[#f1f3f9] bg-white",
+            )}
+          >
+            <div class={cn("absolute left-5 top-5 size-2 rounded-full", dot)} />
+            <span class="text-lg text-casper">{title}</span>
+            <span class="text-4xl font-semibold text-rhino">{value}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</CodePanel>

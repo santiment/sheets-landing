@@ -1,65 +1,43 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "sheets-landing",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "dev:https": "astro dev --host -- --https",
+    "build": "rm -rf static/webkit && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
   "dependencies": {
-    "@santiment-network/ui": "^0.5.277",
-    "apollo-boost": "^0.4.0",
-    "apollo-client": "^2.6.0",
-    "apollo-link-context": "^1.0.17",
-    "classnames": "^2.2.6",
-    "copy-to-clipboard": "^3.2.0",
-    "gatsby": "^2.7.1",
-    "gatsby-image": "^2.11.0",
-    "gatsby-plugin-env-variables": "^1.0.1",
-    "gatsby-plugin-intl": "^0.2.8",
-    "gatsby-plugin-manifest": "^2.12.1",
-    "gatsby-plugin-offline": "^2.1.1",
-    "gatsby-plugin-react-helmet": "^3.0.12",
-    "gatsby-plugin-sass": "^2.8.0",
-    "gatsby-plugin-sharp": "^2.14.1",
-    "gatsby-source-filesystem": "^2.0.37",
-    "gatsby-transformer-sharp": "^2.12.0",
-    "graphql-tag": "^2.10.1",
-    "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.17.14",
-    "lodash.template": "^4.5.0",
-    "node-sass": "^4.14.1",
-    "prop-types": "^15.7.2",
-    "query-string": "^6.5.0",
-    "react": "^16.8.6",
-    "react-apollo": "^2.5.6",
-    "react-dom": "^16.8.6",
-    "react-ga": "^2.6.0",
-    "react-helmet": "^5.2.1",
-    "react-slick": "^0.24.0",
-    "react-stripe-elements": "^3.0.0",
-    "react-transition-group": "^4.1.1",
-    "react-typed": "^1.1.2",
-    "slick-carousel": "^1.8.1"
+    "@astrojs/svelte": "^7.2.5",
+    "@astrojs/tailwind": "^6.0.2",
+    "@melt-ui/svelte": "^0.86.6",
+    "astro": "^5.18.0",
+    "bits-ui": "^1.8.0",
+    "rxjs": "^7.8.2",
+    "san-webkit-next": "github:santiment/san-webkit#lib-d2a185e1-060326",
+    "svelte": "^5.53.7"
   },
   "devDependencies": {
-    "prettier": "^1.17.1"
+    "@astrojs/ts-plugin": "^1.10.6",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "@sentry/astro": "^10.40.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "sharp": "^0.34.5",
+    "svelte-preprocess": "^5.1.4",
+    "svelte-preprocess-cssmodules": "^3.0.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12",
+    "vite-plugin-mkcert": "^1.17.9"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  "pnpm": {
+    "overrides": {
+      "@sveltejs/kit": "2.48.2"
+    }
   }
 }

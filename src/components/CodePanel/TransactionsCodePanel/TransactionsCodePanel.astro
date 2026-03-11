@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets"
+
+import CodePanel from "../CodePanel.astro"
+import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
+
+import graph from "./assets/graph.svg"
+---
+
+<CodePanel class="h-[430px] w-[60%]">
+  <Image
+    class="absolute bottom-[20px] left-1/2 -translate-x-1/2"
+    src={graph}
+    alt=""
+  />
+
+  <span
+    class="absolute left-[45px] top-[139px] text-xs font-medium text-waterloo"
+  >
+    $82,896,365
+  </span>
+  <span
+    class="absolute left-[313px] top-[182px] text-xs font-medium text-waterloo"
+  >
+    $43,447,355
+  </span>
+  <span
+    class="absolute left-[470px] top-[238px] text-xs font-medium text-waterloo"
+  >
+    $24,221,782
+  </span>
+
+  <FloatingPanel class="-left-[15px] top-[78px]" title="$BTC">
+    <div
+      class="absolute -right-[30px] -top-[30px] flex size-[50px] items-center justify-center rounded-full border border-porcelain bg-white text-3xl"
+    >
+      🐋
+    </div>
+  </FloatingPanel>
+
+  <FloatingPanel class="left-[298px] top-[105px]" title="$MATIC">
+    <div
+      class="absolute -right-[30px] -top-[30px] flex size-[50px] items-center justify-center rounded-full border border-porcelain bg-white text-3xl"
+    >
+      🐋
+    </div>
+  </FloatingPanel>
+
+  <FloatingPanel class="left-[520px] top-[163px]" title="$SAND">
+    <div
+      class="absolute -right-[30px] -top-[30px] flex size-[50px] items-center justify-center rounded-full border border-porcelain bg-white text-3xl"
+    >
+      🐋
+    </div>
+  </FloatingPanel>
+</CodePanel>

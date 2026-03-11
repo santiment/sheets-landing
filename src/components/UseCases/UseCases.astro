@@ -1,0 +1,117 @@
+---
+import { cn } from "san-webkit-next/ui/utils"
+
+import AnalyzeCodePanel from "../CodePanel/AnalyzeCodePanel/AnalyzeCodePanel.astro"
+import BacktestCodePanel from "../CodePanel/BacktestCodePanel/BacktestCodePanel.astro"
+import FundingCodePanel from "../CodePanel/FundingCodePanel/FundingCodePanel.astro"
+import MatrixCodePanel from "../CodePanel/MatrixCodePanel/MatrixCodePanel.astro"
+import MeanAgeCodePanel from "../CodePanel/MeanAgeCodePanel/MeanAgeCodePanel.astro"
+import MonitorCodePanel from "../CodePanel/MonitorCodePanel/MonitorCodePanel.astro"
+import MvrvCodePanel from "../CodePanel/MvrvCodePanel/MvrvCodePanel.astro"
+import NvtCodePanel from "../CodePanel/NvtCodePanel/NvtCodePanel.astro"
+import SocDominanceCodePanel from "../CodePanel/SocDominanceCodePanel/SocDominanceCodePanel.astro"
+import TopHoldersCodePanel from "../CodePanel/TopHoldersCodePanel/TopHoldersCodePanel.astro"
+import TransactionsCodePanel from "../CodePanel/TransactionsCodePanel/TransactionsCodePanel.astro"
+
+const iconModules = import.meta.glob<{ default: any }>("./icons/*.svg", {
+  eager: true,
+})
+
+const icon = (name: string) => iconModules[`./icons/${name}.svg`]?.default
+
+const cases = [
+  {
+    title: "Backtesting strategies",
+    desc: "Prototype and evaluate the performance of different investment strategies using exclusive data. Develop signals and trading indicators directly in your 'spreadsheets'.",
+    code: BacktestCodePanel,
+    icon: icon("BacktestIcon"),
+  },
+  {
+    title: "Monitor portfolio",
+    desc: "Evalute portfolio performance over time, manage risk exposure and keep track of all your active positions in one place. Add or remove assets with a single click.",
+    code: MonitorCodePanel,
+    icon: icon("MonitorIcon"),
+  },
+  {
+    title: "Analyze 100s of assets",
+    desc: "Review every coin from all possible angles before choosing to enter or exit a trade. Plot multiple tokens against each other by combining dozens of metrics.",
+    code: AnalyzeCodePanel,
+    icon: icon("AnalyzeIcon"),
+  },
+  {
+    title: "Asset Activity Matrix",
+    desc: "This template is a paradise for altcoin traders who enjoy swing trading between the hottest (or coldest) assets in crypto on a daily or weekly basis.",
+    code: MatrixCodePanel,
+    icon: icon("MatrixIcon"),
+  },
+  {
+    title: "MVRV Opportunity & Danger Zone",
+    desc: "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
+    code: MvrvCodePanel,
+    icon: icon("MvrvIcon"),
+  },
+  {
+    title: "Mean Age & Mean Dollar Age",
+    desc: "This metric identifies accumulation and sell cycles for any network.",
+    code: MeanAgeCodePanel,
+    icon: icon("MeanAgeIcon"),
+  },
+  {
+    title: "Top Holders Supply",
+    desc: "This template monitors how the biggest addresses in crypto are behaving to give you a key edge in seeing whether key stakeholders are preparing to pump.",
+    code: TopHoldersCodePanel,
+    icon: icon("TopHoldersIcon"),
+  },
+  {
+    title: "NVT Template",
+    desc: "This template calculates the NVT for BTC, ETH, and several ERC-20 coins, and assigns a bullish or bearish value to their historical and present-day performance.",
+    code: NvtCodePanel,
+    icon: icon("NvtIcon"),
+  },
+  {
+    title: "Funding Rate",
+    desc: "Paying attention to how many traders are longing or shorting an asset provides a guide on how much greed or fear you can capitalize on.",
+    code: FundingCodePanel,
+    icon: icon("FundingIcon"),
+  },
+  {
+    title: "Top Transactions",
+    desc: "This makes it easy to see which networks are seeing major whale movement.",
+    code: TransactionsCodePanel,
+    icon: icon("TransactionsIcon"),
+  },
+  {
+    title: "Social Dominance Divergence",
+    desc: "Measuring each asset against its normal resting discussion rate average helps notify when any asset is suddenly getting increased attention.",
+    code: SocDominanceCodePanel,
+    icon: icon("SocDominanceIcon"),
+  },
+]
+---
+
+<section id="use-cases" class="mb-[165px] md:mb-20 sm:mb-10">
+  <ul class="space-y-[155px] md:space-y-5">
+    {
+      cases.map(({ title, desc, code: Code, icon: Icon }, i) => (
+        <li
+          class={cn(
+            "flex items-center justify-between gap-8 md:flex-col md:gap-5",
+            i % 2 !== 0 && "flex-row-reverse",
+          )}
+        >
+          <div class="max-w-[372px] md:w-full md:max-w-full">
+            <Icon />
+
+            <h3 class="mb-4 mt-[14px] flex items-center text-xl font-bold text-rhino">
+              {title}
+            </h3>
+
+            <p class="text-lg text-waterloo">{desc}</p>
+          </div>
+
+          <Code />
+        </li>
+      ))
+    }
+  </ul>
+</section>

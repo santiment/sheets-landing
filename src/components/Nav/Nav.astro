@@ -1,0 +1,40 @@
+---
+import CtaButton from "$components/CtaButton.svelte"
+
+import MobileNav from "./MobileNav.svelte"
+import ProductsButton from "./ProductsButton.svelte"
+
+import Logo from "./assets/logo.svg"
+---
+
+<nav class="container flex h-[70px] items-center justify-between">
+  <div class="flex items-center gap-6">
+    <a href="/" aria-label="Go to homepage">
+      <Logo width="124" height="40" />
+    </a>
+
+    <ProductsButton client:load />
+  </div>
+
+  <div
+    class="flex items-center gap-8 text-base text-waterloo md:hidden hover:[&_a]:text-green-hover"
+  >
+    <a href="/#metrics">Metrics</a>
+
+    <a href="/#use-cases">Use cases</a>
+
+    <a
+      href="https://app.santiment.net/pricing"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Pricing
+    </a>
+
+    <a href="mailto:support@santiment.net">Support</a>
+
+    <CtaButton />
+  </div>
+
+  <MobileNav client:idle />
+</nav>

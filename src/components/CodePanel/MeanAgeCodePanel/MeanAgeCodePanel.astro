@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets"
+
+import CodePanel from "../CodePanel.astro"
+import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
+
+import graph from "./assets/graph.svg"
+
+const panels = [
+  {
+    title: "❄️",
+    pos: "top-[64px] left-[85px]",
+    arrow: "rotate-[134deg] top-[82%] left-[83%]",
+  },
+  {
+    title: "❄️",
+    pos: "top-[107px] left-[404px]",
+    arrow: "rotate-[227deg] top-[82%] right-[83%]",
+  },
+  {
+    title: "🔥",
+    pos: "top-[291px] -left-[41px]",
+    arrow: "rotate-[46deg] bottom-[82%] left-[83%]",
+  },
+  {
+    title: "🔥",
+    pos: "top-[305px] left-[248px]",
+    arrow: "rotate-[46deg] bottom-[82%] left-[83%]",
+  },
+  {
+    title: "🔥",
+    pos: "top-[296px] left-[548px]",
+    arrow: "rotate-[313deg] bottom-[82%] right-[83%]",
+  },
+]
+---
+
+<CodePanel class="w-[60%]">
+  <Image class="absolute left-[-98px] top-[-58px]" src={graph} alt="" />
+
+  {
+    panels.map(({ title, pos, arrow }) => (
+      <FloatingPanel
+        class={`${pos} size-[64px] justify-center p-0`}
+        title={title}
+      >
+        <svg
+          slot="before"
+          class={`absolute ${arrow}`}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <polygon points="12,0 24,24 0,24" fill="#f1f3f9" />
+          <polygon points="12,4 22,24 2,24" fill="white" />
+        </svg>
+      </FloatingPanel>
+    ))
+  }
+</CodePanel>

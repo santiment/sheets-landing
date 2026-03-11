@@ -1,0 +1,35 @@
+---
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+---
+
+<script is:inline define:vars={{ id }}>
+  window.addEventListener("load", () => {
+    if (!window.twq) {
+      window.twq = function () {
+        window.twq.exe
+          ? window.twq.exe.apply(window.twq, arguments)
+          : window.twq.queue.push(arguments)
+      }
+      window.twq.version = "1.1"
+      window.twq.queue = []
+    }
+
+    var t = document.createElement("script")
+    t.type = "text/javascript"
+    t.async = !0
+    t.src = "https://static.ads-twitter.com/uwt.js"
+    t.onload = t.onreadystatechange = function () {
+      var t = this.readyState
+      if (!t || "complete" == t || "loaded" == t)
+        try {
+          twq("init", id)
+        } catch (t) {}
+    }
+    var e = document.getElementsByTagName("script")[0]
+    e.parentNode.insertBefore(t, e)
+  })
+</script>
