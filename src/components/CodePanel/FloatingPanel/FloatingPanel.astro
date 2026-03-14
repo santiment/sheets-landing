@@ -1,9 +1,11 @@
 ---
+import { Image } from "astro:assets"
+import type { SvgComponent } from "astro/types"
 import { cn } from "san-webkit-next/ui/utils"
 
 type Props = {
   title: string
-  icon?: string
+  icon?: SvgComponent & ImageMetadata
   class?: string
 }
 
@@ -17,7 +19,7 @@ const { title, icon, class: className } = Astro.props
   ])}
 >
   <slot name="before" />
-  {icon && <img src={icon} alt="" />}
+  {icon && <Image src={icon} alt="" />}
   <span class="whitespace-nowrap text-lg text-rhino">{title}</span>
   <slot />
 </div>

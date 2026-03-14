@@ -24,7 +24,7 @@
       >
         <Accordion.Header>
           <Accordion.Trigger
-            class="group flex w-full items-center justify-between px-8 py-[27px] text-left"
+            class="group flex w-full items-center justify-between px-8 py-[27px]"
           >
             <h3 class="text-lg sm:text-base">
               {@html question}

@@ -1,10 +1,73 @@
 ---
 import { Image } from "astro:assets"
 
-import neal from "$assets/neal.jpg"
+import ibis from "$assets/ibis.jpg"
+
+import dima from "./assets/dima.jpeg"
+import garry from "./assets/garry.jpeg"
+import nasty from "./assets/nasty.jpg"
+import nemo from "./assets/nemo.jpeg"
+import neal from "./assets/neal.jpg"
+import yura from "./assets/yura.jpeg"
+
+import bg from "./bg.svg?url"
+
+const floaters = [
+  { img: dima, size: 40, style: "top:10%;left:20%;--x:2px;--y:6px;--dur:7s" },
+  {
+    img: ibis,
+    size: 36,
+    style: "top:40%;left:0;--x:5px;--y:9px;--scale-to:1.4;--radius:-10deg;--dur:10s",
+  },
+  {
+    img: nasty,
+    size: 32,
+    style: "top:4%;right:16%;--x:11px;--y:0px;--radius:15deg;--dur:6s",
+  },
+  {
+    img: nemo,
+    size: 28,
+    style:
+      "bottom:13%;right:0;--x:4px;--y:-9px;--scale-to:1.6;--radius:22deg;--dur:8s",
+  },
+  {
+    img: garry,
+    size: 48,
+    style: "bottom:30%;right:15%;--x:0px;--y:-9px;--radius:5deg;--dur:6s",
+  },
+  { img: yura, size: 50, style: "bottom:20%;left:5%;--x:5px;--y:-5px;--dur:8s" },
+]
 ---
 
-<section class="relative mb-[165px] text-center md:mb-20 sm:mb-10">
+<section
+  class="relative mb-[165px] text-center md:mb-20 sm:mb-10"
+  style={`background: url('${bg}') no-repeat 50%`}
+>
+  {
+    floaters.map(({ img, size, style }) => (
+      <div
+        class="floater absolute overflow-hidden rounded-full border-2 border-white shadow-[0px_6px_20px_rgba(56,74,167,0.15)] md:hidden"
+        style={`width:${size}px;height:${size}px;${style}`}
+      >
+        <Image src={img} alt="" width={size} height={size} class="size-full object-cover" />
+      </div>
+    ))
+  }
+
+  <span
+    class="floater absolute text-2xl md:hidden"
+    style="top:35%;right:3%;--scale-from:1.4;--scale-to:1.4;--radius:-10deg;--dur:4s;transform-origin:0 100%"
+  >
+    👍
+  </span>
+
+  <span
+    class="floater absolute text-2xl md:hidden"
+    style="bottom:45%;left:15%;--scale-from:1.4;--scale-to:1.4;--radius:20deg;--dur:6s;transform-origin:100% 100%"
+  >
+    👋
+  </span>
+
   <h2 class="mb-[60px] text-4xl font-bold sm:text-3xl">
     What people<br />are saying
   </h2>
@@ -32,3 +95,22 @@ import neal from "$assets/neal.jpg"
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes moving {
+    0% {
+      transform: translateY(0) scale(var(--scale-from, 1)) rotate(0deg);
+    }
+    50% {
+      transform: translate(var(--x, 0), var(--y, 0)) scale(var(--scale-to, 1))
+        rotate(var(--radius, 0deg));
+    }
+    100% {
+      transform: translateY(0) scale(var(--scale-from, 1)) rotate(0deg);
+    }
+  }
+
+  .floater {
+    animation: moving var(--dur, 6s) infinite ease-in-out;
+  }
+</style>

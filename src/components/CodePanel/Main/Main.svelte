@@ -71,12 +71,40 @@
   )
 
   onMount(() => {
-    let idx = 0
-    const interval = setInterval(() => {
-      idx = (idx + 1) % TYPED_STRINGS.length
-      placeholder = TYPED_STRINGS[idx]
-    }, 2500)
-    return () => clearInterval(interval)
+    let stringIdx = 0
+    let charIdx = 0
+    let isDeleting = false
+    let timeout: ReturnType<typeof setTimeout>
+
+    function tick() {
+      const current = TYPED_STRINGS[stringIdx]
+
+      if (!isDeleting) {
+        charIdx++
+        placeholder = current.slice(0, charIdx)
+
+        if (charIdx === current.length) {
+          isDeleting = true
+          timeout = setTimeout(tick, 1500)
+          return
+        }
+        timeout = setTimeout(tick, 40)
+      } else {
+        charIdx--
+        placeholder = current.slice(0, charIdx)
+
+        if (charIdx === 0) {
+          isDeleting = false
+          stringIdx = (stringIdx + 1) % TYPED_STRINGS.length
+          timeout = setTimeout(tick, 300)
+          return
+        }
+        timeout = setTimeout(tick, 50)
+      }
+    }
+
+    timeout = setTimeout(tick, 1000)
+    return () => clearTimeout(timeout)
   })
 </script>
 
@@ -121,34 +149,34 @@
         />
       </svg>
 
-      <span class="ml-2.5 mt-1 text-sm text-rhino">= SAN_</span>
+      <span class="ml-2.5 text-sm text-rhino">= SAN_</span>
 
       <div class="relative flex-1">
         <input
-          class="w-full border-none bg-transparent py-1.5 pl-0 pr-2 text-sm text-rhino outline-none placeholder:text-waterloo"
+          class="w-full border-none bg-transparent py-0 pl-0 pr-2 text-sm text-rhino outline-none placeholder:text-waterloo"
           {placeholder}
           bind:value={inputValue}
         />
+      </div>
 
-        {#if inputValue !== ""}
-          <div
-            class="absolute left-0 top-full z-10 max-h-48 w-64 overflow-auto rounded border border-porcelain bg-white"
-          >
-            {#each filtered as fn}
-              <a
-                href={`https://github.com/santiment/google-spreadsheet-addon/blob/master/doc/sheet_functions.md#${fn}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block px-3 py-1.5 text-sm text-fiord hover:bg-athens"
-              >
-                {fn}
-              </a>
-            {/each}
-            {#if filtered.length === 0}
-              <div class="px-3 py-2 text-sm text-waterloo">
-                No results found
-              </div>
-            {/if}
+      <div
+        class="absolute left-1/2 top-[-50px] z-10 max-h-[231px] w-80 overflow-x-hidden overflow-y-scroll rounded-lg border border-[#f1f3f9] bg-white p-2 text-waterloo shadow-[0px_4px_50px_rgba(56,74,167,0.04),0px_60px_40px_rgba(56,74,167,0.02)]"
+      >
+        {#each filtered as fn}
+          <div class="min-h-8 px-2 py-1.5">
+            <a
+              href={`https://github.com/santiment/google-spreadsheet-addon/blob/master/doc/sheet_functions.md#${fn}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-base text-waterloo hover:text-sheets"
+            >
+              {fn}
+            </a>
+          </div>
+        {/each}
+        {#if inputValue && filtered.length === 0}
+          <div class="px-2 py-1.5 text-base text-waterloo">
+            No results found
           </div>
         {/if}
       </div>
@@ -157,9 +185,7 @@
 
   <ul class="mt-auto">
     {#each SOURCE_LINES as blocks}
-      <li
-        class="mx-5 flex items-center gap-[18px] border-t border-zircon py-4"
-      >
+      <li class="mx-5 flex items-center gap-[18px] border-t border-zircon py-4">
         {#each blocks as width}
           <span class="h-3.5 rounded-full bg-[#f0f2f7]" style="width:{width}px"
           ></span>

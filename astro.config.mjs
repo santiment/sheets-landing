@@ -1,10 +1,9 @@
-import svelte from "@astrojs/svelte"
-import tailwind from "@astrojs/tailwind"
 import path from "path"
 import { fileURLToPath } from "url"
+import svelte from "@astrojs/svelte"
+import tailwind from "@astrojs/tailwind"
 import { defineConfig, mergeConfig } from "astro/config"
 import { AstroSvelteCtxPlugin } from "san-webkit-next/plugins/vite.js"
-
 import { createAstroConfig } from "san-webkit-next/vite.config.js"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -26,9 +25,14 @@ const viteConfig = mergeConfig(viteBase, {
     alias: [
       { find: "@sentry/sveltekit", replacement: "@sentry/astro" },
       { find: "$assets", replacement: path.resolve(__dirname, "./src/assets") },
-      { find: "$components", replacement: path.resolve(__dirname, "./src/components") },
-      { find: "$layouts", replacement: path.resolve(__dirname, "./src/layouts") },
-      { find: "$utils", replacement: path.resolve(__dirname, "./src/utils") },
+      {
+        find: "$components",
+        replacement: path.resolve(__dirname, "./src/components"),
+      },
+      {
+        find: "$layouts",
+        replacement: path.resolve(__dirname, "./src/layouts"),
+      },
       { find: "$pages", replacement: path.resolve(__dirname, "./src/pages") },
     ],
   },

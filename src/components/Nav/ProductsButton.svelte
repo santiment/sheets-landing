@@ -3,7 +3,7 @@
   import Button from "san-webkit-next/ui/core/Button"
 </script>
 
-<ProductsButton active="sanapi" variant="green">
+<ProductsButton active="sheets" variant="green">
   {#snippet children({ ref })}
     <Button
       {ref}

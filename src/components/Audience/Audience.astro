@@ -6,13 +6,13 @@ import secondImg from "./second.svg?url"
 <section class="mb-[165px] space-y-8 md:mb-20 sm:mb-10">
   <article
     style={`--bg-image: url('${firstImg}')`}
-    class="relative flex flex-col rounded-lg bg-mirage bg-no-repeat p-[40px_50px] [background-image:var(--bg-image)] [background-position:92%_55%] lg:bg-contain lg:pt-[150px] lg:[background-position:92%_12%] sm:p-[132px_24px_32px]"
+    class="relative flex flex-col rounded-lg bg-mirage bg-no-repeat p-[40px_50px] [background-image:var(--bg-image)] [background-position:92%_55%] lg:bg-contain lg:pt-[150px] lg:[background-position:92%_-53%] sm:p-[132px_24px_32px] sm:[background-position:92%_-5%]"
   >
-    <h2 class="mb-4 text-left text-xl font-bold text-white">
+    <h2 class="mb-4 text-xl font-bold text-white">
       For traders &amp; investors
     </h2>
 
-    <p class="max-w-[400px] text-left text-sm text-casper">
+    <p class="max-w-[400px] text-sm text-casper">
       Build models and backtest your strategies with the most comprehensive
       source of crypto data on the market.
     </p>
@@ -22,13 +22,30 @@ import secondImg from "./second.svg?url"
     style={`--bg-image: url('${secondImg}')`}
     class="relative flex flex-col rounded-lg bg-mirage bg-no-repeat p-[40px_50px] [background-image:var(--bg-image)] [background-position:92%_55%] lg:bg-contain lg:pt-[150px] lg:[background-position:92%_12%] sm:p-[132px_24px_32px]"
   >
-    <h2 class="mb-4 text-left text-xl font-bold text-white">
+    <h2 class="mb-4 text-xl font-bold text-white">
       For researchers &amp; journalists
     </h2>
 
-    <p class="max-w-[400px] text-left text-sm text-casper">
+    <p class="max-w-[400px] text-sm text-casper">
       Investigate network activity, discover market patterns, and analyze
       stakeholder behavior.
     </p>
   </article>
 </section>
+
+<style>
+  article:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 186px;
+    left: 5%;
+    top: 26px;
+    z-index: -1;
+    background-color: var(--mirage);
+    opacity: 0.6;
+    filter: blur(18px);
+    border-radius: 8px;
+  }
+</style>

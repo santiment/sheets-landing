@@ -12,7 +12,6 @@
       "$assets/*": ["./src/assets/*"],
       "$components/*": ["./src/components/*"],
       "$layouts/*": ["./src/layouts/*"],
-      "$utils/*": ["./src/utils/*"],
       "$pages/*": ["./src/pages/*"]
     }
   }
