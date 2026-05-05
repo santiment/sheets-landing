@@ -184,7 +184,7 @@ const Footer = ({ intl }) => {
             </a>
             <a
               className={styles.social__link}
-              href='https://twitter.com/santimentfeed'
+              href='https://x.com/santimentdata'
               target="_blank" rel="noopener noreferrer"
             >
               <svg
