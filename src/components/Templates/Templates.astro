@@ -13,78 +13,84 @@ import SocDominanceCodePanel from "../CodePanel/SocDominance/SocDominance.astro"
 import TopHoldersCodePanel from "../CodePanel/TopHolders/TopHolders.astro"
 import TransactionsCodePanel from "../CodePanel/Transactions/Transactions.astro"
 
-const iconModules = import.meta.glob<{ default: any }>("./icons/*.svg", {
-  eager: true,
-})
-
-const icon = (name: string) => iconModules[`./icons/${name}.svg`]?.default
+import AnalyzeIcon from "./icons/AnalyzeIcon.svg"
+import BacktestIcon from "./icons/BacktestIcon.svg"
+import FundingIcon from "./icons/FundingIcon.svg"
+import MatrixIcon from "./icons/MatrixIcon.svg"
+import MeanAgeIcon from "./icons/MeanAgeIcon.svg"
+import MonitorIcon from "./icons/MonitorIcon.svg"
+import MvrvIcon from "./icons/MvrvIcon.svg"
+import NvtIcon from "./icons/NvtIcon.svg"
+import SocDominanceIcon from "./icons/SocDominanceIcon.svg"
+import TopHoldersIcon from "./icons/TopHoldersIcon.svg"
+import TransactionsIcon from "./icons/TransactionsIcon.svg"
 
 const cases = [
   {
     title: "Backtesting strategies",
     desc: "Prototype and evaluate the performance of different investment strategies using exclusive data. Develop signals and trading indicators directly in your 'spreadsheets'.",
     code: BacktestCodePanel,
-    icon: icon("BacktestIcon"),
+    icon: BacktestIcon,
   },
   {
     title: "Monitor portfolio",
     desc: "Evalute portfolio performance over time, manage risk exposure and keep track of all your active positions in one place. Add or remove assets with a single click.",
     code: MonitorCodePanel,
-    icon: icon("MonitorIcon"),
+    icon: MonitorIcon,
   },
   {
     title: "Analyze 100s of assets",
     desc: "Review every coin from all possible angles before choosing to enter or exit a trade. Plot multiple tokens against each other by combining dozens of metrics.",
     code: AnalyzeCodePanel,
-    icon: icon("AnalyzeIcon"),
+    icon: AnalyzeIcon,
   },
   {
     title: "Asset Activity Matrix",
     desc: "This template is a paradise for altcoin traders who enjoy swing trading between the hottest (or coldest) assets in crypto on a daily or weekly basis.",
     code: MatrixCodePanel,
-    icon: icon("MatrixIcon"),
+    icon: MatrixIcon,
   },
   {
     title: "MVRV Opportunity & Danger Zone",
     desc: "When average realized profits are high for an asset, there is increased risk. When realized profits are low, it it a historically more opportunistic time.",
     code: MvrvCodePanel,
-    icon: icon("MvrvIcon"),
+    icon: MvrvIcon,
   },
   {
     title: "Mean Age & Mean Dollar Age",
     desc: "This metric identifies accumulation and sell cycles for any network.",
     code: MeanAgeCodePanel,
-    icon: icon("MeanAgeIcon"),
+    icon: MeanAgeIcon,
   },
   {
     title: "Top Holders Supply",
     desc: "This template monitors how the biggest addresses in crypto are behaving to give you a key edge in seeing whether key stakeholders are preparing to pump.",
     code: TopHoldersCodePanel,
-    icon: icon("TopHoldersIcon"),
+    icon: TopHoldersIcon,
   },
   {
     title: "NVT Template",
     desc: "This template calculates the NVT for BTC, ETH, and several ERC-20 coins, and assigns a bullish or bearish value to their historical and present-day performance.",
     code: NvtCodePanel,
-    icon: icon("NvtIcon"),
+    icon: NvtIcon,
   },
   {
     title: "Funding Rate",
     desc: "Paying attention to how many traders are longing or shorting an asset provides a guide on how much greed or fear you can capitalize on.",
     code: FundingCodePanel,
-    icon: icon("FundingIcon"),
+    icon: FundingIcon,
   },
   {
     title: "Top Transactions",
     desc: "This makes it easy to see which networks are seeing major whale movement.",
     code: TransactionsCodePanel,
-    icon: icon("TransactionsIcon"),
+    icon: TransactionsIcon,
   },
   {
     title: "Social Dominance Divergence",
     desc: "Measuring each asset against its normal resting discussion rate average helps notify when any asset is suddenly getting increased attention.",
     code: SocDominanceCodePanel,
-    icon: icon("SocDominanceIcon"),
+    icon: SocDominanceIcon,
   },
 ]
 ---
@@ -96,7 +102,7 @@ const cases = [
         <li
           class={cn(
             "flex items-center justify-between gap-8 md:flex-col md:gap-5",
-            i % 2 !== 0 && "flex-row-reverse",
+            i % 2 !== 0 && "flex-row-reverse"
           )}
         >
           <div class="max-w-[372px] md:w-full md:max-w-full">

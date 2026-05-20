@@ -1,7 +1,7 @@
     <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="none">
       <circle cx="30" cy="30" r="30" fill="#8AFFCE" />
       <mask
-        id="a"
+        id="monitor-mask"
         width="60"
         height="60"
         x="0"
@@ -10,7 +10,7 @@
       >
         <circle cx="30" cy="30" r="30" fill="#C4C4C4" />
       </mask>
-      <g strokeLinecap="round" mask="url(#a)">
+      <g strokeLinecap="round" mask="url(#monitor-mask)">
         <path
           stroke="#181B2B"
           strokeLinecap="round"

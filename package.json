@@ -16,7 +16,7 @@
     "astro": "^5.18.0",
     "bits-ui": "^1.8.0",
     "rxjs": "^7.8.2",
-    "san-webkit-next": "github:santiment/san-webkit#lib-d2a185e1-060326",
+    "san-webkit-next": "github:santiment/san-webkit#lib-e24c3dd8-180526",
     "svelte": "^5.53.7"
   },
   "devDependencies": {

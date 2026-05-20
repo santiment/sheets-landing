@@ -54,7 +54,18 @@ const siteUrl = process.env.SITE_URL || "https://sheets.santiment.net"
 export default defineConfig({
   site: siteUrl,
   experimental: {
-    svgo: true,
+    svgo: {
+      plugins: [
+        {
+          name: "preset-default",
+          params: {
+            overrides: {
+              cleanupIds: false,
+            },
+          },
+        },
+      ],
+    },
   },
   integrations: [
     svelte({

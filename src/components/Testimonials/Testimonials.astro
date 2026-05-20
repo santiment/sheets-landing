@@ -1,23 +1,20 @@
 ---
-import { Image } from "astro:assets"
-
-import ibis from "$assets/ibis.jpg"
-
 import dima from "./assets/dima.jpeg"
 import garry from "./assets/garry.jpeg"
 import nasty from "./assets/nasty.jpg"
-import nemo from "./assets/nemo.jpeg"
 import neal from "./assets/neal.jpg"
+import nemo from "./assets/nemo.jpeg"
 import yura from "./assets/yura.jpeg"
-
 import bg from "./bg.svg?url"
+import ibis from "$assets/ibis.jpg"
 
 const floaters = [
   { img: dima, size: 40, style: "top:10%;left:20%;--x:2px;--y:6px;--dur:7s" },
   {
     img: ibis,
     size: 36,
-    style: "top:40%;left:0;--x:5px;--y:9px;--scale-to:1.4;--radius:-10deg;--dur:10s",
+    style:
+      "top:40%;left:0;--x:5px;--y:9px;--scale-to:1.4;--radius:-10deg;--dur:10s",
   },
   {
     img: nasty,
@@ -35,7 +32,11 @@ const floaters = [
     size: 48,
     style: "bottom:30%;right:15%;--x:0px;--y:-9px;--radius:5deg;--dur:6s",
   },
-  { img: yura, size: 50, style: "bottom:20%;left:5%;--x:5px;--y:-5px;--dur:8s" },
+  {
+    img: yura,
+    size: 50,
+    style: "bottom:20%;left:5%;--x:5px;--y:-5px;--dur:8s",
+  },
 ]
 ---
 
@@ -49,7 +50,13 @@ const floaters = [
         class="floater absolute overflow-hidden rounded-full border-2 border-white shadow-[0px_6px_20px_rgba(56,74,167,0.15)] md:hidden"
         style={`width:${size}px;height:${size}px;${style}`}
       >
-        <Image src={img} alt="" width={size} height={size} class="size-full object-cover" />
+        <img
+          src={img.src}
+          alt=""
+          width={size}
+          height={size}
+          class="size-full object-cover"
+        />
       </div>
     ))
   }
@@ -83,8 +90,8 @@ const floaters = [
     </p>
 
     <div class="flex flex-col items-center gap-2">
-      <Image
-        src={neal}
+      <img
+        src={neal.src}
         alt="Neal Swaelens"
         width={60}
         height={60}
