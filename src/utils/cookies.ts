@@ -2,7 +2,18 @@ import { BROWSER } from "esm-env"
 import CookiesPopup from "san-webkit-next/ui/core/CookiesPopup"
 import { mount, type Component } from "svelte"
 
-const Popup = CookiesPopup as unknown as Component<{ isVisible: boolean }>
+type TPopupProps = {
+  isVisible: boolean
+  style: string
+}
+
+const Popup = CookiesPopup as unknown as Component<TPopupProps>
+
+const ACCENT_STYLE = [
+  "--green: var(--sheets)",
+  "--c-green: 26 161 104",
+  "--c-green-hover: 22 135 90",
+].join("; ")
 
 export function initCookiesPopup() {
   if (!BROWSER) return
@@ -13,6 +24,6 @@ export function initCookiesPopup() {
 
   mount(Popup, {
     target: document.body,
-    props: { isVisible: true },
+    props: { isVisible: true, style: ACCENT_STYLE },
   })
 }
