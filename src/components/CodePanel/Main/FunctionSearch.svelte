@@ -79,11 +79,12 @@
   <span class="ml-2.5 text-sm text-rhino">= SAN_</span>
 
   <input
-    class="flex-1 border-none bg-transparent py-0 pl-0 pr-2 text-sm text-rhino outline-none placeholder:text-fiord focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sheets"
+    class="flex-1 border-none bg-transparent py-0 pl-0 pr-2 text-sm text-rhino outline-none placeholder:text-fiord"
     aria-label="Sansheets function"
     {placeholder}
     value={inputValue}
     oninput={(e) => (inputValue = e.currentTarget.value.toUpperCase())}
+    {@attach (node) => node.focus({ preventScroll: true })}
   />
 
   <div
