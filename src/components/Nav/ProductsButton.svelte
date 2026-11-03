@@ -18,7 +18,7 @@
       iconOnRight
       iconSize={9}
       class={cn(
-        "fill-fiord pl-0 text-base text-fiord transition-transform",
+        "fill-fiord pl-0 text-sm text-fiord transition-transform",
         "hover:bg-transparent hover:fill-sheets-hover hover:text-sheets-hover",
         "[&>svg]:transition-transform [&>svg]:duration-200",
         "[&>svg]:ease-in-out [&[data-state=open]>svg]:rotate-180"

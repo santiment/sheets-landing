@@ -50,7 +50,7 @@
       ? "https://app.santiment.net/"
       : "https://app.santiment.net/sign-up"}
     class={cn(
-      "press w-full flex-shrink-0 justify-center whitespace-nowrap px-4",
+      "press flex flex-shrink-0 justify-center whitespace-nowrap px-5",
       isLoggedIn &&
         "border-sheets bg-transparent text-sheets hover:border-sheets-hover hover:text-sheets-hover"
     )}

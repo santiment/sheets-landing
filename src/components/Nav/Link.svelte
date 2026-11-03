@@ -24,7 +24,7 @@
   target={isExternal ? "_blank" : undefined}
   rel={isExternal ? "noopener noreferrer" : undefined}
   class={cn(
-    "group flex items-center text-fiord hover:text-sheets-hover",
+    "group flex items-center rounded px-2.5 py-1.5 text-fiord hover:bg-athens hover:text-sheets-hover",
     className
   )}
   data-source="sheets.santiment.net"

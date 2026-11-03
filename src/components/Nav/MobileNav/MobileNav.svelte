@@ -86,7 +86,7 @@
       <div
         class="mt-auto flex flex-col gap-2 border-t border-porcelain p-4 pb-[max(1rem,env(safe-area-inset-bottom))]"
       >
-        <CtaButton class="h-10 w-full" />
+        <CtaButton class="h-10 w-full [&>a]:w-full" />
       </div>
     </Dialog.Content>
   </Dialog.Portal>
