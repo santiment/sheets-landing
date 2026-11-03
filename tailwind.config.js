@@ -8,6 +8,10 @@ export default {
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["Inter Variable", "sans-serif"],
+      display: ["Anek Latin Variable", "sans-serif"],
+    },
     container: {
       center: true,
       padding: "16px",

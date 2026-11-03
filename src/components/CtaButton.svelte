@@ -37,7 +37,7 @@
 
 <div
   class={cn(
-    "account-slot flex h-8 w-36 justify-end",
+    "account-slot flex h-8 w-40 justify-end",
     isLoaded && "is-loaded",
     className
   )}
@@ -50,7 +50,7 @@
       ? "https://app.santiment.net/"
       : "https://app.santiment.net/sign-up"}
     class={cn(
-      "w-full flex-shrink-0 justify-center px-4",
+      "press w-full flex-shrink-0 justify-center whitespace-nowrap px-4",
       isLoggedIn &&
         "border-sheets bg-transparent text-sheets hover:border-sheets-hover hover:text-sheets-hover"
     )}

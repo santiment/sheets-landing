@@ -78,8 +78,8 @@
           "w-full rounded-none border-t border-porcelain px-0 pb-6 pt-6",
           "[&_h2]:font-medium [&_p]:hidden",
           "[&>section>a]:w-full [&>section]:px-4",
-          "[&>section:last-child]:mt-6 [&>section:last-child]:px-0 [&>section:last-child]:pt-6",
-          "[&>section:last-child>div]:max-w-none [&>section:last-child>div]:px-7"
+          "[&>section:last-child]:mt-6 [&>section:last-child]:w-auto",
+          "[&>section:last-child]:px-7 [&>section:last-child]:pt-6"
         )}
       />
 

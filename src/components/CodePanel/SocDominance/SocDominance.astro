@@ -14,8 +14,12 @@ const changes = [
 ]
 ---
 
-<CodePanel class="h-[430px] w-[60%]">
-  <Image class="absolute -bottom-[129px] -left-[110px]" src={graph} alt="" />
+<CodePanel class="h-[430px]">
+  <Image
+    class="absolute -bottom-[129px] -left-[110px] max-w-none"
+    src={graph}
+    alt=""
+  />
 
   {
     changes.map(({ title, pos, value }) => (

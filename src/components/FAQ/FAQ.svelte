@@ -1,60 +1,28 @@
 <script lang="ts">
-  import { Accordion } from "bits-ui"
-  import { cubicInOut } from "svelte/easing"
-  import { slide } from "svelte/transition"
+  import Accordion from "san-webkit-next/ui/core/Accordion"
 
   import { questions } from "./assets/questions"
-  import Plus from "./Plus.svelte"
 
-  let value = $state(questions[0].questionTag)
+  const items = questions.map(({ question, answer }) => ({
+    label: question,
+    answer,
+  }))
 </script>
 
 <section class="relative mb-[165px] sm:mb-20" id="faq">
   <h2
-    class="mb-6 flex items-center justify-center gap-4 text-4xl font-semibold sm:text-3xl"
+    class="mb-10 flex items-center justify-center gap-4 text-4xl font-semibold sm:text-3xl"
   >
     Frequently asked questions
   </h2>
 
-  <Accordion.Root type="single" bind:value class="mx-auto mt-10 max-w-[720px]">
-    {#each questions as { question, answer, questionTag } (questionTag)}
-      <Accordion.Item
-        value={questionTag}
-        class="mb-6 rounded-2xl border border-porcelain bg-athens transition-colors data-[state=open]:border-sheets"
-      >
-        <Accordion.Header>
-          <Accordion.Trigger
-            class="group flex w-full items-center justify-between px-8 py-[27px] text-left"
-          >
-            <h3 class="text-lg sm:text-base">
-              {@html question}
-            </h3>
-
-            <Plus class="ml-[18px]" opened={value === questionTag} />
-          </Accordion.Trigger>
-        </Accordion.Header>
-
-        <Accordion.Content forceMount>
-          {#snippet child({ props, open })}
-            {#if open}
-              <div
-                {...props}
-                transition:slide={{
-                  duration: 300,
-                  easing: cubicInOut,
-                  axis: "y",
-                }}
-              >
-                <div
-                  class="space-y-2 px-8 pb-[27px] text-base [&_a]:text-sheets hover:[&_a]:opacity-80"
-                >
-                  {@html answer}
-                </div>
-              </div>
-            {/if}
-          {/snippet}
-        </Accordion.Content>
-      </Accordion.Item>
-    {/each}
-  </Accordion.Root>
+  <div class="mx-auto max-w-[720px]">
+    <Accordion {items} level={3}>
+      {#snippet content({ answer })}
+        <div class="space-y-2 [&_a]:text-sheets hover:[&_a]:opacity-80">
+          {@html answer}
+        </div>
+      {/snippet}
+    </Accordion>
+  </div>
 </section>

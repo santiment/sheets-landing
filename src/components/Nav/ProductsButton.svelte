@@ -18,8 +18,8 @@
       iconOnRight
       iconSize={9}
       class={cn(
-        "fill-waterloo pl-0 text-waterloo transition-transform",
-        "hover:bg-transparent hover:fill-sheets hover:text-sheets",
+        "fill-fiord pl-0 text-base text-fiord transition-transform",
+        "hover:bg-transparent hover:fill-sheets-hover hover:text-sheets-hover",
         "[&>svg]:transition-transform [&>svg]:duration-200",
         "[&>svg]:ease-in-out [&[data-state=open]>svg]:rotate-180"
       )}>Products</Button

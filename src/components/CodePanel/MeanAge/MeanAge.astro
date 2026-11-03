@@ -35,8 +35,12 @@ const panels = [
 ]
 ---
 
-<CodePanel class="w-[60%]">
-  <Image class="absolute -left-[98px] -top-[58px]" src={graph} alt="" />
+<CodePanel>
+  <Image
+    class="absolute -left-[98px] -top-[58px] max-w-none"
+    src={graph}
+    alt=""
+  />
 
   {
     panels.map(({ title, pos, arrow }) => (

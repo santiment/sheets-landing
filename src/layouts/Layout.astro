@@ -1,9 +1,13 @@
 ---
 import { ClientRouter } from "astro:transitions"
 
+import "@fontsource-variable/anek-latin"
+import "@fontsource-variable/inter"
 import "../app.css"
 import "san-webkit-next/app.css"
 
+import anekWoff2 from "@fontsource-variable/anek-latin/files/anek-latin-latin-wght-normal.woff2?url"
+import interWoff2 from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url"
 import Notifications from "san-webkit-next/ui/core/Notifications"
 
 import Nav from "$components/Nav/Nav.astro"
@@ -28,6 +32,21 @@ const { class: className = "" } = Astro.props
     <link rel="icon" type="image/png" href="/logo.png" />
     <link rel="apple-touch-icon" href="/logo.png" />
     <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous" />
+
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+      href={interWoff2}
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+      href={anekWoff2}
+    />
 
     <slot name="seo" />
     <slot name="head" />

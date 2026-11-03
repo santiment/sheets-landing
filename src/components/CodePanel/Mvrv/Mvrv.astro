@@ -7,8 +7,12 @@ import FloatingPanel from "../FloatingPanel/FloatingPanel.astro"
 import graph from "./assets/graph.svg"
 ---
 
-<CodePanel class="w-[60%]">
-  <Image class="absolute -left-[98px] -top-[58px]" src={graph} alt="" />
+<CodePanel>
+  <Image
+    class="absolute -left-[98px] -top-[58px] max-w-none"
+    src={graph}
+    alt=""
+  />
 
   <FloatingPanel class="-left-7 top-[265px]" title="Danger zone">
     <div slot="before" class="h-5 w-5 rounded-full bg-red"></div>

@@ -17,9 +17,7 @@
 
   const filtered = $derived(
     inputValue
-      ? SAN_FUNCTIONS.filter((fn) =>
-          fn.includes("SAN_" + inputValue.toUpperCase())
-        )
+      ? SAN_FUNCTIONS.filter((fn) => fn.includes("SAN_" + inputValue))
       : SAN_FUNCTIONS
   )
 
@@ -84,7 +82,8 @@
     class="flex-1 border-none bg-transparent py-0 pl-0 pr-2 text-sm text-rhino outline-none placeholder:text-fiord focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sheets"
     aria-label="Sansheets function"
     {placeholder}
-    bind:value={inputValue}
+    value={inputValue}
+    oninput={(e) => (inputValue = e.currentTarget.value.toUpperCase())}
   />
 
   <div
