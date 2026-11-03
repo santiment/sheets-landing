@@ -1,0 +1,15 @@
+{
+  "name": "Sansheets",
+  "short_name": "Sansheets",
+  "start_url": "/",
+  "background_color": "#1aa168",
+  "theme_color": "#1aa168",
+  "display": "minimal-ui",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    }
+  ]
+}

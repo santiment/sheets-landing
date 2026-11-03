@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets"
+import Svg from "san-webkit-next/ui/core/Svg"
 
 import CodePanel from "../CodePanel.astro"
 import { btcIcon, ethCircleIcon, financialIcon } from "../FloatingPanel/assets"
@@ -21,23 +22,13 @@ import man from "$assets/ibis.jpg"
   />
 
   <div
-    class="absolute -left-[38px] top-[224px] flex flex-col items-center rounded-lg bg-white p-[14px_20px] shadow-panel"
+    class="absolute -left-[38px] top-56 flex flex-col items-center rounded-lg bg-white p-[14px_20px] shadow-panel"
   >
     <div class="flex w-full items-center justify-between text-waterloo">
       <span>BTC / USD</span>
 
       <span class="flex items-center gap-1 text-blue">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="6"
-          height="4"
-          fill="none"
-        >
-          <path
-            fill="#5275FF"
-            d="M2.66.16c.18-.21.5-.21.68 0L5.9 3.31c.23.28.03.69-.33.69H.43a.42.42 0 0 1-.33-.7L2.66.17z"
-          ></path>
-        </svg>
+        <Svg id="triangle" w={6} h={4} class="fill-blue" />
         7.26%
       </span>
     </div>
@@ -50,7 +41,7 @@ import man from "$assets/ibis.jpg"
       class="mt-4"
     >
       <path
-        stroke="#5275FF"
+        stroke="var(--blue, #5275FF)"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="1.5"
@@ -64,9 +55,9 @@ import man from "$assets/ibis.jpg"
   >
     <Image src={financialIcon} alt="" class="-mt-1" />
     <div>
-      <h4 class="mb-1.5 text-lg font-medium text-rhino">
+      <p class="mb-1.5 text-lg font-medium text-rhino">
         Ethereum price tracking
-      </h4>
+      </p>
 
       <p class="w-[250px] text-sm text-waterloo">
         Track the activity of selected address based on the Ethereum
@@ -74,43 +65,33 @@ import man from "$assets/ibis.jpg"
     </div>
   </div>
 
-  <div class="absolute bottom-[33px] right-[36px] shadow-panel">
+  <div class="absolute bottom-[33px] right-9 shadow-panel">
     <Image
       src={man}
       alt=""
       width={32}
       height={32}
-      class="absolute left-3.5 top-3.5 size-8 rounded-full object-cover"
+      class="absolute left-3.5 top-1/2 size-8 -translate-y-1/2 rounded-full object-cover"
     />
 
     <input
       disabled
       placeholder="Update the status..."
-      class="w-full rounded border border-porcelain bg-athens px-[57px] py-[30px] pr-[80px] text-sm text-mystic outline-none placeholder:text-casper"
+      class="h-[62px] w-full rounded border border-porcelain bg-athens px-[57px] py-0 pr-20 text-sm text-mystic outline-none placeholder:text-casper"
     />
 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      fill="none"
-      class="absolute right-6 top-5 fill-[#7a859e]"
-    >
-      <path
-        d="M7 7a1 1 0 1 1-2 0 1 1 0 0 1 2 0zM12 8a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM6.86 10.28a1 1 0 1 0-1.72 1.04 4.5 4.5 0 0 0 7.72 0 1 1 0 0 0-1.72-1.04 2.5 2.5 0 0 1-4.28 0z"
-      ></path>
-      <path
-        fill-rule="evenodd"
-        d="M9 .5a8.5 8.5 0 1 0 0 17 8.5 8.5 0 0 0 0-17zM2.5 9a6.5 6.5 0 1 1 13 0 6.5 6.5 0 0 1-13 0z"
-        clip-rule="evenodd"></path>
-    </svg>
+    <Svg
+      id="smile"
+      w={18}
+      class="absolute right-6 top-1/2 -translate-y-1/2 fill-waterloo"
+    />
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="17"
       height="17"
       fill="none"
-      class="absolute right-[57px] top-5 fill-[#7a859e]"
+      class="absolute right-[57px] top-1/2 -translate-y-1/2 fill-waterloo"
     >
       <path
         fill-rule="evenodd"
@@ -122,7 +103,7 @@ import man from "$assets/ibis.jpg"
   <ul class="space-y-6 px-10 py-8">
     {
       [433, 197, 366, 473, 315, 447, 536, 238].map((w) => (
-        <li class="h-5 rounded-full bg-[#f0f2f7]" style={`width:${w}px`} />
+        <li class="h-5 rounded-full bg-porcelain" style={`width:${w}px`} />
       ))
     }
   </ul>

@@ -1,10 +1,10 @@
-export interface Question {
+type TQuestion = {
   questionTag: string
   question: string
   answer: string
 }
 
-export const questions: Question[] = [
+export const questions: TQuestion[] = [
   {
     questionTag: "install",
     question: "How do I install Sansheets?",

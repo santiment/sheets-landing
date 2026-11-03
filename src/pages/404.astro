@@ -1,15 +1,16 @@
 ---
-import Footer from "san-webkit-next/ui/app/Footer"
-
+import Footer from "$components/Footer.astro"
 import SEO from "$components/SEO.astro"
 import Layout from "$layouts/Layout.astro"
 ---
 
 <Layout>
-  <SEO title="404: Not found" />
+  <SEO slot="seo" title="404: Not found" />
 
   <section class="flex h-[50vh] flex-col items-center justify-center">
-    <h1 class="mb-5 text-5xl font-bold text-rhino sm:text-4xl">NOT FOUND</h1>
+    <h1 class="mb-5 text-5xl font-semibold text-rhino sm:text-4xl">
+      NOT FOUND
+    </h1>
     <p class="text-base">
       You just hit a route that doesn&#39;t exist... the sadness.
     </p>

@@ -2,7 +2,7 @@
 import { seo } from "$assets/seo"
 import { questions } from "$components/FAQ/assets/questions"
 
-interface Props {
+type Props = {
   title?: string
   description?: string
 }
@@ -11,14 +11,6 @@ const { title = seo.title, description = seo.description } = Astro.props
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 const imageUrl = new URL("/sheets.png", Astro.site)
-
-const stripHtml = (html: string) =>
-  html
-    .replace(/<[^>]*>/g, " ")
-    .replace(/&rarr;/g, "→")
-    .replace(/&[a-z]+;/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -55,6 +47,15 @@ const jsonLd = {
       })),
     },
   ],
+}
+
+function stripHtml(html: string) {
+  return html
+    .replace(/<[^>]*>/g, " ")
+    .replace(/&rarr;/g, "→")
+    .replace(/&[a-z]+;/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
 }
 ---
 

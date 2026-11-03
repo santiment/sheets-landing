@@ -3,23 +3,28 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
+    "astro": "astro",
+    "build": "rm -rf static/webkit && astro build",
+    "check": "astro check",
     "dev": "astro dev",
     "dev:https": "astro dev --host -- --https",
-    "build": "rm -rf static/webkit && astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "preview": "astro preview"
   },
   "dependencies": {
     "@astrojs/svelte": "^7.2.5",
     "@astrojs/tailwind": "^6.0.2",
     "@melt-ui/svelte": "^0.86.6",
     "astro": "^5.18.0",
-    "bits-ui": "^1.8.0",
+    "bits-ui": "^2.18.1",
+    "esm-env": "^1.2.2",
     "rxjs": "^7.8.2",
-    "san-webkit-next": "github:santiment/san-webkit#lib-e24c3dd8-180526",
+    "san-webkit-next": "github:santiment/san-webkit#lib-d4613f0a-110826",
     "svelte": "^5.53.7"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.12",
     "@astrojs/ts-plugin": "^1.10.6",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@sentry/astro": "^10.40.0",

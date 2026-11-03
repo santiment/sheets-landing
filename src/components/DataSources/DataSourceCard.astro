@@ -1,0 +1,40 @@
+---
+import Svg from "san-webkit-next/ui/core/Svg"
+
+type Props = {
+  area: string
+  label: string
+  title: string
+  features: string[]
+}
+
+const { area, label, title, features } = Astro.props
+---
+
+<article
+  class="rounded-lg bg-athens p-[30px_40px] md:p-[30px]"
+  style={`grid-area:${area}`}
+>
+  <p class="text-lg text-sheets">{label}</p>
+
+  <h3
+    class="mb-[30px] mt-[22px] whitespace-pre-line text-4xl font-semibold md:text-xl"
+  >
+    {title}
+  </h3>
+
+  <ul class="space-y-2.5">
+    {
+      features.map((feature) => (
+        <li class="relative pl-6 text-base leading-5 md:text-sm">
+          <Svg
+            id="checkmark"
+            w={12}
+            class="absolute left-0 top-1 fill-sheets"
+          />
+          {feature}
+        </li>
+      ))
+    }
+  </ul>
+</article>

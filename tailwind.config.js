@@ -18,22 +18,22 @@ export default {
     screens: {
       ...tailwindConfig.theme.screens,
       xl: { max: "1199px" },
-      lg: { max: "1024px" },
     },
     extend: {
-      fontWeight: {
-        bold: '600',
-      },
       colors: {
         sheets: {
-          DEFAULT: "#1AA168",
-          hover: "#16875A",
+          DEFAULT: "var(--sheets)",
+          hover: "var(--sheets-hover)",
+          accent: "var(--sheets-accent)",
         },
-        zircon: "#f2f4fa",
+      },
+      dropShadow: {
+        panel: "0 10px 40px rgba(24, 27, 43, 0.06)",
       },
       boxShadow: {
         panel: "0px 10px 40px rgba(24, 27, 43, 0.06)",
-        popup: "0px 4px 50px rgba(24, 27, 43, 0.04), 0px 10px 40px rgba(24, 27, 43, 0.06)",
+        popup:
+          "0px 4px 50px rgba(24, 27, 43, 0.04), 0px 10px 40px rgba(24, 27, 43, 0.06)",
         code: "0px 4px 50px rgba(56, 74, 167, 0.04), 0px 60px 40px rgba(56, 74, 167, 0.02)",
       },
       keyframes: {

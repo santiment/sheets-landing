@@ -41,8 +41,8 @@ const floaters = [
 ---
 
 <section
-  class="relative mb-[165px] text-center md:mb-20 sm:mb-10"
-  style={`background: url('${bg}') no-repeat 50%`}
+  class="relative mb-[165px] text-center sm:mb-20"
+  style={`background-image: url('${bg}'); background-repeat: no-repeat; background-position: 50%;`}
 >
   {
     floaters.map(({ img, size, style }) => (
@@ -75,7 +75,7 @@ const floaters = [
     👋
   </span>
 
-  <h2 class="mb-[60px] text-4xl font-bold sm:text-3xl">
+  <h2 class="mb-[60px] text-4xl font-semibold sm:text-3xl">
     What people<br />are saying
   </h2>
 
@@ -98,7 +98,7 @@ const floaters = [
         class="size-[60px] rounded-full border-2 border-white object-cover"
       />
       <h3 class="text-base font-medium">Neal Swaelens</h3>
-      <h4 class="text-sm text-waterloo">Product Manager</h4>
+      <p class="text-sm text-fiord">Product Manager</p>
     </div>
   </div>
 </section>
@@ -119,5 +119,11 @@ const floaters = [
 
   .floater {
     animation: moving var(--dur, 6s) infinite ease-in-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .floater {
+      animation: none;
+    }
   }
 </style>

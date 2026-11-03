@@ -1,13 +1,12 @@
 ---
-import Footer from "san-webkit-next/ui/app/Footer"
-
-import ForWhom from "$components/Audience/Audience.astro"
-import Advantages from "$components/DataSources/DataSources.astro"
+import Audience from "$components/Audience/Audience.astro"
+import DataSources from "$components/DataSources/DataSources.astro"
 import FAQ from "$components/FAQ/FAQ.svelte"
-import ReadyToStart from "$components/GetStarted/GetStarted.astro"
+import Footer from "$components/Footer.astro"
+import GetStarted from "$components/GetStarted/GetStarted.astro"
 import Hero from "$components/Hero.astro"
 import SEO from "$components/SEO.astro"
-import UseCases from "$components/Templates/Templates.astro"
+import Templates from "$components/Templates/Templates.astro"
 import Testimonials from "$components/Testimonials/Testimonials.astro"
 import Layout from "$layouts/Layout.astro"
 
@@ -19,17 +18,18 @@ import waves from "$assets/waves.svg?url"
 
   <div class="waves" style={`background-image: url('${waves}')`}></div>
 
-  <div class="container">
+  <div class="container md:max-w-[800px]">
     <Hero />
-    <ForWhom />
-    <Advantages />
-    <UseCases />
+    <Audience />
+    <DataSources />
+    <Templates />
     <FAQ client:load />
     <Testimonials />
-    <ReadyToStart />
   </div>
 
-  <Footer style="--accent: var(--sheets)" />
+  <GetStarted />
+
+  <Footer />
 </Layout>
 
 <style>

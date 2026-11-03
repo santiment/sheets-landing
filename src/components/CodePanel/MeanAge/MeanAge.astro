@@ -9,7 +9,7 @@ import graph from "./assets/graph.svg"
 const panels = [
   {
     title: "❄️",
-    pos: "top-[64px] left-[85px]",
+    pos: "top-16 left-[85px]",
     arrow: "rotate-[134deg] top-[82%] left-[83%]",
   },
   {
@@ -36,12 +36,12 @@ const panels = [
 ---
 
 <CodePanel class="w-[60%]">
-  <Image class="absolute left-[-98px] top-[-58px]" src={graph} alt="" />
+  <Image class="absolute -left-[98px] -top-[58px]" src={graph} alt="" />
 
   {
     panels.map(({ title, pos, arrow }) => (
       <FloatingPanel
-        class={`${pos} size-[64px] justify-center p-0`}
+        class={`${pos} size-16 justify-center p-0 [&>span]:text-3xl`}
         title={title}
       >
         <svg
@@ -51,8 +51,8 @@ const panels = [
           height="24"
           viewBox="0 0 24 24"
         >
-          <polygon points="12,0 24,24 0,24" fill="#f1f3f9" />
-          <polygon points="12,4 22,24 2,24" fill="white" />
+          <polygon points="12,0 24,24 0,24" fill="var(--athens, #f1f3f9)" />
+          <polygon points="12,4 22,24 2,24" fill="var(--white, #fff)" />
         </svg>
       </FloatingPanel>
     ))

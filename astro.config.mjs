@@ -11,6 +11,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const viteBase = await createAstroConfig()
 
 const viteConfig = mergeConfig(viteBase, {
+  build: {
+    assetsInlineLimit: 0,
+  },
+
   define: {
     __SVELTEKIT_APP_VERSION_POLL_INTERVAL__: "0",
     __SVELTEKIT_PATHS_BASE__: '""',
@@ -34,6 +38,7 @@ const viteConfig = mergeConfig(viteBase, {
         replacement: path.resolve(__dirname, "./src/layouts"),
       },
       { find: "$pages", replacement: path.resolve(__dirname, "./src/pages") },
+      { find: "$utils", replacement: path.resolve(__dirname, "./src/utils") },
     ],
   },
   ssr: {

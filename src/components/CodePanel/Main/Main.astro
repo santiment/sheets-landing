@@ -1,0 +1,93 @@
+---
+import CodePanel from "../CodePanel.astro"
+import FunctionSearch from "./FunctionSearch.svelte"
+
+import chainImage from "$assets/chain.svg?url"
+import combinedTemplate from "$assets/combined-template.svg?url"
+import image from "$assets/image.png"
+import sheetImage from "$assets/sheet.svg?url"
+
+const TOP_LINES = [60, 42, 54, 62]
+
+const SOURCE_LINES = [
+  [128, 92, 69],
+  [137, 177],
+  [137, 99, 150],
+  [204, 129],
+  [182, 117, 161],
+]
+---
+
+<CodePanel
+  interactive
+  class="-mr-[30px] -mt-[30px] ml-auto flex flex-col lg:mr-[30px] lg:min-w-[500px]"
+>
+  <div class="px-6 pb-2.5 pt-[18px]">
+    <ul class="relative mb-[30px] flex flex-col pl-[62px]">
+      <img
+        src={sheetImage}
+        alt=""
+        aria-hidden="true"
+        class="absolute left-0 top-0 h-12 w-[38px]"
+      />
+
+      <li class="mb-[15px] h-3.5 w-[228px] rounded-full bg-porcelain"></li>
+
+      <li class="flex gap-[18px]">
+        {
+          TOP_LINES.map((width) => (
+            <span
+              class="h-3.5 rounded-full bg-porcelain"
+              style={`width:${width}px`}
+            />
+          ))
+        }
+      </li>
+    </ul>
+
+    <FunctionSearch client:load />
+  </div>
+
+  <ul class="mt-auto">
+    {
+      SOURCE_LINES.map((blocks) => (
+        <li class="mx-5 flex h-[50px] items-center gap-[18px] border-t border-athens">
+          {blocks.map((width) => (
+            <span
+              class="h-3.5 rounded-full bg-porcelain"
+              style={`width:${width}px`}
+            />
+          ))}
+        </li>
+      ))
+    }
+  </ul>
+
+  <div
+    class="absolute -left-5 bottom-4 flex h-[140px] w-[263px] flex-col justify-end rounded-lg p-[30px_24px_18px_20px]"
+    style={`background-image: url('${combinedTemplate}'); background-repeat: no-repeat;`}
+  >
+    <div
+      class="absolute right-1 top-1 z-[2] size-[35px] rounded-full bg-center bg-no-repeat"
+      style={`background-color: var(--sheets-accent); background-image: url('${chainImage}');`}
+    >
+    </div>
+
+    <div
+      class="pointer-events-none absolute bottom-0 left-0 h-[120px] w-[249px] rounded-lg shadow-popup"
+    >
+    </div>
+
+    <div class="mb-4 flex items-center gap-3">
+      <img src={image.src} alt="" aria-hidden="true" width="26" height="26" />
+
+      <p class="text-sm text-rhino">Favorites</p>
+    </div>
+
+    <p class="text-sm text-waterloo">
+      The price of your list was increased by
+      <b class="mx-1 font-semibold text-rhino">$ 532.73</b>
+      today
+    </p>
+  </div>
+</CodePanel>

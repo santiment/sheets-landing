@@ -95,24 +95,24 @@ const cases = [
 ]
 ---
 
-<section id="use-cases" class="mb-[165px] md:mb-20 sm:mb-10">
-  <ul class="space-y-[155px] md:space-y-5">
+<section id="use-cases" class="mb-[165px] sm:mb-20">
+  <ul class="space-y-[155px] md:space-y-5 sm:space-y-10">
     {
       cases.map(({ title, desc, code: Code, icon: Icon }, i) => (
         <li
           class={cn(
-            "flex items-center justify-between gap-8 md:flex-col md:gap-5",
+            "flex items-center justify-between gap-8 sm:flex-col sm:gap-5",
             i % 2 !== 0 && "flex-row-reverse"
           )}
         >
-          <div class="max-w-[372px] md:w-full md:max-w-full">
+          <div class="max-w-[360px] lg:px-[25px] md:max-w-[400px] sm:flex sm:w-full sm:max-w-full sm:flex-col sm:items-center sm:px-0 sm:text-center">
             <Icon />
 
-            <h3 class="mb-4 mt-[14px] flex items-center text-xl font-bold text-rhino">
+            <h3 class="mb-4 mt-3.5 text-xl font-semibold text-rhino sm:mb-3 sm:mt-2.5">
               {title}
             </h3>
 
-            <p class="text-lg text-waterloo">{desc}</p>
+            <p class="text-lg text-fiord">{desc}</p>
           </div>
 
           <Code />

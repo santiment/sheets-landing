@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist", "node_modules"],
+  "exclude": ["dist", "node_modules", "public", "static"],
   "compilerOptions": {
     "plugins": [
       {
@@ -12,7 +12,8 @@
       "$assets/*": ["./src/assets/*"],
       "$components/*": ["./src/components/*"],
       "$layouts/*": ["./src/layouts/*"],
-      "$pages/*": ["./src/pages/*"]
+      "$pages/*": ["./src/pages/*"],
+      "$utils/*": ["./src/utils/*"]
     }
   }
 }

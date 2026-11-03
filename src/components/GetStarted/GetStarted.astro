@@ -1,28 +1,34 @@
 ---
+import Button from "san-webkit-next/ui/core/Button"
+
 import girlImage from "./assets/girl.svg?url"
 ---
 
 <section class="mb-0 flex h-[550px] w-full items-start justify-center">
   <div
-    class="h-full w-full pt-[50px] text-center sm:pt-[170px]"
-    style={`background: linear-gradient(180deg, white 0%, rgba(255,255,255,0) 27%, rgba(255,255,255,0) 73%, white 100%), url('${girlImage}') no-repeat 27% 73%;`}
+    class="h-full w-full bg-[length:auto,auto] pt-[50px] text-center xs:bg-[length:auto,contain] xs:pt-[170px]"
+    style={`background-image: linear-gradient(180deg, white 0%, rgba(255,255,255,0) 27%, rgba(255,255,255,0) 73%, white 100%), url('${girlImage}'); background-repeat: no-repeat, no-repeat; background-position: 0% 0%, 37% 73%;`}
   >
-    <h2 class="text-4xl font-bold text-rhino sm:text-3xl">
+    <h2 class="text-4xl font-semibold text-rhino sm:text-3xl">
       Ready to get started?
     </h2>
 
-    <p class="mx-auto mt-4 text-sm text-waterloo">
+    <p class="mx-auto mb-6 mt-4 text-base text-fiord">
       Click below to access the Santiment API or join the Discord<br
-        class="sm:hidden"
+        class="xs:hidden"
       />
       channel to share your solutions with the world
     </p>
 
-    <a
-      href="https://academy.santiment.net/sansheets/setting-up/"
-      class="mt-6 inline-flex h-[50px] items-center rounded-sm bg-sheets px-[45px] text-base font-medium text-white transition-opacity hover:opacity-80"
+    <Button
+      href="https://app.santiment.net/sign-up"
+      target="_blank"
+      variant="fill"
+      accent="custom"
+      size="lg"
+      class="inline-flex h-[50px] px-[45px]"
     >
       Get access
-    </a>
+    </Button>
   </div>
 </section>

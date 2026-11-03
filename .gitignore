@@ -35,3 +35,6 @@ static/~partytown
 mkcert
 cert-key.pem
 cert.pem
+
+# macOS
+.DS_Store

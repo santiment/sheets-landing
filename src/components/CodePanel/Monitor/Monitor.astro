@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets"
-
 import { cn } from "san-webkit-next/ui/utils"
 
 import CodePanel from "../CodePanel.astro"
@@ -32,7 +31,7 @@ const items = [
     </FloatingPanel>
 
     <FloatingPanel
-      class="bottom-[20px] left-[54px]"
+      class="bottom-5 left-[54px]"
       title="Low risk"
       icon={starIcon}
     />
@@ -45,7 +44,7 @@ const items = [
           <li
             class={cn(
               "relative mt-2.5 flex flex-col pb-[9px] pl-[38px] pr-5 pt-2.5",
-              highlight && "rounded-lg border border-[#f1f3f9] bg-white",
+              highlight && "rounded-lg border border-athens bg-white"
             )}
           >
             <div class={cn("absolute left-5 top-5 size-2 rounded-full", dot)} />

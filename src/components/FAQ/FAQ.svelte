@@ -9,9 +9,9 @@
   let value = $state(questions[0].questionTag)
 </script>
 
-<section class="relative mb-[165px] md:mb-20 sm:mb-10" id="faq">
+<section class="relative mb-[165px] sm:mb-20" id="faq">
   <h2
-    class="mb-6 flex items-center justify-center gap-4 text-4xl font-bold sm:text-3xl"
+    class="mb-6 flex items-center justify-center gap-4 text-4xl font-semibold sm:text-3xl"
   >
     Frequently asked questions
   </h2>
@@ -20,11 +20,11 @@
     {#each questions as { question, answer, questionTag } (questionTag)}
       <Accordion.Item
         value={questionTag}
-        class="mb-6 rounded-2xl border border-porcelain bg-[#f7f8fb] transition-colors data-[state=open]:border-sheets"
+        class="mb-6 rounded-2xl border border-porcelain bg-athens transition-colors data-[state=open]:border-sheets"
       >
         <Accordion.Header>
           <Accordion.Trigger
-            class="group flex w-full items-center justify-between px-8 py-[27px]"
+            class="group flex w-full items-center justify-between px-8 py-[27px] text-left"
           >
             <h3 class="text-lg sm:text-base">
               {@html question}

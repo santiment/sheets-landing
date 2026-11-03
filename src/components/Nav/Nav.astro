@@ -1,13 +1,17 @@
 ---
 import CtaButton from "$components/CtaButton.svelte"
 
-import MobileNav from "./MobileNav.svelte"
+import Link from "./Link.svelte"
+import MobileNav from "./MobileNav/MobileNav.svelte"
 import ProductsButton from "./ProductsButton.svelte"
+import { links } from "./utils"
 
 import Logo from "./assets/logo.svg"
 ---
 
-<nav class="container flex h-[70px] items-center justify-between">
+<nav
+  class="container flex h-[70px] items-center justify-between md:max-w-[800px]"
+>
   <div class="flex items-center gap-6">
     <a href="/" aria-label="Go to homepage">
       <Logo width="124" height="40" />
@@ -16,24 +20,14 @@ import Logo from "./assets/logo.svg"
     <ProductsButton client:load />
   </div>
 
-  <div
-    class="flex items-center gap-8 text-base text-waterloo md:hidden hover:[&_a]:text-green-hover"
-  >
-    <a href="/#metrics">Metrics</a>
+  <div class="flex items-center gap-8 text-base md:hidden">
+    {
+      links.map(({ href, label, isExternal = false }) => (
+        <Link {href} {label} {isExternal} />
+      ))
+    }
 
-    <a href="/#use-cases">Use cases</a>
-
-    <a
-      href="https://app.santiment.net/pricing"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Pricing
-    </a>
-
-    <a href="mailto:support@santiment.net">Support</a>
-
-    <CtaButton />
+    <CtaButton client:load />
   </div>
 
   <MobileNav client:idle />

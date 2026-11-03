@@ -1,16 +1,28 @@
 <script lang="ts">
   import ProductsButton from "san-webkit-next/ui/app/Products"
   import Button from "san-webkit-next/ui/core/Button"
+  import { cn } from "san-webkit-next/ui/utils"
+
+  type TProps = {
+    class?: string
+  }
+
+  const { class: className = "" }: TProps = $props()
 </script>
 
-<ProductsButton active="sheets" variant="green">
-  {#snippet children({ ref })}
+<ProductsButton class={className} active="sheets" align="start" isCompact>
+  {#snippet children({ props })}
     <Button
-      {ref}
-      size="auto"
-      icon="products-toggle"
-      iconSize={16}
-      class="mr-[42px] fill-waterloo p-2 hover:bg-transparent hover:fill-green-hover"
-    ></Button>
+      {...props}
+      icon="arrow-down"
+      iconOnRight
+      iconSize={9}
+      class={cn(
+        "fill-waterloo pl-0 text-waterloo transition-transform",
+        "hover:bg-transparent hover:fill-sheets hover:text-sheets",
+        "[&>svg]:transition-transform [&>svg]:duration-200",
+        "[&>svg]:ease-in-out [&[data-state=open]>svg]:rotate-180"
+      )}>Products</Button
+    >
   {/snippet}
 </ProductsButton>

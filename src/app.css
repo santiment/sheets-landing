@@ -1,3 +1,24 @@
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --speed-quick: 0.1s;
+
+  --sheets: #1aa168;
+  --sheets-hover: #16875a;
+  --sheets-accent: #8affce;
+
+  --accent: var(--sheets);
+  --accent-hover: var(--sheets-hover);
+}
+
+.account-slot {
+  opacity: 0;
+  transition: opacity var(--speed-quick) var(--ease-out-expo);
+}
+
+.account-slot.is-loaded {
+  opacity: 1;
+}
+
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--casper) var(--porcelain);

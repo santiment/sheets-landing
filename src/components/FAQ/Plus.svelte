@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { cn } from "san-webkit-next/ui/utils"
+
   type TProps = {
     class?: string
     opened?: boolean
   }
 
-  let { class: className = "", opened = false }: TProps = $props()
+  const { class: className = "", opened = false }: TProps = $props()
 </script>
 
 <svg
@@ -12,7 +14,10 @@
   height="28"
   viewBox="0 0 28 28"
   fill="none"
-  class="ml-[18px] h-6 w-6 min-w-6 origin-center cursor-pointer stroke-fiord sm:h-auto sm:w-auto sm:min-w-7 {className}"
+  class={cn(
+    "h-6 w-6 min-w-6 origin-center cursor-pointer stroke-fiord sm:h-auto sm:w-auto sm:min-w-7",
+    className
+  )}
 >
   <g
     stroke-linecap="round"
@@ -23,7 +28,7 @@
     <path d="M14 25.67a11.67 11.67 0 100-23.34 11.67 11.67 0 000 23.34z" />
     <path
       d="M14 9.33v9.34"
-      class="duration-[250ms] origin-center transition-transform ease-out {opened
+      class="origin-center transition-transform duration-200 ease-out {opened
         ? 'rotate-90'
         : ''}"
     />

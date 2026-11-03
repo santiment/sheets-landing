@@ -42,7 +42,7 @@ const { class: className = "" } = Astro.props
       <slot />
     </main>
 
-    <Notifications client:only="svelte" />
+    <Notifications client:idle />
 
     {
       import.meta.env.PROD && (
@@ -56,3 +56,12 @@ const { class: className = "" } = Astro.props
     }
   </body>
 </html>
+
+<script>
+  import { startLinksListener } from "san-webkit-next/analytics"
+
+  import { initCookiesPopup } from "$utils/cookies"
+
+  startLinksListener()
+  initCookiesPopup()
+</script>

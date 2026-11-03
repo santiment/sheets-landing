@@ -6,19 +6,27 @@
   import { useObserveFnCall } from "san-webkit-next/utils"
   import { onMount } from "svelte"
 
-  const { class: className = "" } = $props()
+  type TProps = {
+    class?: string
+  }
+
+  const { class: className = "" }: TProps = $props()
 
   const queryCurrentUser = ApiQuery(
     () => `{ currentUser { id  } }`,
     (gql: { currentUser: null | { id: number } }) => gql.currentUser
   )
 
-  let isLoggedIn = $state<boolean>(false)
+  let isLoggedIn = $state(false)
+  let isLoaded = $state(false)
 
   const loadCurrentUser = useObserveFnCall(() =>
     pipe(
       switchMap(() => queryCurrentUser()()),
-      tap((data) => (isLoggedIn = Boolean(data)))
+      tap((data) => {
+        isLoggedIn = Boolean(data)
+        isLoaded = true
+      })
     )
   )
 
@@ -27,19 +35,28 @@
   })
 </script>
 
-<Button
-  target="_blank"
-  variant={isLoggedIn ? "border" : "fill"}
-  href={isLoggedIn
-    ? "https://app.santiment.net/"
-    : "https://app.santiment.net/sign-up"}
+<div
   class={cn(
-    "flex flex-shrink-0 justify-center border border-sheets px-5 text-sheets",
-    "bg-transparent hover:border-green-hover hover:bg-green-light-3 hover:text-green-hover",
+    "account-slot flex h-8 w-36 justify-end",
+    isLoaded && "is-loaded",
     className
   )}
-  data-source="santiment.net"
-  data-type="go_to_sanbase"
 >
-  {isLoggedIn ? "Go to Sanbase" : "Get Started"}
-</Button>
+  <Button
+    target="_blank"
+    accent="custom"
+    variant={isLoggedIn ? "border" : "fill"}
+    href={isLoggedIn
+      ? "https://app.santiment.net/"
+      : "https://app.santiment.net/sign-up"}
+    class={cn(
+      "w-full flex-shrink-0 justify-center px-4",
+      isLoggedIn &&
+        "border-sheets bg-transparent text-sheets hover:border-sheets-hover hover:text-sheets-hover"
+    )}
+    data-source="sheets.santiment.net"
+    data-type="go_to_sanbase"
+  >
+    {isLoggedIn ? "Go to Sanbase" : "Get Started"}
+  </Button>
+</div>

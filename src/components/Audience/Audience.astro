@@ -1,36 +1,42 @@
 ---
 import firstImg from "./first.svg?url"
 import secondImg from "./second.svg?url"
+
+const audiences = [
+  {
+    image: firstImg,
+    title: "For traders & investors",
+    text: "Build models and backtest your strategies with the most comprehensive source of crypto data on the market. No data aggregation, no intermediaries.",
+    position:
+      "md:[background-position:92%_-53%] sm:[background-position:92%_-5%]",
+  },
+  {
+    image: secondImg,
+    title: "For researchers & journalists",
+    text: "Investigate network activity, discover market patterns, and analyze stakeholder behavior with our clean, reliable data streams for 100s of digital assets.",
+    position: "md:[background-position:92%_12%]",
+  },
+]
 ---
 
-<section class="mb-[165px] space-y-8 md:mb-20 sm:mb-10">
-  <article
-    style={`--bg-image: url('${firstImg}')`}
-    class="relative flex flex-col rounded-lg bg-mirage bg-no-repeat p-[40px_50px] [background-image:var(--bg-image)] [background-position:92%_55%] lg:bg-contain lg:pt-[150px] lg:[background-position:92%_-53%] sm:p-[132px_24px_32px] sm:[background-position:92%_-5%]"
-  >
-    <h2 class="mb-4 text-xl font-bold text-white">
-      For traders &amp; investors
-    </h2>
+<section class="mb-[165px] space-y-8 sm:mb-20">
+  {
+    audiences.map(({ image, title, text, position }) => (
+      <article
+        style={`--bg-image: url('${image}')`}
+        class:list={[
+          "relative flex flex-col rounded-lg bg-mirage bg-no-repeat p-[40px_50px]",
+          "[background-image:var(--bg-image)] [background-position:92%_55%]",
+          "md:bg-contain md:pt-[150px] sm:p-[132px_24px_32px]",
+          position,
+        ]}
+      >
+        <h2 class="mb-4 text-xl font-semibold text-white">{title}</h2>
 
-    <p class="max-w-[400px] text-sm text-casper">
-      Build models and backtest your strategies with the most comprehensive
-      source of crypto data on the market.
-    </p>
-  </article>
-
-  <article
-    style={`--bg-image: url('${secondImg}')`}
-    class="relative flex flex-col rounded-lg bg-mirage bg-no-repeat p-[40px_50px] [background-image:var(--bg-image)] [background-position:92%_55%] lg:bg-contain lg:pt-[150px] lg:[background-position:92%_12%] sm:p-[132px_24px_32px]"
-  >
-    <h2 class="mb-4 text-xl font-bold text-white">
-      For researchers &amp; journalists
-    </h2>
-
-    <p class="max-w-[400px] text-sm text-casper">
-      Investigate network activity, discover market patterns, and analyze
-      stakeholder behavior.
-    </p>
-  </article>
+        <p class="max-w-[400px] text-base text-casper">{text}</p>
+      </article>
+    ))
+  }
 </section>
 
 <style>
