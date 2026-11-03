@@ -25,8 +25,6 @@ podTemplate(label: 'sheets-landing-production-deploy', nodeSelector: 'cpu.credit
         container('docker') {
           docker.withRegistry("https://${awsRegistry}", "ecr:eu-central-1:ecr-credentials") {
             sh "docker pull ${taggedSource}"
-            sh "docker tag ${taggedSource} ${sourceImage}:production"
-            sh "docker push ${sourceImage}:production"
             sh "mkdir -p artifacts"
             sh "docker create --name sheets-landing-temp ${taggedSource}"
             sh "docker cp sheets-landing-temp:/app/public ./artifacts/"

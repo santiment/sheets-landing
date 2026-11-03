@@ -1,4 +1,4 @@
-podTemplate(label: 'sheets-landing-stage-deploy', nodeSelector: 'cpu.credits=no', containers: [
+podTemplate(label: 'sheets-landing-staging-deploy', nodeSelector: 'cpu.credits=no', containers: [
     containerTemplate(name: 'kubectl', image: 'lachlanevenson/k8s-kubectl:v1.25.4', command: 'cat', ttyEnabled: true),
     containerTemplate(name: 'docker', image: 'docker', ttyEnabled: true, command: 'cat', envVars: [
       envVar(key: 'DOCKER_BUILDKIT', value: '1'),
@@ -9,7 +9,7 @@ podTemplate(label: 'sheets-landing-stage-deploy', nodeSelector: 'cpu.credits=no'
       secretEnvVar(key: 'AWS_SECRET_ACCESS_KEY', secretName: 'sanbase-sheets-landing-uploader-env', secretKey: 'awsSecretAccessKey'),
     ])
 ]) {
-  node('sheets-landing-stage-deploy') {
+  node('sheets-landing-staging-deploy') {
     stage('Update deployment') {
       def scmVars = checkout scm
       def gitCommit = scmVars.GIT_COMMIT
@@ -25,8 +25,6 @@ podTemplate(label: 'sheets-landing-stage-deploy', nodeSelector: 'cpu.credits=no'
         container('docker') {
           docker.withRegistry("https://${awsRegistry}", "ecr:eu-central-1:ecr-credentials") {
             sh "docker pull ${taggedSource}"
-            sh "docker tag ${taggedSource} ${sourceImage}:stage"
-            sh "docker push ${sourceImage}:stage"
             sh "mkdir -p artifacts"
             sh "docker create --name sheets-landing-temp ${taggedSource}"
             sh "docker cp sheets-landing-temp:/app/public ./artifacts/"
