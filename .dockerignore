@@ -1,0 +1,32 @@
+# Installed inside the image; a host copy would also clobber it on COPY.
+node_modules
+**/node_modules
+
+# .git is NOT excluded: san-webkit-next's vite config runs `git rev-parse`,
+# `git rev-list --count` and `git show` at build time.
+
+# Build outputs and generated files, regenerated in the image.
+public
+dist
+.astro
+.svelte-kit
+static/webkit
+static/vendors
+static/~partytown
+
+# Local/editor files and secrets.
+.env
+.env.*
+*.pem
+*.key
+mkcert
+*.log
+.vscode
+.idea
+.DS_Store
+.claude
+
+Dockerfile
+.dockerignore
+Jenkinsfile
+Jenkinsfile-*
