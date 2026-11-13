@@ -36,8 +36,8 @@ dependencies:
     specifier: ^7.8.2
     version: 7.8.2
   san-webkit-next:
-    specifier: github:santiment/san-webkit#lib-190eb1ac-031126
-    version: github.com/santiment/san-webkit/cf763f0a769fb6e164cc2f702f76dcf56dbea626(@amplitude/rrweb@2.0.0-alpha.35)(@floating-ui/dom@1.8.0)(@melt-ui/svelte@0.86.6)(@sveltejs/adapter-auto@3.3.1)(@sveltejs/adapter-node@5.5.4)(@sveltejs/kit@2.48.2)(@sveltejs/vite-plugin-svelte@5.1.1)(@types/react@19.2.14)(@wagmi/connectors@5.11.2)(@wagmi/core@2.21.2)(bits-ui@2.20.4)(driver.js@1.10.2)(estree-walker@3.0.3)(graphql@16.13.1)(highlight.js@11.11.1)(indicatorts@2.2.2)(lottie-web@5.13.0)(marked-highlight@2.2.3)(marked@15.0.12)(mathjs@14.9.1)(monaco-editor@0.52.2)(phoenix@1.8.7)(photoswipe@5.4.4)(react@18.3.1)(rollup@4.59.0)(rxjs@7.8.2)(svelte@5.53.10)(tailwind-merge@2.6.1)(tailwindcss@3.4.19)(typescript@5.9.3)(uuid@11.1.0)(viem@2.47.1)(vite@7.3.1)(wagmi@2.19.5)
+    specifier: github:santiment/san-webkit#lib-d3e99a072-131126
+    version: github.com/santiment/san-webkit/a056d7747d067bea12937efb333a8663dbf2e046(@amplitude/rrweb@2.0.0-alpha.35)(@floating-ui/dom@1.8.0)(@melt-ui/svelte@0.86.6)(@sveltejs/adapter-auto@3.3.1)(@sveltejs/adapter-node@5.5.4)(@sveltejs/kit@2.48.2)(@sveltejs/vite-plugin-svelte@5.1.1)(@types/react@19.2.14)(@wagmi/connectors@5.11.2)(@wagmi/core@2.21.2)(bits-ui@2.20.4)(driver.js@1.10.2)(estree-walker@3.0.3)(graphql@16.13.1)(highlight.js@11.11.1)(indicatorts@2.2.2)(lottie-web@5.13.0)(marked-highlight@2.2.3)(marked@15.0.12)(mathjs@14.9.1)(monaco-editor@0.52.2)(phoenix@1.8.7)(photoswipe@5.4.4)(react@18.3.1)(rollup@4.59.0)(rxjs@7.8.2)(svelte@5.53.10)(tailwind-merge@2.6.1)(tailwindcss@3.4.19)(typescript@5.9.3)(uuid@11.1.0)(viem@2.47.1)(vite@7.3.1)(wagmi@2.19.5)
   svelte:
     specifier: ^5.53.7
     version: 5.53.10
@@ -6521,6 +6521,7 @@ packages:
 
   /axios-retry@4.5.0(axios@1.13.6):
     resolution: {integrity: sha512-aR99oXhpEDGo0UuAlYcn2iGRds30k366Zfa05XWScR9QaQD4JYiP3/1Qt1u7YlefUOK+cn0CcwoL1oefavQUlQ==}
+    deprecated: axios-retry is no longer maintained. See https://github.com/softonic/axios-retry for alternatives.
     requiresBuild: true
     peerDependencies:
       axios: 0.x || 1.x
@@ -11927,9 +11928,9 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
-  github.com/santiment/san-webkit/cf763f0a769fb6e164cc2f702f76dcf56dbea626(@amplitude/rrweb@2.0.0-alpha.35)(@floating-ui/dom@1.8.0)(@melt-ui/svelte@0.86.6)(@sveltejs/adapter-auto@3.3.1)(@sveltejs/adapter-node@5.5.4)(@sveltejs/kit@2.48.2)(@sveltejs/vite-plugin-svelte@5.1.1)(@types/react@19.2.14)(@wagmi/connectors@5.11.2)(@wagmi/core@2.21.2)(bits-ui@2.20.4)(driver.js@1.10.2)(estree-walker@3.0.3)(graphql@16.13.1)(highlight.js@11.11.1)(indicatorts@2.2.2)(lottie-web@5.13.0)(marked-highlight@2.2.3)(marked@15.0.12)(mathjs@14.9.1)(monaco-editor@0.52.2)(phoenix@1.8.7)(photoswipe@5.4.4)(react@18.3.1)(rollup@4.59.0)(rxjs@7.8.2)(svelte@5.53.10)(tailwind-merge@2.6.1)(tailwindcss@3.4.19)(typescript@5.9.3)(uuid@11.1.0)(viem@2.47.1)(vite@7.3.1)(wagmi@2.19.5):
-    resolution: {tarball: https://codeload.github.com/santiment/san-webkit/tar.gz/cf763f0a769fb6e164cc2f702f76dcf56dbea626}
-    id: github.com/santiment/san-webkit/cf763f0a769fb6e164cc2f702f76dcf56dbea626
+  github.com/santiment/san-webkit/a056d7747d067bea12937efb333a8663dbf2e046(@amplitude/rrweb@2.0.0-alpha.35)(@floating-ui/dom@1.8.0)(@melt-ui/svelte@0.86.6)(@sveltejs/adapter-auto@3.3.1)(@sveltejs/adapter-node@5.5.4)(@sveltejs/kit@2.48.2)(@sveltejs/vite-plugin-svelte@5.1.1)(@types/react@19.2.14)(@wagmi/connectors@5.11.2)(@wagmi/core@2.21.2)(bits-ui@2.20.4)(driver.js@1.10.2)(estree-walker@3.0.3)(graphql@16.13.1)(highlight.js@11.11.1)(indicatorts@2.2.2)(lottie-web@5.13.0)(marked-highlight@2.2.3)(marked@15.0.12)(mathjs@14.9.1)(monaco-editor@0.52.2)(phoenix@1.8.7)(photoswipe@5.4.4)(react@18.3.1)(rollup@4.59.0)(rxjs@7.8.2)(svelte@5.53.10)(tailwind-merge@2.6.1)(tailwindcss@3.4.19)(typescript@5.9.3)(uuid@11.1.0)(viem@2.47.1)(vite@7.3.1)(wagmi@2.19.5):
+    resolution: {tarball: https://codeload.github.com/santiment/san-webkit/tar.gz/a056d7747d067bea12937efb333a8663dbf2e046}
+    id: github.com/santiment/san-webkit/a056d7747d067bea12937efb333a8663dbf2e046
     name: san-webkit-next
     version: 0.0.1
     hasBin: true
