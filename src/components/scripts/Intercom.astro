@@ -1,5 +1,9 @@
 <script>
   import { bootIntercom } from "san-webkit-next/analytics/intercom"
 
-  window.addEventListener("load", () => bootIntercom("cyjjko9u"))
+  const ACCENT = "#1aa168"
+
+  window.addEventListener("load", () => {
+    bootIntercom("cyjjko9u", { action_color: ACCENT, background_color: ACCENT })
+  })
 </script>
