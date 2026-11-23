@@ -14,7 +14,6 @@ import Nav from "$components/Nav/Nav.astro"
 import GoogleAnalytics from "$components/scripts/GoogleAnalytics.astro"
 import Intercom from "$components/scripts/Intercom.astro"
 import Posthog from "$components/scripts/Posthog.astro"
-import TwitterPixel from "$components/scripts/TwitterPixel.astro"
 
 type Props = {
   class?: string
@@ -68,7 +67,6 @@ const { class: className = "" } = Astro.props
         <>
           <Intercom />
           <GoogleAnalytics id="G-H53MB0V33X" />
-          <TwitterPixel id="o0e0e" />
           <Posthog />
         </>
       )
